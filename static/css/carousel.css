@@ -1,0 +1,9 @@
+.carousel-height {
+	height: 100vh;
+}
+
+@media (max-width: 767px) {
+	.carousel-height{
+	height: 70vh;
+}
+}

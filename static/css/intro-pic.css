@@ -1,0 +1,10 @@
+.intro-pic {
+    border-radius: 50%;
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    object-fit: cover;
+    color: transparent;
+    text-indent: 10000px;
+    top: 25;
+}
