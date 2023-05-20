@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import YogaUser
+from .models import YogaUser, UserOTP
 # Register your models here.
 
 
@@ -10,3 +10,6 @@ class YogshalaaByJJ(admin.ModelAdmin):
     list_display = ['fullName', 'contactNumber', 'paymentStatus']
     list_filter = ['paymentStatus', 'paymentMode', 'batchTimingSelection', 'packageSelection']
     search_fields = ['fullName']
+
+
+admin.site.register(UserOTP)

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'landing_page',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
+
+APIKey = '72bed8bd-f30d-11ed-addf-0200cd936042'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,18 +96,21 @@ WSGI_APPLICATION = 'yogshalaa.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'Yogshalaa',
-        'CLIENT': {
-            'host': "mongodb+srv://bajajraghav9:Sterlite#3@cluster0.ajubkd3.mongodb.net/",
-            'username': 'bajajraghav9',
-            'password': 'Sterlite#3',
-        }
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'Yogshalaa_OTP_Authentication',
+#         'CLIENT': {
+#             'host': "mongodb+srv://bajajraghav9:Sterlite#3@cluster0.ajubkd3.mongodb.net/",
+#             'username': 'bajajraghav9',
+#             'password': 'Sterlite#3',
+#         }
+#     }
+# }
 
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -139,8 +147,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'landing_page.UserOTP'

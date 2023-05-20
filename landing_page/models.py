@@ -1,6 +1,8 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from django.contrib.auth.models import AbstractUser
 import uuid
+from .manager import UserManager
 from django.contrib.auth.models import User
 import datetime
 from datetime import timedelta
@@ -56,3 +58,19 @@ class YogaUser(models.Model):
 
         first_name = self.fullName.split(' ')[0]
         return first_name
+
+
+class UserOTP(AbstractUser):
+    @classmethod
+    def create(cls, phone_number, otp):
+        book = cls(phone_number=phone_number, otp=otp)
+        # do something with the book
+        return book
+
+    phone_number = models.CharField(max_length=15, unique=True)
+    is_phone_verified = models.BooleanField(default=False)
+    otp = models.CharField(max_length=6)
+
+    USERNAME_FIELD = 'phone_number'
+    REQUIRED_FIELDS = ['username']
+    objects = UserManager
