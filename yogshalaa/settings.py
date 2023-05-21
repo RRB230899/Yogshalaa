@@ -109,8 +109,8 @@ WSGI_APPLICATION = 'yogshalaa.wsgi.application'
 #     }
 # }
 
-DATABASE_URL = config('DATABASE_URL')
-DEVELOPMENT_MODE = False
+# DATABASE_URL = config('DATABASE_URL')
+DEVELOPMENT_MODE = True
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {
