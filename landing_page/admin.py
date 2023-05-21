@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import YogaUser, UserOTP
+from .models import *
 # Register your models here.
 
 
@@ -12,4 +12,5 @@ class YogshalaaByJJ(admin.ModelAdmin):
     search_fields = ['fullName']
 
 
-admin.site.register(UserOTP)
+# admin.site.register(UserOTP)
+admin.site.register(Profile)

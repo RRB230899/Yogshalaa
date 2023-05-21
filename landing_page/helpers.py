@@ -3,11 +3,12 @@ import random
 from django.conf import settings
 
 
-def send_otp(phone_number):
-    try:
-        otp = random.randint(1000, 9999)
-        url = f"https://2factor.in/API/V1/{settings.APIKey}/SMS/{phone_number}/{otp}"
-        response = requests.get(url)
-        return otp
-    except Exception as e:
-        return None
+class OTPHandler:
+
+    phone_num = None
+    otp = None
+
+    def __int__(self, phone_num, otp):
+        self.phone_num = phone_num
+        self.otp = otp
+

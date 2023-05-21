@@ -17,17 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
-from landing_page.views import sendOTP, verifyOTP
+# from landing_page.views import sendOTP, verifyOTP
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('landing_page.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name="Homepage"),
-    path('send_otp', sendOTP),
-    path('verify_otp', verifyOTP),
+    # path('send_otp', sendOTP),
+    # path('verify_otp', verifyOTP),
     # path('generatePDF/', generatePDF, name='generatePDF')
 ]
-
-urlpatterns += staticfiles_urlpatterns()
 
