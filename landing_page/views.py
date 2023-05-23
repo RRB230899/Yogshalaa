@@ -106,6 +106,7 @@ def verifyOTP(request, uid):
     # uid = Profile.uid
     if request.method == "POST":
         profile = Profile.objects.get(uid=uid)
+        print(uid)
         if request.COOKIES.get('can_otp_enter') is not None:
             if profile.otp == request.POST['otp']:
                 red = redirect("User Landing Page")
