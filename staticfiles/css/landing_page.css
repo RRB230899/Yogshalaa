@@ -25,13 +25,13 @@ body, html {
     height: 100vh;
 }
 
-@media screen and (max-width: 767px){
+/*@media screen and (max-width: 767px){
     .bg-image-height{
         height: 70vh;
     }
 }
 
-/* Position text in the middle of the page/image */
+Position text in the middle of the page/image */
 
 
  body .credit {

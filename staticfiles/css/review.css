@@ -2,8 +2,8 @@
 .section-class {
 	display: grid;
 	place-items: center;
-	height: 100vh;
-	background: rgb(66, 161, 150, .7);
+	height: 80vh;
+	background: rgba(138,43,226, .5);
     font-family: montserrat;
 }
 .section-header{
@@ -50,7 +50,7 @@
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
-	border: 7px solid rgb(66, 161, 150, .7);
+	border: 7px solid rgba(138,43,226, .5);
 }
 .content{
     font-size: 18px;
@@ -62,7 +62,7 @@
 .content p span {
 	font-size: 48px;
 	margin-right: 20px;
-    color: rgb(66, 161, 150, .7);
+    color: rgba(138,43,226, .5);
 }
 .socials i {
 	margin-right: 25px;
@@ -71,5 +71,11 @@
 	font-family: 'Berkshire Swash', cursive;
 }
 .carousel-control-next-icon, .carousel-control-prev-icon {
-	background-color: rgb(66, 161, 150, .7);
+	background-color: rgba(138,43,226, .5);
+}
+@media (max-width: 767px)
+{
+    .section-class {
+        height: 120vh;
+    }
 }
