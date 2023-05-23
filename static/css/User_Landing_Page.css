@@ -99,7 +99,7 @@ nav .nav-1 .nav-main .nav-logo a {
 }
 
 nav .nav-2 {
-    background-color: #46ccde;
+    background-color: rgba(138,43,226, .5);
 }
 
 nav .nav-2 .nav-main .nav-mobile-menu {
@@ -305,11 +305,15 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header
 
 main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header .pricing-checkbox>div {
     width: 45px;
-    background: #1d1b67;
+    background: rgba(138,43,226, .5);
     height: 24px;
     border-radius: 15px;
     position: relative;
     cursor: pointer;
+}
+
+.quarterly{
+    background: green !important;
 }
 
 main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header .pricing-checkbox>div div {
@@ -323,7 +327,7 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header
     border-radius: 50%;
 }
 
-main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header .pricing-checkbox>div.anually div {
+main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header .pricing-checkbox>div.quarterly div {
     left: unset;
     right: 3px;
 }
@@ -394,7 +398,7 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>
 }
 
 main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>div>div .card .card-body ul li::before {
-    color: #1d1b67;
+    color: rgba(138,43,226, .5);
     font-weight: bold;
     width: 20px;
     margin-left: -18px;

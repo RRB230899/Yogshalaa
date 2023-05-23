@@ -102,10 +102,10 @@ def sendOTP(request):
     pass
 
 
-def verifyOTP(request, mobile):
+def verifyOTP(request, uid):
     # uid = Profile.uid
     if request.method == "POST":
-        profile = Profile.objects.get(mobile=mobile)
+        profile = Profile.objects.get(uid=uid)
         if request.COOKIES.get('can_otp_enter') is not None:
             if profile.otp == request.POST['otp']:
                 red = redirect("User Landing Page")
@@ -113,7 +113,7 @@ def verifyOTP(request, mobile):
                 return red
             return HttpResponse("wrong otp")
         return HttpResponse("10 minutes passed")
-    return render(request, "verifyOTP.html", {'mobile': mobile})
+    return render(request, "verifyOTP.html", {'uid': uid})
 
 
 def loginView(request):

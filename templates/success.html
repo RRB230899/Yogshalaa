@@ -6,16 +6,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet'>
 	<style>
 		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
 		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 	</style>
-	<link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
     <link rel="stylesheet" href="{% static 'css/User_Landing_Page.css' %}">
-	<script src="{% static 'js/dashboard.js' %}"></script>>
+    <link rel="stylesheet" href="{% static 'css/yellowtailfont.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
                     <a href="index.html" class="nav-logo-img"><img src="https://rvs-product-pricing-page.vercel.app/assets/Logo.svg" alt=""></a>
                 </div>
                 <ul>
-                    <li><a href="index.html">Features</a></li>
+                    <li><a href="index.html">Class coverage</a></li>
                     <li><a href="#pricing_plans">Pricing</a></li>
                 </ul>
             </div>
@@ -61,7 +62,7 @@ To become part of this Jounery. Stay Connected 
 Contact no.</p>
             <div class="section-4-1">
                 <div class="section-main">
-                    <h1>Flexible Plans for Everyone</h1>
+                    <h1 class="about-us-heading">Flexible Plans for Everyone</h1>
                     <p>Our plans are made for eveyone. Whether you're just starting out on social media, or have been on there for a long time, we have a plan that's right for you.</p>
                 </div>
             </div>
@@ -98,8 +99,8 @@ Contact no.</p>
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h2 class="card-price">£14.99/lesson<span>/mo</span></h2>
-                                            <p>`Personalized` Sessions</p>
+                                            <h2 class="card-price">£14.99/lesson</h2>
+                                            <p>Personalized Sessions</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
@@ -114,7 +115,7 @@ Contact no.</p>
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h2 class="card-price">£6.99/lesson<span>/mo</span></h2>
+                                            <h2 class="card-price">£6.99/lesson</h2>
                                             <p>Meditation & Mantra Chanting</p>
                                         </div>
                                         <div class="card-body">
@@ -201,7 +202,7 @@ Contact no.</p>
                 <div class="footer-subcontent">
                     <div class="footer-links">
                         <div class="footer-links-1">
-                            <h5 class="footer-links-title">Product</h5>
+                            <h5 class="footer-links-title">Services</h5>
                             <ul class="footer-links-lists">
                                 <li><a href="{% url 'Homepage' %}">Homepage</a></li>
                                 <li><a href="#">Pricing</a></li>
