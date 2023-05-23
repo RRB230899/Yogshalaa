@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yogshalaa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css" integrity="sha512-C8Movfk6DU/H5PzarG0+Dv9MA9IZzvmQpO/3cIlGIflmtY3vIud07myMu4M/NTPJl8jmZtt/4mC9bAioMZBBdA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
     <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
     <link rel="stylesheet" href="{% static 'css/intro-pic.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" href="{% static 'css/review.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/contact_us.css' %}">
+    <link rel="stylesheet" href="{% static 'css/socialLinks.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -40,6 +41,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+<div class="icon-bar">
+		<a href="https://instagram.com/ln_infra?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram social-media-links"></i></a>
+		<a href="https://api.whatsapp.com/send/?phone=917741008919" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
+</div>
 <div class="navbar-container">
 		<div class="logo">
 			<a href="#" class="nav-logo"><img src="{% static 'images/Yogshalaa_logo.jpg' %}" alt="Bootstrap" width="60" height="48"></a>
@@ -214,13 +219,6 @@
                               <div class="col-md-6">
                                   <div class="content">
                                       <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
-                                      <p class="socials">
-                                          <i class="fa fa-twitter"></i>
-                                          <i class="fa fa-behance"></i>
-                                          <i class="fa fa-pinterest"></i>
-                                          <i class="fa fa-dribbble"></i>
-                                          <i class="fa fa-vimeo"></i>
-                                      </p>
                                   </div>
                               </div>
                           </div>
@@ -243,13 +241,6 @@
                               <div class="col-md-6">
                                   <div class="content">
                                       <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
-                                      <p class="socials">
-                                          <i class="fa fa-twitter"></i>
-                                          <i class="fa fa-behance"></i>
-                                          <i class="fa fa-pinterest"></i>
-                                          <i class="fa fa-dribbble"></i>
-                                          <i class="fa fa-vimeo"></i>
-                                      </p>
                                   </div>
                               </div>
                           </div>
@@ -272,13 +263,6 @@
                               <div class="col-md-6">
                                   <div class="content">
                                       <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
-                                      <p class="socials">
-                                          <i class="fa fa-twitter"></i>
-                                          <i class="fa fa-behance"></i>
-                                          <i class="fa fa-pinterest"></i>
-                                          <i class="fa fa-dribbble"></i>
-                                          <i class="fa fa-vimeo"></i>
-                                      </p>
                                   </div>
                               </div>
                           </div>
