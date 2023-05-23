@@ -6,8 +6,11 @@
     <title>Yogshalaa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/yellowtailfont.css' %}">
+    <link rel="stylesheet" href="{% static 'css/new_style.css' %}">
     <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
     <link rel="stylesheet" href="{% static 'css/review.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
@@ -37,6 +40,7 @@
             animation: blinker 3s linear infinite;
             font-family: Yellowtail;
             font-size: 36px;
+            line-height: 1;
         }
 
         @keyframes blinker {
@@ -49,7 +53,8 @@
 <body>
 <div class="icon-bar">
 		<a href="https://instagram.com/ln_infra?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram social-media-links"></i></a>
-		<a href="https://api.whatsapp.com/send/?phone=917741008919" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
+		<a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
+		about%20your%20services%2E" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
 </div>
 <div class="navbar-container">
 		<div class="logo">
@@ -63,7 +68,7 @@
 			</ul>
 			<ul class="nav-menu">
 				<li>
-                    <a href="{% url 'register' %}" class="nav-link-dummy">Products</a>
+                    <a href="{% url 'register' %}" class="nav-link-dummy">Services</a>
 				</li>
 			</ul>
 			<ul class="nav-menu">
@@ -74,22 +79,8 @@
 		</div>
 	</div>
 <div class="bg-image bg-image-height"></div>
-
-
-<!--<div class="bg-text">-->
-<!--    {% load static %}-->
-<!--    <img class="intro-pic" src="{% static 'images/Chelsey.jpg' %}">-->
-<!--  <h1>Experience the Healing Power of Yoga with Yogshalaa!</h1>-->
-<!--  <p>Learn the subtle art of Yoga to feel the amazing change in your life.</p>-->
-<!--    <p>Help me learn more about you by filling the following form</p>-->
-<!--    <button><a href="https://formfaca.de/sm/Qq_X64okM">Click here!</a></button>-->
-<!--</div>-->
-
-<!--<div style="display: flex; justify-content: center; padding-top: 20px">-->
-<!--    <script class="3d49bd6dd409fe0ae05239c697c14123"-->
-<!--            src="https://w.promofeatures.com/js/timer/3d49bd6dd409fe0ae05239c697c14123.js?v=1683312139"></script>-->
-<!--</div>-->
 <hr/>
+
 <div id="about_us">
     <p class="about-us-heading">About Yogshalaa</p>
     <p class="about-us-content">Yogshalaa is a Online Yoga Platform especially designed to indulge people around the Globe in practicing
@@ -98,35 +89,12 @@
         Whatever your level of Experience, Aspirations and Life Stage -
         <span class="blink_me">We are here to create a Virtual Yoga Program for you.</span>
     </p>
-
 </div>
 <hr/>
-<!--<div class="wrapper">-->
-<!--&lt;!&ndash;      <div class="container1">&ndash;&gt;-->
-<!--&lt;!&ndash;        <i class="fas fa-utensils"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;        <span class="num" data-val="400">0</span>&ndash;&gt;-->
-<!--&lt;!&ndash;        <span class="text">Meals Delivered</span>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-<!--      <div class="container1">-->
-<!--        <i class="fas fa-smile-beam"></i>-->
-<!--        <span class="num" data-val="86">0</span>-->
-<!--        <span class="text">Happy Customers</span>-->
-<!--      </div>-->
-<!--      <div class="container1">-->
-<!--        <i class="fas fa-list"></i>-->
-<!--        <span class="num" data-val="3">0</span>-->
-<!--        <span class="text">Programs offered</span>-->
-<!--      </div>-->
-<!--      <div class="container1">-->
-<!--        <i class="fas fa-star"></i>-->
-<!--        <span class="num" data-val="17">0</span>-->
-<!--        <span class="text">Five Stars</span>-->
-<!--      </div>-->
-<!--</div>-->
-    <!-- Script -->
+
+<!-- Script -->
 {% load static %}
 <script src="{% static 'js/script.js' %}"></script>
-
 <div class="options">
     <div class="option active"
          style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
@@ -196,7 +164,9 @@
 </div>
 <hr/>
 <!--<div><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Ln2iiY3wsolqGu" async> </script> </form></div>-->
+
 <script src="{% static 'js/slit.js' %}"></script>
+
 <section class="section-class">
         <div class="container">
             <h1 class="section-header about-us-heading">Client Review <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></h1>
@@ -258,7 +228,7 @@
                                       </div>
                                       <div class="bio">
                                           <h2>Amisha Patel</h2>
-                                          <h4>Private Lessons</h4>
+                                          <h4>Personalized Lessons</h4>
                                       </div>
                                   </div>
                               </div>
@@ -283,11 +253,108 @@
 
             </div>
         </div>
-    </section>
+</section>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 <hr/>
+
+<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section about-us-heading">Contact Form</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper-contact-form">
+						<div class="row no-gutters">
+							<div class="col-lg-6 background-blueviolet">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3>Contact us</h3>
+									<p class="mb-4">We're open for any suggestion or just to have a chat</p>
+									<div id="form-message-warning" class="mb-4"></div>
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div>
+									<div class="row mb-4">
+										<div class="col-md-4">
+											<div class="dbox w-100 d-flex align-items-start">
+						        		<div class="text">
+							            <p><span>Address:</span>T.F. 3, Narmada Building, Sitaram City, Bhandara - 441904</p>
+							          </div>
+						          </div>
+										</div>
+										<div class="col-md-4">
+											<div class="dbox w-100 d-flex align-items-start">
+						        		<div class="text">
+							            <p><span>Email:</span> <a href="mailto:jyotijhanwar.ca16@gmail.com">jyotijhanwar.ca16@gmail.com</a></p>
+							          </div>
+						          </div>
+										</div>
+										<div class="col-md-4">
+											<div class="dbox w-100 d-flex align-items-start">
+						        		<div class="text">
+							            <p><span>Phone:</span> <a href="tel://+917023425271">+91 7023425271</a></p>
+							          </div>
+						          </div>
+										</div>
+									</div>
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Create a message here"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Send Message" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+									<div class="w-100 social-media mt-5">
+										<h3>Follow us here</h3>
+										<p>
+											<a href="#">Facebook</a>
+											<a href="#">Twitter</a>
+											<a href="#">Instagram</a>
+											<a href="#">Dribbble</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-5 img">
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<hr/>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
 </body>
 </html>

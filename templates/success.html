@@ -11,6 +11,7 @@
 		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 	</style>
 	<link rel="stylesheet" href="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/default_thank_you.css">
+    <link rel="stylesheet" href="{% static 'css/User_Landing_Page.css' %}">
 	<script src="{% static 'js/dashboard.js' %}"></script>>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
@@ -26,7 +27,7 @@
                 </div>
                 <ul>
                     <li><a href="index.html">Features</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="#pricing_plans">Pricing</a></li>
                 </ul>
             </div>
         </div>
@@ -76,7 +77,7 @@ Contact no.</p>
                                 <span for="pricing__quarterly">Billed Quarterly</span>
                             </div>
                         </div>
-                        <div class="pricing-body-plans">
+                        <div class="pricing-body-plans" id="pricing_plans">
 
                             <div class="active" id="pricing__monthly__plan">
                                 <div>
@@ -98,7 +99,7 @@ Contact no.</p>
                                     <div class="card">
                                         <div class="card-header">
                                             <h2 class="card-price">£14.99/lesson<span>/mo</span></h2>
-                                            <p>Private Sessions</p>
+                                            <p>`Personalized` Sessions</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
