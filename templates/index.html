@@ -32,6 +32,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .blink_me {
+            animation: blinker 3s linear infinite;
+            font-family: Yellowtail;
+            font-size: 36px;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="icon-bar">
@@ -76,20 +89,18 @@
 <!--    <script class="3d49bd6dd409fe0ae05239c697c14123"-->
 <!--            src="https://w.promofeatures.com/js/timer/3d49bd6dd409fe0ae05239c697c14123.js?v=1683312139"></script>-->
 <!--</div>-->
-<b class="hr"></b>
-
-<br><br>
+<hr/>
 <div id="about_us">
     <p class="about-us-heading">About Yogshalaa</p>
     <p class="about-us-content">Yogshalaa is a Online Yoga Platform especially designed to indulge people around the Globe in practicing
         Yoga and Meditation- Whether if you are a busy mom looking for a quick Energy flow in the morning,
         or a beginner to brush up on the Basics of Yoga, or a traveler in a need to relax with a Yog Nidra.
-        Whatever your level of Experience, Aspirations and Life Stage - We are here to create an Online Yoga Program for you.</p>
+        Whatever your level of Experience, Aspirations and Life Stage -
+        <span class="blink_me">We are here to create a Virtual Yoga Program for you.</span>
+    </p>
 
 </div>
-<b class="hr"></b>
-
-<br><br>
+<hr/>
 <!--<div class="wrapper">-->
 <!--&lt;!&ndash;      <div class="container1">&ndash;&gt;-->
 <!--&lt;!&ndash;        <i class="fas fa-utensils"></i>&ndash;&gt;-->
@@ -183,9 +194,7 @@
         </div>
     </div>
 </div>
-<b class="hr"></b>
-
-<br><br>
+<hr/>
 <!--<div><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Ln2iiY3wsolqGu" async> </script> </form></div>-->
 <script src="{% static 'js/slit.js' %}"></script>
 <section class="section-class">
@@ -279,8 +288,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-<b class="hr"></b>
-
-<br><br>
+<hr/>
 </body>
 </html>
