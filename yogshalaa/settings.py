@@ -164,3 +164,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Twilio configuration
+ACCOUNT_SID = 'AC90d58e90383ce2feb4d2839a81e0fe01'
+AUTH_TOKEN = '59ae88c4dc0844bbf702260f3023a2a5'
+COUNTRY_CODE = '+91'
+TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'
+TWILIO_PHONE_NUMBER = '+12545408239'

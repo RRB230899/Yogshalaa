@@ -81,3 +81,5 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     mobile = PhoneNumberField(default='', blank=False, null=False, unique=True)
     otp = models.CharField(max_length=6, default='******')
+    uid = models.CharField(default=f'{uuid.uuid4}', max_length=200)
+    objects = models.Manager()
