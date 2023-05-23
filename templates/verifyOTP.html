@@ -48,7 +48,7 @@ h2{
 </head>
 <body>
     {% block includes %}
-    <form action="/otp/{{id}}/" method="post">
+    <form method="post">
         <h2>OTP VERIFICATION:</h2>
         {% csrf_token %}
         <label for="otp">OTP:         </label>
