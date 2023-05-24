@@ -2,6 +2,10 @@ body, html {
   height: 100%;
 }
 
+body{
+    background: rgb(232, 240, 253, .5) !important;
+}
+
 * {
   box-sizing: border-box;
 }

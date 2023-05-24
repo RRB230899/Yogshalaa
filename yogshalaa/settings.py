@@ -120,7 +120,7 @@ WSGI_APPLICATION = 'yogshalaa.wsgi.application'
 # }
 
 
-DEVELOPMENT_MODE = False
+DEVELOPMENT_MODE = True
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {

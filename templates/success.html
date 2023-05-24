@@ -13,7 +13,7 @@
 	</style>
     <link rel="stylesheet" href="{% static 'css/User_Landing_Page.css' %}">
     <link rel="stylesheet" href="{% static 'css/yellowtailfont.css' %}">
-    <link rel="stylesheet" href="{% static 'css/aboutJJ.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard_navbar.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
@@ -24,10 +24,13 @@
 	<nav>
         <div class="nav-1">
             <div class="nav-main">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="nav-logo">
                     <a href="index.html" class="nav-logo-img"><img src="https://rvs-product-pricing-page.vercel.app/assets/Logo.svg" alt=""></a>
                 </div>
-                <ul>
+                <ul id="navbarSupportedContent">
                     <li><a href="{% url 'Coverage' %}">Class coverage</a></li>
                     <li><a href="#pricing_plans">Pricing</a></li>
                 </ul>
@@ -38,19 +41,11 @@
                 <ul>
                     <li><a href="#">Start Scheduling</a></li>
                 </ul>
-                <div class="nav-mobile-menu" id="nav-mobile-menu">
-                    <img src="https://rvs-product-pricing-page.vercel.app/assets/Hamburger-Menu.svg" alt="">
-                </div>
+<!--                <div class="nav-mobile-menu" id="nav-mobile-menu">-->
+<!--                    <img src="https://rvs-product-pricing-page.vercel.app/assets/Hamburger-Menu.svg" alt="">-->
+<!--                </div>-->
             </div>
         </div>
-    </nav>
-
-    <nav class="mobile-menu">
-        <ul>
-            <li><a href="index.html">Features</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="#">Start Scheduling</a></li>
-        </ul>
     </nav>
 
     <main>

@@ -10,12 +10,17 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/yellowtailfont.css' %}">
+    <link rel="stylesheet" href="{% static 'css/separator.css' %}">
     <link rel="stylesheet" href="{% static 'css/new_style.css' %}">
     <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
     <link rel="stylesheet" href="{% static 'css/review.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/socialLinks.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index_footer.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@1,100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -79,7 +84,7 @@
 		</div>
 	</div>
 <div class="bg-image bg-image-height"></div>
-<hr/>
+<div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 
 <div id="about_us">
     <p class="about-us-heading">About Yogshalaa</p>
@@ -90,7 +95,7 @@
         <span class="blink_me">We are here to create a Virtual Yoga Program for you.</span>
     </p>
 </div>
-<hr/>
+<div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 
 <!-- Script -->
 {% load static %}
@@ -162,7 +167,7 @@
         </div>
     </div>
 </div>
-<hr/>
+<div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 <!--<div><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Ln2iiY3wsolqGu" async> </script> </form></div>-->
 
 <script src="{% static 'js/slit.js' %}"></script>
@@ -257,9 +262,9 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-<hr/>
+<div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 
-<section class="ftco-section">
+<section class="ftco-section" id="contact_us">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
@@ -352,9 +357,87 @@
 			</div>
 		</div>
 	</section>
-<hr/>
+<div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 <script src="{% static 'js/popper.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+
+<footer id="footer" class="footer-1 footer-top">
+<div class="main-footer widgets-dark typo-light">
+<div class="container">
+<div class="row">
+
+<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="widget subscribe no-box">
+<h5 class="widget-title">YOGSHALAA<span></span></h5>
+<p>Get access to the Yoga plan of your choice... </p>
+    <a class="btn custom-button" href="{% url 'register' %}">Subscribe Now</a>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-4">
+<div class="widget no-box">
+<h5 class="widget-title">Quick Links<span></span></h5>
+<ul class="thumbnail-widget">
+<li>
+<div class="thumb-content"><a href="{% url 'Coverage' %}">Class Coverage</a></div>
+</li>
+<li>
+<div class="thumb-content"><a href="{% url 'meet_our_instructor' %}">Meet our Instructor</a></div>
+</li>
+<li>
+<div class="thumb-content"><a href="/success#pricing_plans">Pricing</a></div>
+</li>
+<li>
+<div class="thumb-content"><a href="#about_us">About</a></div>
+</li>
+    <li>
+<div class="thumb-content">
+    <a href="https://www.termsandconditionsgenerator.com/live.php?token=TCHSEdabKRzUvl9emlTQIwle6w89hGvW">Terms & Conditions</a></div>
+</li>
+    <li>
+<div class="thumb-content">
+    <a href="https://www.privacypolicygenerator.info/live.php?token=21C9NpTX3c87ZVYqxCnM6hXaR5VKkjVd">Privacy Policy</a></div>
+</li>
+    <li>
+<div class="thumb-content">
+    <a href="https://merchant.razorpay.com/policy/LtUNXCPz8i5XU1/refund">Cancellation & Refund Policy</a></div>
+</li>
+    <li>
+<div class="thumb-content">
+    <a href="https://merchant.razorpay.com/policy/LtUNXCPz8i5XU1/shipping">Shipping & Delivery Policy</a></div>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-4">
+
+<div class="widget no-box">
+<h5 class="widget-title">Contact Us<span></span></h5>
+
+<div class="thumb-content"><a href="mailto:jyoti.jhanwar@gmail.com" style="color: #fff" title="glorythemes">jyotijhanwar.ca@gmail.com</a></div>
+<ul class="social-footer2">
+<li class="" style="padding-top: 15px; display: flex">
+    <a title="instagram" target="_blank" href="https://www.instagram.com/"><i style="color: #fff; font-size: 1.5em;" class="fab fa-instagram"></i></a>
+    <a title="instagram" target="_blank" href="https://www.instagram.com/"><i style="color: #fff; font-size: 1.5em;" class="fab fa-whatsapp"></i></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<p>Copyright Yogshalaa © 2023. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
 
 </body>
 </html>

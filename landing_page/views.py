@@ -17,7 +17,7 @@ import http.client
 # Create your views here.
 
 
-# @login_required(login_url='login')
+@login_required(login_url='otp')
 def success_page(request):
     return render(request, 'success.html', {'data': 'Something'})
 
@@ -150,3 +150,7 @@ def logoutView(request):
 
 def coverageView(request):
     return render(request, 'classCoverage.html', {'data': 'something'})
+
+
+def instructorView(request):
+    pass
