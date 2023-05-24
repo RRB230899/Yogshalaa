@@ -81,16 +81,20 @@ def registerView(request):
         #
         # context = {'form': form}
         # return render(request, 'register.html', context)
-        if User.objects.filter(username__iexact=request.POST['email']).exists():
-            return HttpResponse("User already exists.. Please login")
+        phone_num = request.POST['phone_number']
+        if Profile.objects.filter(mobile=phone_num).exists():
+            return redirect('User Landing Page')
+            # return HttpResponse("User already exists.. Please login")
 
         user = User.objects.create(username=request.POST['email'])
         otp = random.randint(1000, 9999)
         phone_num = request.POST['phone_number']
         profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}')
         if request.POST['methodOtp'] == "methodOtpWhatsapp":
+            print(profile, profile.uid)
             messagehandler = OTPHandler(phone_num, otp).send_otp_via_whatsapp()
         else:
+            print(profile, profile.uid)
             messagehandler = OTPHandler(phone_num, otp).send_otp_via_message()
         red = redirect(f'otp/{profile.uid}/')
         red.set_cookie("can_otp_enter", True, max_age=600)

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import environ
 from decouple import config
 
 
@@ -31,6 +32,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["yogshalaa.in", '127.0.0.1', 'yogshalaa.onrender.com']
 
+# Read .env file data
+env = environ.Env()
+env.read_env()
+
+# External DB URL
+DATABASE_URL = env('DATABASE_URL')
 
 # Application definition
 
@@ -112,8 +119,8 @@ WSGI_APPLICATION = 'yogshalaa.wsgi.application'
 #     }
 # }
 
-# DATABASE_URL = config('DATABASE_URL')
-DEVELOPMENT_MODE = True
+
+DEVELOPMENT_MODE = False
 if DEVELOPMENT_MODE is True:
     DATABASES = {
         "default": {
@@ -123,7 +130,7 @@ if DEVELOPMENT_MODE is True:
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse('DATABASE_URL'),
+        'default': dj_database_url.config(),
     }
 
 # Password validation
