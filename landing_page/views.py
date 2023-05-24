@@ -142,3 +142,7 @@ def loginView(request):
 def logoutView(request):
     logout(request)
     return redirect('login')
+
+
+def coverageView(request):
+    return render(request, 'classCoverage.html', {'data': 'something'})
