@@ -17,7 +17,7 @@ import http.client
 # Create your views here.
 
 
-@login_required(login_url='otp/<str:uid>/')
+# @login_required(login_url='otp/<str:uid>/')
 def success_page(request):
     return render(request, 'success.html', {'data': 'Something'})
 
