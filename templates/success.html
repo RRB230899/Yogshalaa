@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="{% static 'css/User_Landing_Page.css' %}">
     <link rel="stylesheet" href="{% static 'css/yellowtailfont.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard_navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aboutJJ.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css" integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js" integrity="sha512-+z66PuMP/eeemN2MgRhPvI3G15FOBbsp5NcCJBojg6dZBEFL0Zoi0PEGkhjubEcQF7N1EpTX15LZvfuw+Ej95Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'js/dashboard.js' %}"></script>
+<!--    <script src="{% static 'js/aboutJJ.js' %}"></script>-->
     <title>Dashboard</title>
 </head>
 <body>
@@ -51,30 +55,6 @@
     <main>
 
         <section class="section-4">
-            <p>Meet Our Yoga Instructor--></p>
-            <p>Jyoti Jhanwar is a certified Yoga instructor and founder of Yog Shalaa. She has completed her training from Rishikesh- Yoga capital of India. She is Holding US alliance certificate. Also, she is certified from Ministry of Ayush. India
-She is constantly working on directing people towards achieving a healthy lifestyle. Yoga and Mediation are her way of bringing awareness and abate the sufferings.
-To become part of this Jounery. Stay Connected 
-Contact no.</p>
-<!--<div class="container">-->
-<!--  <div class="row">-->
-<!--    <div class="col-12 col-sm-6 col-md-4 col-lg-3">-->
-<!--      <div class="our-team">-->
-<!--        <div class="picture">-->
-<!--          <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">-->
-<!--        </div>-->
-<!--        <div class="team-content">-->
-<!--          <h3 class="name">Michele Miller</h3>-->
-<!--          <h4 class="title">Yoga Trainer</h4>-->
-<!--        </div>-->
-<!--        <ul class="social">-->
-<!--          <li><a href="https://codepen.io/collection/XdWJOQ/" class="fa fa-linkedin" aria-hidden="true"></a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
             <div class="section-4-1">
                 <div class="section-main">
                     <h1 class="about-us-heading">Flexible Plans for Everyone</h1>
@@ -205,6 +185,64 @@ Contact no.</p>
                 </div>
             </div>
         </section>
+        <h3 class="about-us-heading" style="color: #1d1b67; font-size: 40px; line-height: 42px;">Meet our Yoga Instructor</h3>
+        <div class="blog-slider">
+  <div class="blog-slider__wrp swiper-wrapper">
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__img">
+
+        <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp" alt="">
+      </div>
+      <div class="blog-slider__content">
+<!--        <span class="blog-slider__code">26 December 2019</span>-->
+        <div class="blog-slider__title">Introduction</div>
+        <div class="blog-slider__text" style="text-align: justify;">Jyoti Jhanwar is a certified Yoga instructor and founder of Yog Shalaa. She has completed her training from Rishikesh - Yoga capital of India.</div>
+        <a href="#content-2" class="blog-slider__button">READ MORE</a>
+      </div>
+    </div>
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__img">
+        <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
+      </div>
+      <div class="blog-slider__content" id="content-2">
+<!--        <span class="blog-slider__code">26 December 2019</span>-->
+        <div class="blog-slider__title">Certification</div>
+        <div class="blog-slider__text" style="text-align: justify;">She is Holding US alliance certificate. Also, she is certified from Ministry of Ayush, India</div>
+        <a href="#content-3" class="blog-slider__button">READ MORE</a>
+      </div>
+    </div>
+
+    <div class="blog-slider__item swiper-slide">
+      <div class="blog-slider__img">
+        <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp" alt="">
+      </div>
+      <div class="blog-slider__content" id="content-3">
+<!--        <span class="blog-slider__code">26 December 2019</span>-->
+        <div class="blog-slider__title">Vision</div>
+        <div class="blog-slider__text" style="text-align: justify;">She is constantly working on directing people towards achieving a healthy lifestyle. Yoga and Mediation are her way of bringing awareness and abate the sufferings.
+To become part of this Jounery.</div>
+<!--        <a href="#" class="blog-slider__button">READ MORE</a>-->
+      </div>
+    </div>
+
+  </div>
+  <div class="blog-slider__pagination"></div>
+            <script>
+                var swiper = new Swiper('.blog-slider', {
+      spaceBetween: 30,
+      effect: 'fade',
+      loop: true,
+      mousewheel: {
+        invert: false,
+      },
+      // autoHeight: true,
+      pagination: {
+        el: '.blog-slider__pagination',
+        clickable: true,
+      }
+    });
+            </script>
+</div>
 
     </main>
 
