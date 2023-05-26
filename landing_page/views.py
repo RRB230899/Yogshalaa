@@ -119,17 +119,19 @@ def verifyOTP(request, uid):
 def loginView(request):
 
     if request.user.is_authenticated:
-        return redirect('User landing page')
+        return redirect('User Landing Page')
 
     else:
         if request.method == 'POST':
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = authenticate(request, username=username, password=password)
+            phone_number = request.POST.get('phone_number')
+            profile = Profile.objects.get(mobile=phone_number)
+            user = profile.user
+            # profile = authenticate(request, username=username, password=password)
 
-            if user is not None:
+            if Profile.objects.filter(mobile=phone_number).exists():
                 login(request, user)
-                return redirect('User landing page')
+                print(user)
+                return redirect('User Landing Page')
             else:
                 messages.info(request, 'Username or Password is incorrect')
                 return render(request, 'login.html', {'data': 'something'})

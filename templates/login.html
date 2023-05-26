@@ -106,16 +106,10 @@
 		</div>
 	</div>
 
-	<div class="inputGroup inputGroup1">
-		<label for="id_username">Email</label>
-		<input type="text" id="id_username" class="email" maxlength="256" name="username"/>
-		<p class="helper helper1">email@domain.com</p>
-		<span class="indicator"></span>
-
 	</div>
-	<div class="inputGroup inputGroup2">
-		<label for="id_password1">Password</label>
-		<input type="password" id="id_password1" class="password" name="password"/>
+	<div class="inputGroup inputGroup1">
+		<label for="full_name">Phone Number:</label>
+        <input id="full_name" type="text" name="phone_number">
 	</div>
 	<div class="inputGroup inputGroup3">
 		<button id="login" type="submit" name="Login user">Login</button>
@@ -127,8 +121,6 @@
 		<div class="d-flex justify-content-center links">
 			Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a>
 		</div>
-		<a href="https://www.privacypolicygenerator.info/live.php?token=21C9NpTX3c87ZVYqxCnM6hXaR5VKkjVd">Privacy Policy</a>
-		<a href="https://www.termsandconditionsgenerator.com/live.php?token=TCHSEdabKRzUvl9emlTQIwle6w89hGvW">Terms % Conditions</a>
 	</div>
 </form>
     <script type="module" src="{% static 'js/login.js' %}"></script>
