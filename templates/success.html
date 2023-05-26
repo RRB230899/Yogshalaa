@@ -7,6 +7,11 @@
     {% load static %}
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400|Montserrat:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="{% static 'css/toast.css' %}">
 	<style>
 		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
 		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -15,6 +20,7 @@
     <link rel="stylesheet" href="{% static 'css/yellowtailfont.css' %}">
     <link rel="stylesheet" href="{% static 'css/dashboard_navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/aboutJJ.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile_menu.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css" integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
@@ -25,12 +31,30 @@
     <title>Dashboard</title>
 </head>
 <body>
+    <div class="toast_wrapper">
+        <div id="toast">
+            <div class="container-1">
+                <i class="fas fa-check-square"></i>
+            </div>
+            <div class="container-2">
+                <p>Success</p>
+                <p>Here is your free pass to Yogshalaa. Click on the link below</p>
+                <p><a href="#">Yogshalaa Admit Pass</a></p>
+            </div>
+            <button id="close" onclick="closeToast()">
+                &times;
+            </button>
+        </div>
+    </div>
+<!--    <button id="show-toast" onclick="showToast()">Show Toast Message</button>-->
+    <!--Script-->
+    <script src="{% static 'js/toast.js' %}"></script>
 	<nav>
         <div class="nav-1">
             <div class="nav-main">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
                 <div class="nav-logo">
                     <a href="index.html" class="nav-logo-img"><img src="https://rvs-product-pricing-page.vercel.app/assets/Logo.svg" alt=""></a>
                 </div>
@@ -41,6 +65,16 @@
             </div>
         </div>
         <div class="nav-2">
+            <div class="top-nav">
+                <input id="menu-toggle" type="checkbox" />
+                <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+                <ul class="menu">
+                  <li><a href="{% url 'Coverage' %}">Class coverage</a></li>
+                  <li><a href="#pricing_plans">Pricing</a></li>
+                </ul>
+              </div>
             <div class="nav-main">
                 <ul>
                     <li><a href="#">Start Scheduling</a></li>
@@ -79,8 +113,8 @@
                                 <div>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h2 class="card-price">£99<span>/mo</span></h2>
-                                            <p>Morning Energy Flow</p>
+                                            <h2 class="card-price">£99/month</h2>
+                                            <p>Morning Energized Flow</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
@@ -99,7 +133,7 @@
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For PCOD/ PCOS/ Hormonal Imbalance </p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For PCOD/ PCOS/ Hormonal Imbalance</p></li>
                                                 <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Weight Management</p></li>
                                                 <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Flexibility</p></li>
                                                 <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Face</p></li>
@@ -131,19 +165,18 @@
                                 <div>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h2 class="card-price">£249</h2>
+                                            <h2 class="card-price">£249 <span>(18.8% off)</span></h2>
                                             <p>Perfect plan if you're just starting out.</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Linkedin Integration</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Twitter Integration</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Real-time Analytics</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 mins Ashtanga flow</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Regular group batch</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Re-scheduling available</p></li>
                                             </ul>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="#">Subscribe Now</a>
-                                        </div>
+                                        <div class="card-footer"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Ln2iiY3wsolqGu" async> </script> </form></div>
+
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
@@ -152,15 +185,14 @@
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Linkedin Integration</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Twitter Integration</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Instagram Integration</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Real-time Analytics</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>or PCOD/ PCOS/ Hormonal Imbalance</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Weight Management</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Flexibility</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Face</p></li>
                                             </ul>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="#">Subscribe Now</a>
-                                        </div>
+                                        <div class="card-footer"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Ln2iiY3wsolqGu" async> </script> </form></div>
+
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
@@ -169,13 +201,12 @@
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Linkedin Integration</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Twitter Integration</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>30 min lessons</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Time to be decided as per your requirement</p></li>
                                             </ul>
                                         </div>
-                                        <div class="card-footer">
-                                            <a href="#">Subscribe Now</a>
-                                        </div>
+                                        <div class="card-footer"><form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Ln2iiY3wsolqGu" async> </script> </form></div>
+
                                     </div>
                                 </div>
                             </div>

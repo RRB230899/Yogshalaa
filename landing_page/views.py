@@ -86,8 +86,7 @@ def registerView(request):
             return redirect('User Landing Page')
             # return HttpResponse("User already exists.. Please login")
 
-        user = User.objects.create(username=f'Yogshalaa_user_{len(Profile.objects.all())+1}')
-        print(len(Profile.objects.all())+1)
+        user = User.objects.create(username=f'Yogshalaa_user_{request.POST["full_name"]}')
         otp = random.randint(1000, 9999)
         phone_num = request.POST['phone_number']
         profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}')

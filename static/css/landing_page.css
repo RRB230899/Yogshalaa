@@ -86,6 +86,8 @@ Position text in the middle of the page/image */
 	}
 }
  body .options .option {
+    background-repeat: no-repeat;
+    background-size: cover !important;
 	 position: relative;
 	 overflow: hidden;
 	 min-width: 60px;

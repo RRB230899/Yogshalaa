@@ -43,9 +43,9 @@
     <style>
         .blink_me {
             animation: blinker 3s linear infinite;
-            font-family: Yellowtail;
+            font-family: 'Trirong', serif;
             font-size: 36px;
-            line-height: 1;
+            line-height: 1.2;
         }
 
         @keyframes blinker {
@@ -67,7 +67,7 @@
 </head>
 <body>
 <div class="icon-bar">
-		<a href="https://instagram.com/ln_infra?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram social-media-links"></i></a>
+		<a href="https://instagram.com/yog_shalaa?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram social-media-links"></i></a>
 		<a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
 		about%20your%20services%2E" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
 </div>
@@ -95,13 +95,12 @@
 	</div>
 <div class="text-over-image">
     <div class="bg-image bg-image-height"></div>
-<!--    <h3 class="text_landing">Welcome to Yogshalaa</h3>-->
 </div>
 <div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 
 <div id="about_us">
     <p class="about-us-heading">About Yogshalaa</p>
-    <p class="about-us-content">Yogshalaa is a Online Yoga Platform especially designed to indulge people around the Globe in practicing
+    <p class="about-us-content">Yogshalaa is a Virtual Yoga Platform especially designed to indulge people around the Globe in practicing
         Yoga and Meditation- Whether if you are a busy mom looking for a quick Energy flow in the morning,
         or a beginner to brush up on the Basics of Yoga, or a traveler in a need to relax with a Yog Nidra.
         Whatever your level of Experience, Aspirations and Life Stage -
@@ -113,69 +112,70 @@
 <!-- Script -->
 {% load static %}
 <script src="{% static 'js/script.js' %}"></script>
+<p class="about-us-heading">Yoga Gallery</p>
 <div class="options">
-    <div class="option active"
-         style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
+    <div class="option"
+         style="background-image: url('{% static 'images/JJ_Landing/IMG_1098.jpg' %}');">
         <div class="shadow"></div>
         <div class="label">
             <div class="icon">
                 <i class="fas fa-walking"></i>
             </div>
             <div class="info">
-                <div class="main">Blonkisoaz</div>
-                <div class="sub">Omuke trughte a otufta</div>
+                <div class="main">Goddess Pose</div>
+                <div class="sub">Strengthens your legs and hips.</div>
             </div>
         </div>
     </div>
     <div class="option"
-         style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
+         style="background-image: url('{% static 'images/JJ_Landing/IMG_1115.jpg' %}');">
         <div class="shadow"></div>
         <div class="label">
             <div class="icon">
                 <i class="fas fa-snowflake"></i>
             </div>
             <div class="info">
-                <div class="main">Oretemauw</div>
-                <div class="sub">Omuke trughte a otufta</div>
+                <div class="main">Warrior Pose</div>
+                <div class="sub">It strengthens the whole backside of the body.</div>
             </div>
         </div>
     </div>
-    <div class="option"
-         style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+    <div class="option active"
+         style="background-image: url('{% static 'images/JJ_Landing/IMG_1145.jpg' %}');">
         <div class="shadow"></div>
         <div class="label">
             <div class="icon">
                 <i class="fas fa-tree"></i>
             </div>
             <div class="info">
-                <div class="main">Iteresuselle</div>
-                <div class="sub">Omuke trughte a otufta</div>
+                <div class="main">Eagle Pose</div>
+                <div class="sub">It gives two-fold twists to both legs and arms simultaneously.</div>
             </div>
         </div>
     </div>
     <div class="option"
-         style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+         style="background-image: url('{% static 'images/JJ_Landing/IMG_1176.png' %}');">
         <div class="shadow"></div>
         <div class="label">
             <div class="icon">
                 <i class="fas fa-tint"></i>
             </div>
             <div class="info">
-                <div class="main">Idiefe</div>
-                <div class="sub">Omuke trughte a otufta</div>
+                <div class="main">Thunderbolt Pose</div>
+                <div class="sub">Good for our digestive system.</div>
             </div>
         </div>
     </div>
     <div class="option"
-         style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
+         style="background-image: url('{% static 'images/JJ_Landing/IMG_1130.jpg' %}');">
         <div class="shadow"></div>
         <div class="label">
             <div class="icon">
                 <i class="fas fa-sun"></i>
             </div>
             <div class="info">
-                <div class="main">Inatethi</div>
-                <div class="sub">Omuke trughte a otufta</div>
+                <div class="main">Triangle Pose</div>
+                <div class="sub">It stimulates abdominal organs.</div>
             </div>
         </div>
     </div>
@@ -208,7 +208,7 @@
                               </div>
                               <div class="col-md-6">
                                   <div class="content">
-                                      <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                                      <p><span><i class="fa fa-quote-left"></i></span>Yogshala has created a morning discipline in my life and I feel so active after the class. I feel my days have suddenly become so productive.</p>
                                   </div>
                               </div>
                           </div>
@@ -230,7 +230,7 @@
                               </div>
                               <div class="col-md-6">
                                   <div class="content">
-                                      <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                                      <p><span><i class="fa fa-quote-left"></i></span>Yogshala has created a morning discipline in my life and I feel so active after the class. I feel my days have suddenly become so productive.</p>
                                   </div>
                               </div>
                           </div>
@@ -252,7 +252,7 @@
                               </div>
                               <div class="col-md-6">
                                   <div class="content">
-                                      <p><span><i class="fa fa-quote-left"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a eius excepturi molestias commodi aliquam error magnam consectetur laboriosam numquam, minima eveniet nostrum sequi saepe ipsam non ea, inventore tenetur! Corporis commodi consequatur molestiae voluptatum!</p>
+                                      <p><span><i class="fa fa-quote-left"></i></span>Yogshala has created a morning discipline in my life and I feel so active after the class. I feel my days have suddenly become so productive.</p>
                                   </div>
                               </div>
                           </div>
@@ -307,7 +307,7 @@
 										<div class="col-md-4">
 											<div class="dbox w-100 d-flex align-items-start">
 						        		<div class="text">
-							            <p><span>Email:</span> <a href="mailto:jyotijhanwar.ca16@gmail.com">jyotijhanwar.ca16@gmail.com</a></p>
+							            <p><span>Email:</span>jyotijhanwar.ca16@gmail.com</p>
 							          </div>
 						          </div>
 										</div>
@@ -352,10 +352,7 @@
 									<div class="w-100 social-media mt-5">
 										<h3>Follow us here</h3>
 										<p>
-											<a href="#">Facebook</a>
-											<a href="#">Twitter</a>
-											<a href="#">Instagram</a>
-											<a href="#">Dribbble</a>
+											<a href="https://www.instagram.com/yog_shalaa/">Instagram</a>
 										</p>
 									</div>
 								</div>
@@ -431,8 +428,9 @@
 <div class="thumb-content"><a href="mailto:jyoti.jhanwar@gmail.com" style="color: #fff" title="glorythemes">jyotijhanwar.ca@gmail.com</a></div>
 <ul class="social-footer2">
 <li class="" style="padding-top: 15px; display: flex">
-    <a title="instagram" target="_blank" href="https://www.instagram.com/"><i style="color: #fff; font-size: 1.5em;" class="fab fa-instagram"></i></a>
-    <a title="instagram" target="_blank" href="https://www.instagram.com/"><i style="color: #fff; font-size: 1.5em;" class="fab fa-whatsapp"></i></a></li>
+    <a title="instagram" target="_blank" href="https://www.instagram.com/yog_shalaa/"><i style="color: #fff; font-size: 1.5em;" class="fab fa-instagram"></i></a>
+    <a title="instagram" target="_blank" href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
+		about%20your%20services%2E"><i style="color: #fff; font-size: 1.5em;" class="fab fa-whatsapp"></i></a></li>
 </ul>
 </div>
 </div>
