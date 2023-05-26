@@ -13,6 +13,7 @@ window.onload = (event) => {
 
 let x;
 let toast = document.getElementById("toast");
+
 function showToast(){
     clearTimeout(x);
     toast.style.transform = "translateX(0)";
