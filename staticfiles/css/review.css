@@ -3,7 +3,7 @@
 	display: grid;
 	place-items: center;
 	height: 80vh;
-	background: rgba(138,43,226, .5);
+	background: rgba(175,175,212,.8);
     font-family: montserrat;
 }
 .section-header{
@@ -31,7 +31,7 @@
 .testimonials{
     max-width: 1000px;
     padding: 0 15px 50px;
-    margin: 0 auto 80px auto;
+    margin: 0 auto;
 }
 .single-item{
     background: #fff;
@@ -50,7 +50,7 @@
 	height: 200px;
 	width: 200px;
 	border-radius: 50%;
-	border: 7px solid rgba(138,43,226, .5);
+	border: 7px solid rgba(175,175,212,.8);
 }
 .content{
     font-size: 18px;
@@ -62,7 +62,7 @@
 .content p span {
 	font-size: 48px;
 	margin-right: 20px;
-    color: rgba(138,43,226, .5);
+    color: rgba(175,175,212,.8);
 }
 .socials i {
 	margin-right: 25px;
@@ -71,7 +71,7 @@
 	font-family: 'Berkshire Swash', cursive;
 }
 .carousel-control-next-icon, .carousel-control-prev-icon {
-	background-color: rgba(138,43,226, .5);
+	background-color: rgba(175,175,212,.8);
 }
 @media (max-width: 767px)
 {

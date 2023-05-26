@@ -89,7 +89,7 @@ color: #d94f5c;
 	height: 60px;
 	padding: 1.6rem .1rem;
 	backdrop-filter: blur(16px) saturate(180%);
-	background-color: rgba(138,43,226, .3);
+	background-color: rgba(175,175,212,.3);
 	border: 1px solid rgba(255, 255, 255, 0.125);
 	display: flex;
     align-items: center;
