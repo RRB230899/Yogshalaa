@@ -107,18 +107,6 @@ WSGI_APPLICATION = 'yogshalaa.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'Yogshalaa_OTP_Authentication',
-#         'CLIENT': {
-#             'host': "mongodb+srv://bajajraghav9:Sterlite#3@cluster0.ajubkd3.mongodb.net/",
-#             'username': 'bajajraghav9',
-#             'password': 'Sterlite#3',
-#         }
-#     }
-# }
-
 
 DEVELOPMENT_MODE = False
 if DEVELOPMENT_MODE is True:

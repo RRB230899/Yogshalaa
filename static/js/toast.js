@@ -9,7 +9,7 @@ function showToast(){
     toast.style.transform = "translateX(0)";
     x = setTimeout(()=>{
         toast.style.transform = "translateX(100%)"
-    }, 2000000);
+    }, 60000);
 }
 function closeToast(){
     toast.style.transform = "translateX(100%)";

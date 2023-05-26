@@ -90,10 +90,7 @@ def registerView(request):
         otp = random.randint(1000, 9999)
         phone_num = request.POST['phone_number']
         profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}')
-        if request.POST['methodOtp'] == "methodOtpWhatsapp":
-            messagehandler = OTPHandler(phone_num, otp).send_otp_via_whatsapp()
-        else:
-            messagehandler = OTPHandler(phone_num, otp).send_otp_via_message()
+        messagehandler = OTPHandler(phone_num, otp).send_otp_via_message()
         red = redirect(f'otp/{profile.uid}/')
         red.set_cookie("can_otp_enter", True, max_age=600)
         return red
