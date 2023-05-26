@@ -8,7 +8,6 @@
 window.onload = function() {
 var planBtn = document.getElementById("custom-checkbox");
 var plans = document.querySelectorAll(".pricing-body-plans > div");
-console.log(planBtn, plans[0])
 
 if (planBtn) {
     planBtn.addEventListener("click", function() {

@@ -89,7 +89,7 @@ def registerView(request):
         # user = User.objects.create(username=request.POST['email'])
         otp = random.randint(1000, 9999)
         phone_num = request.POST['phone_number']
-        profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}')
+        profile = Profile.objects.create(mobile=phone_num, otp=f'{otp}')
         if request.POST['methodOtp'] == "methodOtpWhatsapp":
             messagehandler = OTPHandler(phone_num, otp).send_otp_via_whatsapp()
         else:
