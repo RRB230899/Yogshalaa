@@ -83,7 +83,7 @@
 			</ul>
 			<ul class="nav-menu">
 				<li>
-                    <a href="{% url 'register' %}" class="nav-link-dummy">Services</a>
+                    <a href="{% url 'register' %}" class="nav-link-dummy">Services & Registration</a>
 				</li>
 			</ul>
 			<ul class="nav-menu">
@@ -112,7 +112,7 @@
 <!-- Script -->
 {% load static %}
 <script src="{% static 'js/script.js' %}"></script>
-<p class="about-us-heading">Yoga Gallery</p>
+<p class="about-us-heading" id="yoga_gallery">Yoga Gallery</p>
 <div class="options">
     <div class="option"
          style="background-image: url('{% static 'images/JJ_Landing/IMG_1098.jpg' %}');">
@@ -392,7 +392,7 @@
 <div class="thumb-content"><a href="{% url 'Coverage' %}">Class Coverage</a></div>
 </li>
 <li>
-<div class="thumb-content"><a href="{% url 'meet_our_instructor' %}">Meet our Instructor</a></div>
+<div class="thumb-content"><a href="/success#about_jj">Meet our Instructor</a></div>
 </li>
 <li>
 <div class="thumb-content"><a href="/success#pricing_plans">Pricing</a></div>

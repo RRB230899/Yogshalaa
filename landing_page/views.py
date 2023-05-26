@@ -130,10 +130,9 @@ def loginView(request):
 
             if Profile.objects.filter(mobile=phone_number).exists():
                 login(request, user)
-                print(user)
                 return redirect('User Landing Page')
             else:
-                messages.info(request, 'Username or Password is incorrect')
+                messages.info(request, 'Phone number entered is incorrect')
                 return render(request, 'login.html', {'data': 'something'})
 
     context = {}
