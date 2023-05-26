@@ -13,6 +13,7 @@ from .helpers import OTPHandler
 import requests
 import random
 import http.client
+import uuid
 
 # Create your views here.
 
@@ -86,7 +87,7 @@ def registerView(request):
             return redirect('User Landing Page')
             # return HttpResponse("User already exists.. Please login")
 
-        user = User.objects.create(username=f'Yogshalaa_user_{request.POST["full_name"]}')
+        user = User.objects.create(username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
         otp = random.randint(1000, 9999)
         phone_num = request.POST['phone_number']
         profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}')
