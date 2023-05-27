@@ -93,7 +93,7 @@
 		 padding: 0.5em 0;
 		 width: 100%;
 		 color: white;
-		 background-color: #222;
+		 background-color: rgba(175,175,212,.8);
 	}
 	 .menu > li:not(:last-child) {
 		 border-bottom: 1px solid #444;
