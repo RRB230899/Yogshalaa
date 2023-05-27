@@ -11,7 +11,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!--Stylesheet-->
-    <link rel="stylesheet" href="{% static 'css/toast.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 	<style>
 		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
 		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -27,7 +27,7 @@
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js" integrity="sha512-+z66PuMP/eeemN2MgRhPvI3G15FOBbsp5NcCJBojg6dZBEFL0Zoi0PEGkhjubEcQF7N1EpTX15LZvfuw+Ej95Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<!--    <script src="{% static 'js/dashboard.js' %}"></script>-->
+    <script src="{% static 'js/dashboard.js' %}"></script>
 <!--    <script src="{% static 'js/aboutJJ.js' %}"></script>-->
     <title>Dashboard</title>
 </head>
@@ -37,21 +37,21 @@
 		<a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
 		about%20your%20services%2E" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
     </div>
-    <div class="toast_wrapper">
-        <div id="toast">
-            <div class="container-1">
-                <i class="fas fa-check-square"></i>
-            </div>
-            <div class="container-2">
-                <p>Congratulations! Here is your free pass to Yogshalaa. Click on the link below</p>
-                <p><a href="https://us06web.zoom.us/j/81944747406?pwd=UkV3QnlydHZMbEVVMEJ3OTNTMHhWQT09" style="font-size: 24px;
-                font-weight: 600;">Yogshalaa Admit Pass</a></p>
-            </div>
-            <button id="close" onclick="closeToast()">
-                &times;
-            </button>
-        </div>
-    </div>
+<!--    <div class="toast_wrapper">-->
+<!--        <div id="toast">-->
+<!--            <div class="container-1">-->
+<!--                <i class="fas fa-check-square"></i>-->
+<!--            </div>-->
+<!--            <div class="container-2">-->
+<!--                <p>Congratulations! Here is your free pass to Yogshalaa. Click on the link below</p>-->
+<!--                <p><a href="https://us06web.zoom.us/j/81944747406?pwd=UkV3QnlydHZMbEVVMEJ3OTNTMHhWQT09" style="font-size: 24px;-->
+<!--                font-weight: 600;">Yogshalaa Admit Pass</a></p>-->
+<!--            </div>-->
+<!--            <button id="close" onclick="closeToast()">-->
+<!--                &times;-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </div>-->
 <!--    <button id="show-toast" onclick="showToast()">Show Toast Message</button>-->
     <!--Script-->
     <script src="{% static 'js/toast.js' %}"></script>
@@ -62,7 +62,7 @@
 <!--                    <span class="navbar-toggler-icon"></span>-->
 <!--                </button>-->
                 <div class="nav-logo">
-                    <a href="index.html" class="nav-logo-img"><img src="https://rvs-product-pricing-page.vercel.app/assets/Logo.svg" alt=""></a>
+                    <a href="/" class="nav-logo-img"><img src="{% static 'images/Logo-final.jpg' %}" width=84 height=84 alt=""></a>
                 </div>
                 <ul id="navbarSupportedContent">
                     <li><a href="{% url 'Coverage' %}">Class coverage</a></li>
@@ -296,7 +296,7 @@ To become part of this Jounery.</div>
         <div class="footer-main">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="index.html" class="footer-logo-img"><img src="https://rvs-product-pricing-page.vercel.app/assets/Logo.svg" alt=""></a>
+                    <a href="/" class="footer-logo-img"><img src="{% static 'images/Logo-final.jpg' %}" width=96 height=80 alt="" style="padding-right: 50px"></a>
                 </div>
                 <div class="footer-subcontent">
                     <div class="footer-links">

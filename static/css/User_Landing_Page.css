@@ -10,6 +10,7 @@
 body {
     width: 100%;
     height: auto;
+    background: rgb(232, 240, 253, .2) !important;
 }
 
 
@@ -474,11 +475,8 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>
         justify-content: flex-start;
     }
 
-
-
-
     main .section-4 {
-        padding: 120px 0px 35px 0px;
+        padding: 50px 0px 35px 0px;
     }
     main .section-4 .section-4-1, main .section-4 .section-4-2 {
         width: 90%;
