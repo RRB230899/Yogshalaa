@@ -10,6 +10,7 @@
 body {
     width: 100%;
     height: auto;
+    background: rgb(232, 240, 253, .2) !important;
 }
 
 
@@ -99,7 +100,7 @@ nav .nav-1 .nav-main .nav-logo a {
 }
 
 nav .nav-2 {
-    background-color: rgba(138,43,226, .5);
+    background-color: #fff;
 }
 
 nav .nav-2 .nav-main .nav-mobile-menu {
@@ -305,7 +306,7 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header
 
 main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-header .pricing-checkbox>div {
     width: 45px;
-    background: rgba(138,43,226, .5);
+    background: rgba(175,175,212,.8);
     height: 24px;
     border-radius: 15px;
     position: relative;
@@ -346,7 +347,7 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>
     border-radius: 8px;
     width: 280px;
     position: relative;
-    border: 1px solid #b5b6b87d;
+    border: 3px solid rgba(175,175,212,.8);
     box-shadow: 1px 1px #b5b6b86e;
     height: fit-content;
 }
@@ -474,11 +475,8 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>
         justify-content: flex-start;
     }
 
-
-
-
     main .section-4 {
-        padding: 110px 0px 35px 0px;
+        padding: 50px 0px 35px 0px;
     }
     main .section-4 .section-4-1, main .section-4 .section-4-2 {
         width: 90%;

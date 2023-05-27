@@ -1,13 +1,13 @@
 .toast_wrapper{
     width: 100%;
-    padding: 110px 0 20px;
+    padding: 90px 0 20px;
     position: absolute;
     right: 0;
     overflow: hidden;
 }
 #toast{
     width: 100%;
-    height: 110px;
+    height: 150px;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(75, 50, 50, 0.05);

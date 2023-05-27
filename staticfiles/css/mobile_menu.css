@@ -9,6 +9,7 @@
 	 color: #fff;
 	 height: 50px;
 	 padding: 1em;
+	 margin: .7em 0 0 6em
 }
  .menu {
 	 display: flex;
@@ -82,7 +83,7 @@
 	}
 	 #menu-toggle:checked ~ .menu li {
 		 border: 1px solid #333;
-		 height: 2.5em;
+		 height: 3.5em;
 		 padding: 0.5em;
 		 transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
 	}
@@ -93,10 +94,14 @@
 		 padding: 0.5em 0;
 		 width: 100%;
 		 color: white;
-		 background-color: #222;
+		 background-color: rgba(175,175,212,.8);
 	}
 	 .menu > li:not(:last-child) {
 		 border-bottom: 1px solid #444;
+	}
+	.menu > li > a{
+	    font-size: 24px;
+	    font-weight: 600;
 	}
 }
 
