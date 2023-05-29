@@ -19,7 +19,6 @@ import uuid
 
 # Stripe product config
 stripe.api_key = settings.SECRET_KEY_PROD
-stripe.Product.create()
 
 
 def create_checkout_session(request):
