@@ -16,7 +16,10 @@ import http.client
 import uuid
 
 # Create your views here.
+
+# Stripe product config
 stripe.api_key = settings.SECRET_KEY_PROD
+stripe.Product.create()
 
 
 def create_checkout_session(request):
@@ -26,7 +29,7 @@ def create_checkout_session(request):
             line_items=[
                 {
                     # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    'price': 'price_1NCzkESFpSBjt2aIIY1PxGl4',
+                    'price': 'price_1ND2WdSFpSBjt2aIa2LLABwX',
                     'quantity': 1,
                 },
             ],
