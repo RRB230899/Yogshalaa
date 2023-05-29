@@ -13,10 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import environ
 from decouple import config
 
-
+config.encoding = 'cp1251'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,34 +24,35 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lbl4p%mz0%(2ue9c3zfqni9^bvnbtp_^4kd$cizgyec8d*io)z'
+SECRET_KEY = config('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 ALLOWED_HOSTS = ["yogshalaa.in", '127.0.0.1', 'yogshalaa.onrender.com']
-
-# Read .env file data
-env = environ.Env()
-env.read_env()
+#
+# # Read .env file data
+# env = environ.Env()
+# env.read_env(encoding="utf8", errors='ignore')
 
 # External DB URL
-DATABASE_URL = env('DATABASE_URL')
+DATABASE_URL = config('DATABASE_URL')
 
 # Twilio configuration
-ACCOUNT_SID = env('ACCOUNT_SID')
-AUTH_TOKEN = env('AUTH_TOKEN')
-COUNTRY_CODE = env('COUNTRY_CODE')
-TWILIO_WHATSAPP_NUMBER = env('TWILIO_WHATSAPP_NUMBER')
-TWILIO_PHONE_NUMBER = env('TWILIO_PHONE_NUMBER')
+ACCOUNT_SID = config('ACCOUNT_SID')
+AUTH_TOKEN = config('AUTH_TOKEN')
+COUNTRY_CODE = config('COUNTRY_CODE')
+TWILIO_WHATSAPP_NUMBER = config('TWILIO_WHATSAPP_NUMBER')
+TWILIO_PHONE_NUMBER = config('TWILIO_PHONE_NUMBER')
 
 # Stripe config for testing
-PUBLISHABLE_KEY = env('PUBLISHABLE_KEY')
-SECRET_KEY = env('SECRET_KEY')
+PUBLISHABLE_KEY = config('PUBLISHABLE_KEY')
+SECRET_KEY_STRIPE = config('SECRET_KEY_STRIPE')
 
 # Stripe configuration for prod
-PUBLISHABLE_KEY_PROD = env('PUBLISHABLE_KEY_PROD')
-SECRET_KEY_PROD = env('SECRET_KEY_PROD')
+PUBLISHABLE_KEY_PROD = config('PUBLISHABLE_KEY_PROD')
+SECRET_KEY_PROD = config('SECRET_KEY_PROD')
 
 
 # Application definition
