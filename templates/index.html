@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Yogshalaa</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Yogshalaa by JJ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css"
+          integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href='https://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/yellowtailfont.css' %}">
     <link rel="stylesheet" href="{% static 'css/separator.css' %}">
@@ -25,17 +27,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
     />
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet"
     />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js"
+            integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
@@ -54,54 +58,39 @@
             }
         }
 
-        .text-over-image{
-            position: relative;
-        }
 
-        .text_landing{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-        }
-        .text-over-image .text{
-            position: relative;
-            bottom: 0;
-            background: rgb(0, 0, 0);/* Fallback color */
-            background: rgba(0, 0, 0, 0.5);/* Black background with opacity */
-            color: #ffffff;
-            width: 360px;
-            top: -700px;
-        }
     </style>
 </head>
 <body>
 <div class="icon-bar">
-		<a href="https://instagram.com/yog_shalaa?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram social-media-links"></i></a>
-		<a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
+    <a href="https://instagram.com/yog_shalaa?igshid=YmMyMTA2M2Y=" target="_blank"><i
+            class="fab fa-instagram social-media-links"></i></a>
+    <a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
 		about%20your%20services%2E" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
 </div>
 <div class="navbar-container">
-		<div class="logo">
-			<a href="#" class="nav-logo"><img src="{% static 'images/Logo-final.jpg' %}" alt="Bootstrap" width="60" height="48"></a>
-		</div>
-		<div class="menu-list">
-			<ul class="nav-menu">
-				<li>
-                    <a href="#about_us" class="nav-link-dummy">About</a>
-				</li>
-			</ul>
-			<ul class="nav-menu">
-				<li>
-                    <a href="{% url 'register' %}" class="nav-link-dummy">Services & Registration</a>
-				</li>
-			</ul>
-			<ul class="nav-menu">
-				<li>
-                    <a href="#contact_us" class="nav-link-dummy">Contact Us</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div class="logo">
+        <a href="#" class="nav-logo"><img src="{% static 'images/Logo-final.jpg' %}" alt="Bootstrap" width="60"
+                                          height="48"></a>
+    </div>
+    <div class="menu-list">
+        <ul class="nav-menu">
+            <li>
+                <a href="#about_us" class="nav-link-dummy">About</a>
+            </li>
+        </ul>
+        <ul class="nav-menu">
+            <li>
+                <a href="{% url 'register' %}" class="nav-link-dummy">Services & Registration</a>
+            </li>
+        </ul>
+        <ul class="nav-menu">
+            <li>
+                <a href="#contact_us" class="nav-link-dummy">Contact Us</a>
+            </li>
+        </ul>
+    </div>
+</div>
 <div class="text-over-image">
     <div class="bg-image bg-image-height"></div>
 </div>
@@ -109,7 +98,8 @@
 
 <div id="about_us">
     <p class="about-us-heading">About Yogshalaa</p>
-    <p class="about-us-content">Yogshalaa is a Virtual Yoga Platform especially designed to indulge people around the Globe in practicing
+    <p class="about-us-content">Yogshalaa is a Virtual Yoga Platform especially designed to indulge people around the
+        Globe in practicing
         Yoga and Meditation- Whether if you are a busy mom looking for a quick Energy flow in the morning,
         or a beginner to brush up on the Basics of Yoga, or a traveler in a need to relax with a Yog Nidra.
         Whatever your level of Experience, Aspirations and Life Stage -
@@ -195,93 +185,102 @@
 <script src="{% static 'js/slit.js' %}"></script>
 
 <section class="section-class">
-        <div class="container">
-            <h1 class="section-header about-us-heading">Client Review <span>What our customers say about us.</span></h1>
-            <div class="testimonials">
-                {% load static %}
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
+    <div class="container">
+        <h1 class="section-header about-us-heading">Client Review <span>What our customers say about us.</span></h1>
+        <div class="testimonials">
+            {% load static %}
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <div class="single-item">
-                          <div class="row">
-                              <div class="col-md-5">
-                                  <div class="profile">
-                                      <div class="img-area">
-                                          <img src="{% static 'images/JJ_Profile.jpg' %}" alt="">
-                                      </div>
-                                      <div class="bio">
-                                          <h2>Mitali Barai</h2>
-                                          <h4>Morning Energized Flow</h4>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="content">
-                                      <p><span><i class="fa fa-quote-left"></i></span>Yogshala has created a morning discipline in my life and I feel so active after the class. I feel my days have suddenly become so productive.</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
+                        <div class="single-item">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="profile">
+                                        <div class="img-area">
+                                            <img src="{% static 'images/JJ_Profile.jpg' %}" alt="">
+                                        </div>
+                                        <div class="bio">
+                                            <h2>Mitali Barai</h2>
+                                            <h4>Morning Energized Flow</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        <p><span><i class="fa fa-quote-left"></i></span>Yogshala has created a morning
+                                            discipline in my life and I feel so active after the class. I feel my days
+                                            have suddenly become so productive.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                      <div class="single-item">
-                          <div class="row">
-                              <div class="col-md-5">
-                                  <div class="profile">
-                                      <div class="img-area">
-                                          <img src="{% static 'images/JJ_Profile_1.jpg' %}" alt="">
-                                      </div>
-                                      <div class="bio">
-                                          <h2>Ruchita Deshmukh</h2>
-                                          <h4>Meditation & Mantra Chanting</h4>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="content">
-                                      <p><span><i class="fa fa-quote-left"></i></span>Never realized the power of Mantra Chanting.
-                                          I personally believe that dedication amd focus can be developed only by discipline.
-                                          Yogshalaa is having this customised program of meditation which provides the much needed discipline.</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
+                        <div class="single-item">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="profile">
+                                        <div class="img-area">
+                                            <img src="{% static 'images/JJ_Profile_1.jpg' %}" alt="">
+                                        </div>
+                                        <div class="bio">
+                                            <h2>Ruchita Deshmukh</h2>
+                                            <h4>Meditation & Mantra Chanting</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        <p><span><i class="fa fa-quote-left"></i></span>Never realized the power of
+                                            Mantra Chanting.
+                                            I personally believe that dedication amd focus can be developed only by
+                                            discipline.
+                                            Yogshalaa is having this customised program of meditation which provides the
+                                            much needed discipline.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                      <div class="single-item">
-                          <div class="row">
-                              <div class="col-md-5">
-                                  <div class="profile">
-                                      <div class="img-area">
-                                          <img src="{% static 'images/JJ_Profile_2.jpg' %}" alt="">
-                                      </div>
-                                      <div class="bio">
-                                          <h2>Amisha Chaudhari</h2>
-                                          <h4>Personalized Lessons</h4>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="content">
-                                      <p><span><i class="fa fa-quote-left"></i></span>The Personalized Lessons are simply amazing with a specific focus on the issue. My back pain doesn't bother me anymore. Thankyou Jyoti Mam!</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
+                        <div class="single-item">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="profile">
+                                        <div class="img-area">
+                                            <img src="{% static 'images/JJ_Profile_2.jpg' %}" alt="">
+                                        </div>
+                                        <div class="bio">
+                                            <h2>Amisha Chaudhari</h2>
+                                            <h4>Personalized Lessons</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="content">
+                                        <p><span><i class="fa fa-quote-left"></i></span>The Personalized Lessons are
+                                            simply amazing with a specific focus on the issue. My back pain doesn't
+                                            bother me anymore. Thankyou Jyoti Mam!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
-
+                </button>
             </div>
+
         </div>
+    </div>
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -289,176 +288,188 @@
 <div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 
 <section class="ftco-section" id="contact_us">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section about-us-heading">Contact Form</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-12">
-					<div class="wrapper-contact-form">
-						<div class="row no-gutters">
-							<div class="col-lg-6 background-blueviolet">
-								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3>Contact us</h3>
-									<p class="mb-4">We're open for any suggestion or just to have a chat</p>
-									<div id="form-message-warning" class="mb-4"></div>
-				      		<div id="form-message-success" class="mb-4">
-				            Your message was sent, thank you!
-				      		</div>
-									<div class="row mb-4">
-										<div class="col-md-4">
-											<div class="dbox w-100 d-flex align-items-start">
-						        		<div class="text">
-							            <p><span>Address:</span>T.F. 3, Narmada Building, Sitaram City, Bhandara - 441904</p>
-							          </div>
-						          </div>
-										</div>
-										<div class="col-md-4">
-											<div class="dbox w-100 d-flex align-items-start">
-						        		<div class="text">
-							            <p><span>Email:</span>jyotijhanwar.ca16@gmail.com</p>
-							          </div>
-						          </div>
-										</div>
-										<div class="col-md-4">
-											<div class="dbox w-100 d-flex align-items-start">
-						        		<div class="text">
-							            <p><span>Phone:</span> <a href="tel://+917023425271">+91 7023425271</a></p>
-							          </div>
-						          </div>
-										</div>
-									</div>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Create a message here"></textarea>
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="submit" value="Send Message" class="btn btn-primary">
-													<div class="submitting"></div>
-												</div>
-											</div>
-										</div>
-									</form>
-									<div class="w-100 social-media mt-5">
-										<h3>Follow us here</h3>
-										<p>
-											<a href="https://www.instagram.com/yog_shalaa/">Instagram</a>
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 d-flex align-items-stretch">
-								<div class="info-wrap w-100 p-5 img">
-			          </div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <h2 class="heading-section about-us-heading">Contact Form</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper-contact-form">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6 background-blueviolet">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <h3>Contact us</h3>
+                                <p class="mb-4">We're open for any suggestion or just to have a chat</p>
+                                <div id="form-message-warning" class="mb-4"></div>
+                                <div id="form-message-success" class="mb-4">
+                                    Your message was sent, thank you!
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 d-flex align-items-start">
+                                            <div class="text">
+                                                <p><span>Address:</span>T.F. 3, Narmada Building, Sitaram City, Bhandara
+                                                    - 441904</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 d-flex align-items-start">
+                                            <div class="text">
+                                                <p><span>Email:</span>jyotijhanwar.ca16@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 d-flex align-items-start">
+                                            <div class="text">
+                                                <p><span>Phone:</span> <a href="tel://+917023425271">+91 7023425271</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="name" id="name"
+                                                       placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" id="email"
+                                                       placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="subject" id="subject"
+                                                       placeholder="Subject">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" id="message" cols="30"
+                                                          rows="4" placeholder="Create a message here"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <input type="submit" value="Send Message" class="btn btn-primary">
+                                                <div class="submitting"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="w-100 social-media mt-5">
+                                    <h3>Follow us here</h3>
+                                    <p>
+                                        <a href="https://www.instagram.com/yog_shalaa/">Instagram</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-stretch">
+                            <div class="info-wrap w-100 p-5 img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="divider"><span></span><span style="display: inline-block;"></span><span></span></div>
 <script src="{% static 'js/popper.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
 
 <footer id="footer" class="footer-1 footer-top">
-<div class="main-footer widgets-dark typo-light">
-<div class="container">
-<div class="row">
+    <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+            <div class="row">
 
-<div class="col-xs-12 col-sm-6 col-md-4">
-<div class="widget subscribe no-box">
-<h5 class="widget-title">YOGSHALAA<span></span></h5>
-<p>Get access to the Yoga plan of your choice... </p>
-    <a class="btn custom-button" href="{% url 'register' %}">Subscribe Now</a>
-</div>
-</div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="widget subscribe no-box">
+                        <h5 class="widget-title">YOGSHALAA<span></span></h5>
+                        <p>Get access to the Yoga plan of your choice... </p>
+                        <a class="btn custom-button" href="{% url 'register' %}">Subscribe Now</a>
+                    </div>
+                </div>
 
-<div class="col-xs-12 col-sm-6 col-md-4">
-<div class="widget no-box">
-<h5 class="widget-title">Quick Links<span></span></h5>
-<ul class="thumbnail-widget">
-<li>
-<div class="thumb-content"><a href="{% url 'Coverage' %}">Class Coverage</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="/success#about_jj">Meet our Instructor</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="/success#pricing_plans">Pricing</a></div>
-</li>
-<li>
-<div class="thumb-content"><a href="#about_us">About</a></div>
-</li>
-    <li>
-<div class="thumb-content">
-    <a href="https://www.termsandconditionsgenerator.com/live.php?token=TCHSEdabKRzUvl9emlTQIwle6w89hGvW">Terms & Conditions</a></div>
-</li>
-    <li>
-<div class="thumb-content">
-    <a href="https://www.privacypolicygenerator.info/live.php?token=21C9NpTX3c87ZVYqxCnM6hXaR5VKkjVd">Privacy Policy</a></div>
-</li>
-    <li>
-<div class="thumb-content">
-    <a href="https://merchant.razorpay.com/policy/LtUNXCPz8i5XU1/refund">Cancellation & Refund Policy</a></div>
-</li>
-    <li>
-<div class="thumb-content">
-    <a href="https://merchant.razorpay.com/policy/LtUNXCPz8i5XU1/shipping">Shipping & Delivery Policy</a></div>
-</li>
-</ul>
-</div>
-</div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Quick Links<span></span></h5>
+                        <ul class="thumbnail-widget">
+                            <li>
+                                <div class="thumb-content"><a href="{% url 'Coverage' %}">Class Coverage</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="/success#about_jj">Meet our Instructor</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="/success#pricing_plans">Pricing</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content"><a href="#about_us">About</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content">
+                                    <a href="https://www.termsandconditionsgenerator.com/live.php?token=TCHSEdabKRzUvl9emlTQIwle6w89hGvW">Terms
+                                        & Conditions</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content">
+                                    <a href="https://www.privacypolicygenerator.info/live.php?token=21C9NpTX3c87ZVYqxCnM6hXaR5VKkjVd">Privacy
+                                        Policy</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content">
+                                    <a href="https://merchant.razorpay.com/policy/LtUNXCPz8i5XU1/refund">Cancellation &
+                                        Refund Policy</a></div>
+                            </li>
+                            <li>
+                                <div class="thumb-content">
+                                    <a href="https://merchant.razorpay.com/policy/LtUNXCPz8i5XU1/shipping">Shipping &
+                                        Delivery Policy</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-<div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="col-xs-12 col-sm-6 col-md-4">
 
-<div class="widget no-box">
-<h5 class="widget-title">Contact Us<span></span></h5>
+                    <div class="widget no-box">
+                        <h5 class="widget-title">Contact Us<span></span></h5>
 
-<div class="thumb-content"><a href="mailto:jyoti.jhanwar@gmail.com" style="color: #fff" title="glorythemes">jyotijhanwar.ca@gmail.com</a></div>
-<ul class="social-footer2">
-<li class="" style="padding-top: 15px; display: flex">
-    <a title="instagram" target="_blank" href="https://www.instagram.com/yog_shalaa/"><i style="color: #fff; font-size: 1.5em;" class="fab fa-instagram"></i></a>
-    <a title="instagram" target="_blank" href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
+                        <div class="thumb-content"><a href="mailto:jyoti.jhanwar@gmail.com" style="color: #fff"
+                                                      title="glorythemes">jyotijhanwar.ca@gmail.com</a></div>
+                        <ul class="social-footer2">
+                            <li class="" style="padding-top: 15px; display: flex">
+                                <a title="instagram" target="_blank" href="https://www.instagram.com/yog_shalaa/"><i
+                                        style="color: #fff; font-size: 1.5em;" class="fab fa-instagram"></i></a>
+                                <a title="instagram" target="_blank" href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
 		about%20your%20services%2E"><i style="color: #fff; font-size: 1.5em;" class="fab fa-whatsapp"></i></a></li>
-</ul>
-</div>
-</div>
+                        </ul>
+                    </div>
+                </div>
 
-</div>
-</div>
-</div>
+            </div>
+        </div>
+    </div>
 
-<div class="footer-copyright">
-<div class="container">
-<div class="row">
-<div class="col-md-12 text-center">
-<p>Copyright Yogshalaa © 2023. All rights reserved.</p>
-</div>
-</div>
-</div>
-</div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>Copyright Yogshalaa © 2023. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
 </body>

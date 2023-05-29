@@ -1,21 +1,43 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.conf import settings
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-# from .models import UserOTP
 from django.views import View
 from .models import YogaUser, Profile
 from .helpers import OTPHandler
 import requests
+import stripe
 import random
 import http.client
 import uuid
 
 # Create your views here.
+stripe.api_key = settings.SECRET_KEY_PROD
+
+
+def create_checkout_session(request):
+    try:
+        YOUR_DOMAIN = "https://yogshalaa.in/"
+        checkout_session = stripe.checkout.Session.create(
+            line_items=[
+                {
+                    # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                    'price': 'price_1NCzkESFpSBjt2aIIY1PxGl4',
+                    'quantity': 1,
+                },
+            ],
+            mode='payment',
+            success_url=YOUR_DOMAIN + '/success',
+            cancel_url=YOUR_DOMAIN + '/cancel',
+        )
+    except Exception as e:
+        return str(e)
+
+    return redirect(checkout_session.url, code=303)
 
 
 # @login_required(login_url='otp/<str:uid>/')
@@ -147,6 +169,3 @@ def logoutView(request):
 def coverageView(request):
     return render(request, 'classCoverage.html', {'data': 'something'})
 
-
-def instructorView(request):
-    pass

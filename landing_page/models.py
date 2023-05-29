@@ -82,4 +82,5 @@ class Profile(models.Model):
     mobile = PhoneNumberField(default='', blank=False, null=False, unique=True)
     otp = models.CharField(max_length=6, default='******')
     uid = models.CharField(default=uuid.uuid4, max_length=200, unique=True, null=True, blank=True)
+    dummy_field = models.CharField(max_length=50, default='Come check this.')
     objects = models.Manager()

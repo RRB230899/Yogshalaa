@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lbl4p%mz0%(2ue9c3zfqni9^bvnbtp_^4kd$cizgyec8d*io)z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["yogshalaa.in", '127.0.0.1', 'yogshalaa.onrender.com']
 
@@ -38,6 +38,22 @@ env.read_env()
 
 # External DB URL
 DATABASE_URL = env('DATABASE_URL')
+
+# Twilio configuration
+ACCOUNT_SID = env('ACCOUNT_SID')
+AUTH_TOKEN = env('AUTH_TOKEN')
+COUNTRY_CODE = env('COUNTRY_CODE')
+TWILIO_WHATSAPP_NUMBER = env('TWILIO_WHATSAPP_NUMBER')
+TWILIO_PHONE_NUMBER = env('TWILIO_PHONE_NUMBER')
+
+# Stripe config for testing
+PUBLISHABLE_KEY = env('PUBLISHABLE_KEY')
+SECRET_KEY = env('SECRET_KEY')
+
+# Stripe configuration for prod
+PUBLISHABLE_KEY_PROD = env('PUBLISHABLE_KEY_PROD')
+SECRET_KEY_PROD = env('SECRET_KEY_PROD')
+
 
 # Application definition
 
@@ -107,9 +123,7 @@ WSGI_APPLICATION = 'yogshalaa.wsgi.application'
 #     }
 # }
 
-
-DEVELOPMENT_MODE = False
-if DEVELOPMENT_MODE is True:
+if DEBUG:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -159,10 +173,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Twilio configuration
-ACCOUNT_SID = 'AC90d58e90383ce2feb4d2839a81e0fe01'
-AUTH_TOKEN = '59ae88c4dc0844bbf702260f3023a2a5'
-COUNTRY_CODE = '+91'
-TWILIO_WHATSAPP_NUMBER = 'whatsapp:+14155238886'
-TWILIO_PHONE_NUMBER = '+12545408239'

@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import success_page, registerView, loginView, logoutView, verifyOTP, coverageView, instructorView
+from .views import success_page, registerView, loginView, logoutView, verifyOTP, coverageView, create_checkout_session
 
 
 urlpatterns = [
@@ -9,5 +9,5 @@ urlpatterns = [
     path('login', loginView, name="login"),
     path('logout', logoutView, name='logout'),
     path('coverage', coverageView, name="Coverage"),
-    path('meet_our_instructor', instructorView, name='meet_our_instructor'),
+    path('create-checkout-session', create_checkout_session, name='Checkout session')
 ]

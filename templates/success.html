@@ -11,7 +11,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!--Stylesheet-->
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboard_navbar.css' %}">
 	<style>
 		@import url(//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css);
 		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
@@ -218,7 +218,14 @@
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LuOaJfCMPrPasV" async> </script> </form>
+<!--                                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"-->
+<!--                                                    data-key="{{ key }}" data-description="Payment Checkout"-->
+<!--                                                    data-amount="10" data-locale="auto" data-currency="gbp">-->
+<!--                                            </script>-->
+                                            <form action="/create-checkout-session" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" id="checkout-button">Checkout</button>
+                                            </form>
                                         </div>
 
                                     </div>
@@ -265,8 +272,8 @@
       <div class="blog-slider__content" id="content-3">
 <!--        <span class="blog-slider__code">26 December 2019</span>-->
         <div class="blog-slider__title">Vision</div>
-        <div class="blog-slider__text" style="text-align: justify;">She is constantly working on directing people towards achieving a healthy lifestyle. Yoga and Mediation are her way of bringing awareness and abate the sufferings.
-To become part of this Jounery.</div>
+        <div class="blog-slider__text" style="text-align: justify;">She is constantly working on directing
+            people towards achieving a healthy lifestyle. Yoga and Mediation are her way of bringing awareness and abate the sufferings.</div>
 <!--        <a href="#" class="blog-slider__button">READ MORE</a>-->
       </div>
     </div>
