@@ -21,7 +21,6 @@ stripe.api_key = settings.SECRET_KEY_PROD
 
 def create_checkout_session(request):
     try:
-        print("Inside Stripe session")
         YOUR_DOMAIN = "https://yogshalaa.in/"
         checkout_session = stripe.checkout.Session.create(
             line_items=[
@@ -32,11 +31,12 @@ def create_checkout_session(request):
                 },
             ],
             mode='payment',
-            success_url=YOUR_DOMAIN + '/success',
-            cancel_url=YOUR_DOMAIN + '/cancel',
+            success_url=YOUR_DOMAIN + 'success',
+            cancel_url=YOUR_DOMAIN + 'cancel',
         )
+        print("Inside Stripe session" + str(checkout_session))
     except Exception as e:
-        print("Exception occurred")
+        print("Exception occurred: " + str(e))
         return str(e)
 
     return redirect(checkout_session.url, code=303)
