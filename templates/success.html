@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{% static 'css/aboutJJ.css' %}">
     <link rel="stylesheet" href="{% static 'css/mobile_menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/socialLinks.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css" integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
@@ -37,6 +38,7 @@
 		<a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
 		about%20your%20services%2E" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
     </div>
+
 <!--    <div class="toast_wrapper">-->
 <!--        <div id="toast">-->
 <!--            <div class="container-1">-->
@@ -58,9 +60,6 @@
 	<nav>
         <div class="nav-1">
             <div class="nav-main">
-<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                    <span class="navbar-toggler-icon"></span>-->
-<!--                </button>-->
                 <div class="nav-logo">
                     <a href="/" class="nav-logo-img"><img src="{% static 'images/Logo-final.jpg' %}" width=84 height=84 alt=""></a>
                 </div>
@@ -83,22 +82,61 @@
               </div>
             <div class="nav-main">
                 <ul>
-                    <li><a href="#">Start Scheduling</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
                 </ul>
-<!--                <div class="nav-mobile-menu" id="nav-mobile-menu">-->
-<!--                    <img src="https://rvs-product-pricing-page.vercel.app/assets/Hamburger-Menu.svg" alt="">-->
-<!--                </div>-->
             </div>
         </div>
     </nav>
 
     <main>
+        <h1 class="about-us-heading" style="font-size: 40px; color: #1d1b67; padding: 50px 0px 0px 0px;">DETAILS ABOUT OUR CLASSES</h1>
+            <ul id="cards">
+                <li class="card" id="card_1">
+                    <div class="card__content">
+                        <div>
+                            <h2>Morning Energizing Flow</h2>
+                            <p>The course emphasizes on Hatha Yoga which includes Asana Alignment
+                            and Ashtanga Yoga Sequences which includes Controlled Movements,
+                            Flowing Breath Patterns and Gaze.</p>
+                            <p><a href="/coverage#Morning-Energizing-Flow" class="btn btn--accent">Check Lesson Coverage</a></p>
+                        </div>
+                        <figure>
+                            <img src="{% static 'images/JJ_Morning_Flow.jpg' %}" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+                <li class="card" id="card_2">
+                    <div class="card__content">
+                        <div>
+                            <h2>Personalized Sessions</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#top" class="btn btn--accent">Check Lesson Coverage</a></p>
+                        </div>
+                        <figure>
+                            <img src="{% static 'images/JJ_Private.jpg' %}" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+                <li class="card" id="card_3">
+                    <div class="card__content">
+                        <div>
+                            <h2>Weekend Yoga Flow</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#top" class="btn btn--accent">Check Lesson Coverage</a></p>
+                        </div>
+                        <figure>
+                            <img src="{% static 'images/JJ_Meditation.jpg' %}" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+            </ul>
+
         <div id="start_content">
         <section class="section-4">
             <div class="section-4-1">
                 <div class="section-main">
-                    <h1 class="about-us-heading">Flexible Plans for Everyone</h1>
-                    <p>Our plans are made for eveyone. Whether you're just starting out on social media, or have been on there for a long time, we have a plan that's right for you.</p>
+                    <h2 class="about-us-heading">Flexible Plans for Everyone</h2>
+                    <p>Our plans are made for eveyone. Whether you're just starting out with Yoga, or have been in there for a long time, we have a plan that's right for you.</p>
                 </div>
             </div>
             <div class="section-4-2">
@@ -120,118 +158,144 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h2 class="card-price">£99/month</h2>
-                                            <p>Morning Energized Flow</p>
+                                            <p>Morning Energizing Flow</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 mins Ashtanga flow</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Regular group batch</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Re-scheduling available</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 minutes' Ashtanga flow</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Batch I (6-7 A.M. (B.S.T.))<br>Batch II (7-8 A.M. (B.S.T.))</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Re-scheduling available*</p></li>
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LuOWqzX77Ghc5b" async> </script> </form>
+                                            <form action="/create-checkout-session" method="POST">
+                                                {% csrf_token %}
+                                                <label for="checkout-button-morning-monthly"></label>
+                                                <input type="submit" id="checkout-button-morning-monthly" name="Morning flow Monthly" value="Checkout"/>
+                                            </form>
                                         </div>
-
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
                                             <h2 class="card-price">£14.99/lesson</h2>
-                                            <p>Personalized Sessions</p>
+                                            <p>Personalized Lessons</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For PCOD/ PCOS/ Hormonal Imbalance</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Weight Management</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Flexibility</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 minutes/lesson</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Timing to be decided as per mutual agreement**</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>PCOD/ PCOS/ Hormonal Imbalance</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Flexibility & Weight Management</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Kids Yoga</p></li>
                                                 <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Face</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Meditation & Pranayama</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Mantra Chanting</p></li>
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LuOZ4B3xOv63vY" async> </script> </form>
+                                            <form action="/create-checkout-session" method="POST">
+                                                {% csrf_token %}
+                                                <label for="checkout-button-personalized-monthly"></label>
+                                                <input type="submit" id="checkout-button-personalized-monthly" name="Personalized flow" value="Checkout"/>
+                                            </form>
                                         </div>
-
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h2 class="card-price">£6.99/lesson</h2>
-                                            <p>Meditation & Mantra Chanting</p>
+                                            <h2 class="card-price">£13.99/week</h2>
+                                            <p>Weekend Yoga Flow</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>30 min lessons</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Time to be decided as per your requirement</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 minutes' Ashtanga flow</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Time to be decided as per mutual agreement**</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Special batches for Kids & Senior Citizen Yoga</p></li>
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LuOaJfCMPrPasV" async> </script> </form>
+                                            <form action="/create-checkout-session" method="POST">
+                                                {% csrf_token %}
+                                                <label for="checkout-button-weekend-monthly"></label>
+                                                <input type="submit" id="checkout-button-weekend-monthly" name="Weekend flow" value="Checkout"/>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                                <p>* &nbsp;&nbsp;Max. up to 2 lessons/month.</p>
+                                <p>** To be discussed over WhatsApp.</p>
                             </div>
                             <div id="pricing__quarterly__plan">
                                 <div>
                                     <div class="card">
                                         <div class="card-header">
                                             <h2 class="card-price">£249 <span>(18.8% off)</span></h2>
-                                            <p>Perfect plan if you're just starting out.</p>
+                                            <p class="about-us-heading">Morning Energizing Flow</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 mins Ashtanga flow</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Regular group batch</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Re-scheduling available</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 minutes' Ashtanga flow</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Batch I (6-7 A.M. (B.S.T.))<br>Batch II (7-8 A.M. (B.S.T.))</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Re-scheduling available*</p></li>
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LuObdhoLY8pV8U" async> </script> </form>
+                                            <form action="/create-checkout-session" method="POST">
+                                                {% csrf_token %}
+                                                <label for="checkout-button-morning"></label>
+                                                <input type="submit" id="checkout-button-morning" name="Morning flow Quarterly" value="Checkout"/>
+                                            </form>
                                         </div>
 
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
                                             <h2 class="card-price">£14.99/lesson</h2>
-                                            <p>Perfect plan if you're a heavy user of social media.</p>
+                                            <p>Personalized Lessons</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>or PCOD/ PCOS/ Hormonal Imbalance</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Weight Management</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Flexibility</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 minutes/lesson</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Timing to be decided as per mutual agreement**</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>PCOD/ PCOS/ Hormonal Imbalance</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Flexibility & Weight Management</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Kids Yoga</p></li>
                                                 <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>For Face</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Meditation & Pranayama</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Mantra Chanting</p></li>
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LuOZ4B3xOv63vY" async> </script> </form>
+                                            <form action="/create-checkout-session" method="POST">
+                                                {% csrf_token %}
+                                                <label for="checkout-button-personalized"></label>
+                                                <input type="submit" id="checkout-button-personalized" name="Personalized flow" value="Checkout"/>
+                                            </form>
                                         </div>
-
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h2 class="card-price">£6.99/lesson</h2>
-                                            <p>Perfect plan if you're just starting out.</p>
+                                            <h2 class="card-price">£13.99/week</h2>
+                                            <p>Weekend Yoga Flow</p>
                                         </div>
                                         <div class="card-body">
                                             <ul>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>30 min lessons</p></li>
-                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Time to be decided as per your requirement</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>60 minutes' Ashtanga flow</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Time to be decided as per mutual agreement**</p></li>
+                                                <li><img src="https://rvs-product-pricing-page.vercel.app/assets/Checkmark.svg" alt=""><p>Special batches for Kids & Senior Citizen Yoga</p></li>
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-<!--                                            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"-->
-<!--                                                    data-key="{{ key }}" data-description="Payment Checkout"-->
-<!--                                                    data-amount="10" data-locale="auto" data-currency="gbp">-->
-<!--                                            </script>-->
                                             <form action="/create-checkout-session" method="POST">
                                                 {% csrf_token %}
-                                                <button type="submit" id="checkout-button">Checkout</button>
+                                                <label for="checkout-button-weekend"></label>
+                                                <input type="submit" id="checkout-button-weekend" name="Weekend flow" value="Checkout"/>
                                             </form>
                                         </div>
-
                                     </div>
                                 </div>
+                                <p>* Max. up to 2 lessons/month</p>
+                                <p>** To be discussed over WhatsApp.</p>
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -12,3 +12,14 @@
     padding: 0 1em 0 1em;
     font-weight: 600;
 }
+
+.card .card-header>p {
+    font-family: 'Trirong', serif;
+    font-size: 28px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.card-body>ul>li>p {
+    font-weight: 600;
+}

@@ -5,15 +5,21 @@
     <title>Registration</title>
 	  {% load static %}
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
-	<link rel="stylesheet" href="{% static 'css/scratch.css' %}" >
     <link rel="stylesheet" href="{% static 'css/intro-pic.css' %}" >
     <link rel="stylesheet" href="{% static 'css/login.css' %}" >
+	<link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
+   	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
 </head>
 <body>
-<form method="POST" action="">
+<form method="POST" action="" onsubmit="return validate()">
     {% csrf_token %}
 	{% if message %}
 	<div class="alert alert-{{class}}">
@@ -125,7 +131,8 @@
 	<div class="inputGroup inputGroup1">
 <!--		<h3>OTP verification method:</h3>-->
 		<label for="id_password1">Phone Number:</label>
-        <input id="id_password1" type="text" name="phone_number">
+        <input id="id_password1" type="tel" name="phone_number" />
+		<input type="hidden" id="country_code" name="country_code"/>
 <!--		<label for="methodOtpSms">SMS:</label>-->
 <!--        <input type="radio" name="methodOtp" id="methodOtpSms" value="methodOtpSms">-->
 
@@ -133,7 +140,7 @@
 <!--        <input type="radio" name="methodOtp" id="methodOtpWhatsapp" value="methodOtpWhatsapp">-->
 	</div>
 	<div class="inputGroup inputGroup3">
-		<button id="login" type="submit" name="Create User">Submit</button>
+		<input id="login" type="submit" name="Submit" value="Submit" />
 	</div>
 	<div class="mt-4">
 		<div class="d-flex justify-content-center links">
@@ -143,15 +150,20 @@
 </form>
     <script type="module" src="{% static 'js/login.js' %}"></script>
 </body>
+<script>
+	const phoneInputField = document.querySelector("#id_password1");
+   const phoneInput = window.intlTelInput(phoneInputField, {
+	initialCountry: 'gb',
+     utilsScript:
+       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+     separateDialCode: true,
+   });
+   function validate(){
+   	console.log("Function executed")
+   	var phn_no = phoneInput.getSelectedCountryData();
+	var ip = document.getElementById('country_code');
+	ip.value = phn_no['dialCode'];
+	return true;
+   }
+</script>
 </html>
-
-
-
-
-<!--<h3>Register</h3>-->
-
-<!--<form>-->
-<!--    {% csrf_token %}-->
-<!--    {{form.as_p}}-->
-<!--    <input type="submit" name="Create User">-->
-<!--</form>-->

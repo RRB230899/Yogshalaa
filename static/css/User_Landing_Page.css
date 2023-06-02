@@ -269,11 +269,12 @@ main .section-4 .section-4-1 .section-main {
     align-items: center;
     row-gap: 10px;
 }
-main .section-4 .section-4-1 .section-main h1 {
+main .section-4 .section-4-1 .section-main h2 {
     font-size: 40px;
     line-height: 42px;
     color: #1d1b67;
     text-align: center;
+    margin: 0.67em;
 }
 main .section-4 .section-4-1 .section-main p {
     color: #425466;
@@ -443,9 +444,6 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>
     display: block;
 }
 
-
-
-
 @media only screen and (max-width: 1200px) {
     nav .nav-1 .nav-main {
         column-gap: 20px;
@@ -455,7 +453,6 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>
     nav .nav-2 .nav-main {
         width: 90%;
     }
-
 
     footer .footer-main {
         width: 90%;
@@ -512,7 +509,6 @@ main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>
     nav .nav-2 .nav-main {
         justify-content: flex-end;
     }
-
 
     main .section-4 .section-4-2 .section-main div.pricing-body .pricing-body-plans>div>div .card {
         width: 100%;

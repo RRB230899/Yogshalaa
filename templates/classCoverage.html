@@ -17,12 +17,18 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" href="{% static 'css/classCoverage.css' %}">
+        <link rel="stylesheet" href="{% static 'css/socialLinks.css' %}">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
-
-
+<!--        <div class="back-arrow-div">-->
+<!--            <a href="{% url 'User Landing Page' %}" class="back-arrow">-->
+<!--                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 50 50">-->
+<!--                  <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>-->
+<!--                </svg>-->
+<!--            </a>-->
+<!--        </div>-->
         <section class="first-section">
           <div class="container">
             <div class="row">
@@ -37,7 +43,7 @@
           </div>
         </section>
 
-        <section class="second-section">
+        <section class="second-section" id="Morning-Energizing-Flow">
           <h2 style="text-align: center">Morning Energizing Flow</h2>
           <div class="container" style="padding: 50px;">
             <div class="row">
@@ -119,43 +125,10 @@
           <div class="container">
             <div class="row">
               <div class="col-md-3 col-sm-6">
-                <div class="portfolio-item first-item">
-                  <div class="image">
-                    <a href="{% static 'images/JJ_Morning_Flow.jpg' %}" data-lightbox="image-1"><img src="{% static 'images/JJ_Morning_Flow.jpg' %}"></a>
-                  </div>
-                  <div class="text">
-                    <span>Strength</span>
-                    <h4>Morning Energized Flow</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="portfolio-item second-item">
-                  <div class="image">
-                    <a href="{% static 'images/JJ_Private.jpg' %}" data-lightbox="image-1"><img src="{% static 'images/JJ_Private.jpg' %}"></a>
-                  </div>
-                  <div class="text">
-                    <span>Target</span>
-                    <h4>Personalized Lessons</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
-                <div class="portfolio-item third-item">
-                  <div class="image">
-                    <a href="{% static 'images/JJ_Morning_Flow.jpg' %}" data-lightbox="image-1"><img src="{% static 'images/JJ_Meditation.jpg' %}"></a>
-                  </div>
-                  <div class="text">
-                    <span>Focus</span>
-                    <h4>Meditation & Mantra Chanting</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6">
                 <div class="send-to-portfolio">
                   <span>Do you want to see more?</span>
                   <div class="primary-button">
-                    <a href="/#yoga_gallery">Visit gallery</a>
+                    <a href="{% url 'Gallery' %}">Visit gallery</a>
                   </div>
                 </div>
               </div>
@@ -163,77 +136,22 @@
           </div>
         </section>
 
-<!--        <section class="fivth-section">-->
-<!--          <div class="container">-->
-<!--            <div class="row">-->
-<!--              <div class="col-md-10 col-md-offset-1">-->
-<!--                <div class="left-text col-md-8">-->
-<!--                  <h4><em>Aliquam efficitur</em><br>augue et libero vulputate feugiat</h4>-->
-<!--                  <p>Mauris eget orci porta, aliquam neque sit amet, porttitor dui. Donec efficitur vehicula justo quis varius. Vivamus pharetra lorem eget turpis ornare tempus. Vivamus ac sodales lectus. Morbi rhoncus feugiat neque ultrices rhoncus. Maecenas ultrices, nisl pellentesque hendrerit dignissim, ante purus hendrerit urna, eu tristique est massa quis risus.</p>-->
-<!--                </div>-->
-<!--                <div class="right-image col-md-4">-->
-<!--                  <img src="{% static 'img/right-image.png' %}" alt="">-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </section>-->
-
-<!--        <section class="sixth-section">-->
-<!--          <div class="container">-->
-<!--            <div class="row">-->
-<!--              <div class="col-md-6">-->
-<!--                <div class="row">-->
-<!--                  <form id="contact" action="" method="post">-->
-<!--                    <div class="col-md-6">-->
-<!--                      <fieldset>-->
-<!--                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">-->
-<!--                      </fieldset>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-6">-->
-<!--                      <fieldset>-->
-<!--                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">-->
-<!--                      </fieldset>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-12">-->
-<!--                      <fieldset>-->
-<!--                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>-->
-<!--                      </fieldset>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-12">-->
-<!--                      <fieldset>-->
-<!--                        <button type="submit" id="form-submit" class="btn">Send Message</button>-->
-<!--                      </fieldset>-->
-<!--                    </div>-->
-<!--                  </form>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="col-md-5">-->
-<!--                <div class="right-info">-->
-<!--                  <ul>-->
-<!--                    <li><a href="#"><i class="fa fa-envelope"></i>jyotijhanwar.ca16@gmail.com</a></li>-->
-<!--                    <li><a href="#"><i class="fa fa-phone"></i>+91 7023425271</a></li>-->
-<!--                    <li><a href="#"><i class="fa fa-map-marker"></i>T.F. 3, Narmada building, Sitaram City, Bhandara - 441904</a></li>-->
-<!--                  </ul>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </section>-->
-
         <footer>
           <div class="container">
             <div class="row">
               <div class="col-md-12">
                 <ul>
-
                   <li><a href="https://instagram.com/yog_shalaa?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fa fa-instagram"></i></a></li>
                   <li><a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
 		about%20your%20services%2E" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                  <li>
+                    <a href="{% url 'User Landing Page' %}" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                      </svg>
+                    </a>
+                  </li>
                 </ul>
-<!--                <p>Copyright &copy; 2017 Company Name-->
-
-<!--                        | Design: <a href="https://www.facebook.com/tooplate" target="_parent">Tooplate</a></p>-->
               </div>
             </div>
           </div>
