@@ -1,28 +1,3 @@
-:root {
-	--card-height: 40vw;
-	--card-margin: 4vw;
-	--card-top-offset: 1em;
-	--numcards: 3;
-	--outline-width: 0px;
-}
-
-#cards {
-	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
-	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
-}
-
-#card_1 {
-	--index: 1;
-}
-
-#card_2 {
-	--index: 2;
-}
-
-#card_3 {
-	--index: 3;
-}
-
 .card {
 	position: sticky;
 	top: 0;
@@ -152,3 +127,29 @@ header {
 	padding: 0.5em;
 	border-radius: 0.25em;
 }
+
+:root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--numcards: 3;
+	--outline-width: 0px;
+}
+
+#cards {
+	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+}
+
+#card_1 {
+	--index: 1;
+}
+
+#card_2 {
+	--index: 2;
+}
+
+#card_3 {
+	--index: 3;
+}
+

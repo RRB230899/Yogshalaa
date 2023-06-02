@@ -18,19 +18,19 @@ import uuid
 # Create your views here.
 
 # Stripe product config
-stripe.api_key = settings.SECRET_KEY_STRIPE
+stripe.api_key = settings.SECRET_KEY_PROD
 
 
 def create_checkout_session(request):
     try:
-        YOUR_DOMAIN = "http://127.0.0.1:8000/"
+        YOUR_DOMAIN = "https://yogshalaa.in/"
         # if request.method == 'POST':
         if 'Weekend flow' in request.POST:
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
                         # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                        'price': 'price_1NDQfGSFpSBjt2aIo9LYpCXB',
+                        'price': 'price_1NDlGVSFpSBjt2aIQHiDadJP',
                         'quantity': 1,
                     },
                 ],
@@ -43,7 +43,7 @@ def create_checkout_session(request):
                 line_items=[
                     {
                         # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                        'price': 'price_1NDiKCSFpSBjt2aIg0fahaL6',
+                        'price': 'price_1NDlHhSFpSBjt2aIHFT5Me9E',
                         'quantity': 1,
                     },
                 ],
@@ -57,7 +57,7 @@ def create_checkout_session(request):
                 line_items=[
                     {
                         # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                        'price': 'price_1NDiL6SFpSBjt2aIBbci9vEr',
+                        'price': 'price_1NDlHoSFpSBjt2aITL7JDNje',
                         'quantity': 1,
                     },
                 ],
@@ -71,7 +71,7 @@ def create_checkout_session(request):
                 line_items=[
                     {
                         # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                        'price': 'price_1NDiLfSFpSBjt2aIR3kiHIpD',
+                        'price': 'price_1NDlHxSFpSBjt2aIFIxQjhmj',
                         'quantity': 1,
                     },
                 ],
