@@ -106,6 +106,21 @@ header {
     .card__content > div {
         gap: .5em;
     }
+    #card_2 {
+        padding-top: 3.4em;
+    }
+    #card_3 {
+        padding-top: 4.9em;
+    }
+}
+
+@media screen and (max-width: 380px){
+    #card_2 {
+        padding-top: 4em !important;
+    }
+    #card_3 {
+        padding-top: 6em !important;
+    }
 }
 
 .card__content > figure {
