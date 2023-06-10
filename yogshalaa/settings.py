@@ -31,10 +31,6 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ["yogshalaa.in", '127.0.0.1', 'yogshalaa.onrender.com']
-#
-# # Read .env file data
-# env = environ.Env()
-# env.read_env(encoding="utf8", errors='ignore')
 
 # External DB URL
 DATABASE_URL = config('DATABASE_URL')
@@ -68,8 +64,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
 ]
-
-APIKey = '72bed8bd-f30d-11ed-addf-0200cd936042'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -111,17 +105,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 WSGI_APPLICATION = 'yogshalaa.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 if DEBUG:
     DATABASES = {
