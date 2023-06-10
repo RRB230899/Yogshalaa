@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.conf import settings
+from django.http import HttpResponseRedirect
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import Profile
@@ -100,10 +101,12 @@ def registerView(request):
             red.set_cookie('profile_verified', True, max_age=86400)
             return red
 
-        user = User.objects.create(username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
+        user = User.objects.create(
+            username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
         otp = random.randint(1000, 9999)
-        profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}')
-        messagehandler = OTPHandler(phone_num, otp, request.POST['country_code']).send_otp_via_message()
+        country_code = f"+{request.POST['country_code']}"
+        profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}', country_code=country_code)
+        OTPHandler(phone_num, otp, country_code).send_otp_via_message()
         red = redirect(f'otp/{profile.uid}/')
         red.set_cookie("can_otp_enter", True, max_age=600)
         return red
@@ -114,7 +117,16 @@ def verifyOTP(request, uid):
     # uid = Profile.uid
     if request.method == "POST":
         profile = Profile.objects.get(uid=uid)
-        if request.COOKIES.get('can_otp_enter') is not None:
+        if request.POST['resend_code']:
+            print("Resend code")
+            otp = random.randint(1000, 9999)
+            OTPHandler(profile.mobile, otp, profile.country_code).send_otp_via_message()
+            profile.otp = otp
+            profile.save()
+            red = HttpResponseRedirect(request.path_info)
+            red.set_cookie("can_otp_enter", True, max_age=600)
+            return red
+        elif request.COOKIES.get('can_otp_enter') is not None:
             if profile.otp == request.POST['otp']:
                 red = redirect("User Landing Page")
                 red.set_cookie('profile_verified', True, max_age=86400)
@@ -165,3 +177,9 @@ def photoGallery(request):
 
 def cancelCheckoutSession(request):
     return render(request, 'cancel.html', {'data': 'something'})
+
+
+def signUpView(request):
+    red = redirect('register')
+    red.delete_cookie('profile_verified')
+    return red

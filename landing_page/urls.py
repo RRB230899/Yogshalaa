@@ -11,5 +11,6 @@ urlpatterns = [
     path('coverage', coverageView, name="Coverage"),
     path('create-checkout-session', create_checkout_session, name='Checkout session'),
     path('gallery', photoGallery, name='Gallery'),
-    path('cancel', cancelCheckoutSession, name='Checkout canceled')
+    path('cancel', cancelCheckoutSession, name='Checkout canceled'),
+    path('signup', signUpView, name='signup')
 ]
