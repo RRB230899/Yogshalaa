@@ -97,7 +97,7 @@ def registerView(request):
         phone_num = request.POST['phone_number']
         if Profile.objects.filter(mobile=phone_num).exists():
             red = redirect('User Landing Page')
-            red.set_cookie('profile_verified', True, max_age=60)
+            red.set_cookie('profile_verified', True, max_age=86400)
             return red
 
         user = User.objects.create(username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
@@ -117,7 +117,7 @@ def verifyOTP(request, uid):
         if request.COOKIES.get('can_otp_enter') is not None:
             if profile.otp == request.POST['otp']:
                 red = redirect("User Landing Page")
-                red.set_cookie('profile_verified', True, max_age=60)
+                red.set_cookie('profile_verified', True, max_age=86400)
                 return red
             return HttpResponse("wrong otp")
         return HttpResponse("10 minutes passed")
@@ -128,7 +128,7 @@ def loginView(request):
 
     if request.user.is_authenticated:
         red = redirect('User Landing Page')
-        red.set_cookie('profile_verified', True, max_age=60)
+        red.set_cookie('profile_verified', True, max_age=86400)
         return red
 
     else:
@@ -140,7 +140,7 @@ def loginView(request):
             if Profile.objects.filter(mobile=phone_number).exists():
                 login(request, user)
                 red = redirect('User Landing Page')
-                red.set_cookie('profile_verified', True, max_age=60)
+                red.set_cookie('profile_verified', True, max_age=86400)
                 return red
             else:
                 messages.info(request, 'Phone number entered is incorrect')
