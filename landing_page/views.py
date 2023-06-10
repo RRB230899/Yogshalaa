@@ -117,10 +117,8 @@ def verifyOTP(request, uid):
     # uid = Profile.uid
     if request.method == "POST":
         profile = Profile.objects.get(uid=uid)
-        print(request.POST)
         resend_code = request.POST.get('resend_code', False)
         if resend_code:
-            print("Resend code")
             otp = random.randint(1000, 9999)
             OTPHandler(profile.mobile, otp, profile.country_code).send_otp_via_message()
             profile.otp = otp
