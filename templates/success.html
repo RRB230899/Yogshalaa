@@ -54,7 +54,9 @@
         <div class="nav-2">
             <div class="top-nav">
                 <input id="menu-toggle" type="checkbox" />
-                <label class='menu-button-container' for="menu-toggle"></label>
+                <label class='menu-button-container' for="menu-toggle">
+                    <div class='menu-button'></div>
+                </label>
                 <ul class="menu">
                   <li><a href="{% url 'Coverage' %}">Class coverage</a></li>
                   <li><a href="/success#pricing_plans">Pricing</a></li>
@@ -287,13 +289,12 @@
   <div class="blog-slider__wrp swiper-wrapper">
     <div class="blog-slider__item swiper-slide">
       <div class="blog-slider__img">
-
         <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp" alt="">
       </div>
       <div class="blog-slider__content">
         <div class="blog-slider__title">Introduction</div>
         <div class="blog-slider__text" style="text-align: justify;">Jyoti Jhanwar is a certified Yoga instructor and founder of Yogshalaa. She has completed her training from Rishikesh - Yoga capital of India.</div>
-        <a href="#content-2" class="blog-slider__button">READ MORE</a>
+        <button class="blog-slider__button" onclick="slideToNextSlide()" style="border: none">READ MORE</button>
       </div>
     </div>
     <div class="blog-slider__item swiper-slide">
@@ -303,10 +304,9 @@
       <div class="blog-slider__content" id="content-2">
         <div class="blog-slider__title">Certification</div>
         <div class="blog-slider__text" style="text-align: justify;">She is Holding US alliance certificate. Also, she is certified from Ministry of Ayush, India</div>
-        <a href="#content-3" class="blog-slider__button">READ MORE</a>
+        <button class="blog-slider__button" onclick="slideToNextSlide()" style="border: none">READ MORE</button>
       </div>
     </div>
-
     <div class="blog-slider__item swiper-slide">
       <div class="blog-slider__img">
         <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp" alt="">
@@ -316,6 +316,7 @@
         <div class="blog-slider__text" style="text-align: justify;">She is constantly working on directing
             people towards achieving a healthy lifestyle. Yoga and Mediation are her way of bringing awareness and abate the sufferings.
         </div>
+        <button class="blog-slider__button" onclick="slideToNextSlide()" style="border: none">Home Slide</button>
       </div>
     </div>
   </div>
@@ -335,6 +336,9 @@
                     clickable: true,
                     }
                 });
+                function slideToNextSlide() {
+                    swiper.slideNext()
+                }
             </script>
     </div>
     </main>
