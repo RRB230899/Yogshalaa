@@ -1,18 +1,14 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import login, logout
 from django.conf import settings
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.views import View
-from .models import YogaUser, Profile
+from .models import Profile
 from .helpers import OTPHandler
-import requests
 import stripe
 import random
-import http.client
 import uuid
 
 # Create your views here.
@@ -21,16 +17,18 @@ import uuid
 stripe.api_key = settings.SECRET_KEY_PROD
 
 
+# Checkout session for accepting payments
 def create_checkout_session(request):
+    checkout_session = None
     try:
         YOUR_DOMAIN = "https://yogshalaa.in/"
         # if request.method == 'POST':
-        if 'Weekend flow' in request.POST:
+        if 'Weekend flow' in request.POST:  # For Weekend Flow
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
                         # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                        'price': 'price_1NDlGVSFpSBjt2aIQHiDadJP',
+                        'price': 'price_1NDlGVSFpSBjt2aIQHiDadJP',  # Can be created on Stripe Dashboard
                         'quantity': 1,
                     },
                 ],
@@ -38,11 +36,10 @@ def create_checkout_session(request):
                 success_url=YOUR_DOMAIN + 'success',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
-        elif 'Personalized flow' in request.POST:
+        elif 'Personalized flow' in request.POST:  # For personalized sessions
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
                         'price': 'price_1NDlHhSFpSBjt2aIHFT5Me9E',
                         'quantity': 1,
                     },
@@ -52,11 +49,10 @@ def create_checkout_session(request):
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
 
-        elif 'Morning flow Monthly' in request.POST:
+        elif 'Morning flow Monthly' in request.POST:  # For Monthly Morning Energized Flow
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
                         'price': 'price_1NDlHoSFpSBjt2aITL7JDNje',
                         'quantity': 1,
                     },
@@ -66,11 +62,10 @@ def create_checkout_session(request):
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
 
-        elif 'Morning flow Quarterly' in request.POST:
+        elif 'Morning flow Quarterly' in request.POST:  # For Quarterly Morning Energized Flow
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
                         'price': 'price_1ND5HgSFpSBjt2aIBhsdfbQr',
                         'quantity': 1,
                     },
@@ -86,18 +81,24 @@ def create_checkout_session(request):
         return str(e)
 
 
-@login_required(login_url='/login', redirect_field_name='register')
+# User Dashboard
 def success_page(request):
-    return render(request, 'success.html', {'data': 'Something'})
+    if request.COOKIES.get('profile_verified') is not None:
+        return render(request, 'success.html', {'data': 'Something'})
+    else:
+        logout(request)
+        return loginView(request)
 
 
 def registerView(request):
-
+    if request.COOKIES.get('profile_verified') is not None:
+        return redirect('User Landing Page')
     if request.method == 'POST':
         phone_num = request.POST['phone_number']
         if Profile.objects.filter(mobile=phone_num).exists():
-            return redirect('User Landing Page')
-            # return HttpResponse("User already exists.. Please login")
+            red = redirect('User Landing Page')
+            red.set_cookie('profile_verified', True, max_age=60)
+            return red
 
         user = User.objects.create(username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
         otp = random.randint(1000, 9999)
@@ -109,10 +110,6 @@ def registerView(request):
     return render(request, 'register.html')
 
 
-def sendOTP(request):
-    pass
-
-
 def verifyOTP(request, uid):
     # uid = Profile.uid
     if request.method == "POST":
@@ -120,7 +117,7 @@ def verifyOTP(request, uid):
         if request.COOKIES.get('can_otp_enter') is not None:
             if profile.otp == request.POST['otp']:
                 red = redirect("User Landing Page")
-                red.set_cookie('verified', True)
+                red.set_cookie('profile_verified', True, max_age=60)
                 return red
             return HttpResponse("wrong otp")
         return HttpResponse("10 minutes passed")
@@ -130,18 +127,21 @@ def verifyOTP(request, uid):
 def loginView(request):
 
     if request.user.is_authenticated:
-        return redirect('User Landing Page')
+        red = redirect('User Landing Page')
+        red.set_cookie('profile_verified', True, max_age=60)
+        return red
 
     else:
         if request.method == 'POST':
             phone_number = request.POST.get('phone_number')
             profile = Profile.objects.get(mobile=phone_number)
             user = profile.user
-            # profile = authenticate(request, username=username, password=password)
 
             if Profile.objects.filter(mobile=phone_number).exists():
                 login(request, user)
-                return redirect('User Landing Page')
+                red = redirect('User Landing Page')
+                red.set_cookie('profile_verified', True, max_age=60)
+                return red
             else:
                 messages.info(request, 'Phone number entered is incorrect')
                 return render(request, 'login.html', {'data': 'something'})
