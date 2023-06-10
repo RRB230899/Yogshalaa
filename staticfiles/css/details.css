@@ -107,19 +107,26 @@ header {
         gap: .5em;
     }
     #card_2 {
-        padding-top: 3.4em;
+        margin-top: 3.4em;
+        padding-top: 0;
     }
     #card_3 {
-        padding-top: 4.9em;
+        margin-top: 4.9em;
+        padding-top: 0;
     }
 }
 
 @media screen and (max-width: 380px){
     #card_2 {
-        padding-top: 4em !important;
+        margin-top: 4em !important;
+        padding-top: 0 !important;
     }
     #card_3 {
-        padding-top: 6em !important;
+        margin-top: 6.1em !important;
+        padding-top: 0 !important;
+    }
+    .card__content > div {
+        width: 100% !important;
     }
 }
 
