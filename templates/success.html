@@ -54,14 +54,12 @@
         <div class="nav-2">
             <div class="top-nav">
                 <input id="menu-toggle" type="checkbox" />
-                <label class='menu-button-container' for="menu-toggle">
-                <div class='menu-button'></div>
-              </label>
+                <label class='menu-button-container' for="menu-toggle"></label>
                 <ul class="menu">
                   <li><a href="{% url 'Coverage' %}">Class coverage</a></li>
                   <li><a href="/success#pricing_plans">Pricing</a></li>
                 </ul>
-              </div>
+            </div>
             <div class="nav-main">
                 <ul>
                     <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -119,7 +117,7 @@
             <div class="section-4-1">
                 <div class="section-main">
                     <h2 class="dashboard">Flexible Plans for Everyone</h2>
-                    <p>Our plans are made for eveyone. Whether you're just starting out with Yoga, or have been in there for a long time, we have a plan that's right for you.</p>
+                    <p>Our plans are made for everyone. Whether you're just starting out with Yoga, or have been in there for a long time, we have a plan that's right for you.</p>
                 </div>
             </div>
             <div class="section-4-2">
@@ -127,15 +125,14 @@
                     <div class="pricing-body">
                         <div class="pricing-body-header" id="pricing_plans">
                             <div class="pricing-checkbox">
-                                <span for="pricing__monthly">Billed Monthly</span>
+                                <span>Billed Monthly</span>
                                 <div id="custom-checkbox">
                                     <div class="quarter"></div>
                                 </div>
-                                <span for="pricing__quarterly">Billed Quarterly</span>
+                                <span>Billed Quarterly</span>
                             </div>
                         </div>
                         <div class="pricing-body-plans">
-
                             <div class="active" id="pricing__monthly__plan">
                                 <div>
                                     <div class="card">
@@ -294,9 +291,8 @@
         <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759872/kuldar-kalvik-799168-unsplash.webp" alt="">
       </div>
       <div class="blog-slider__content">
-<!--        <span class="blog-slider__code">26 December 2019</span>-->
         <div class="blog-slider__title">Introduction</div>
-        <div class="blog-slider__text" style="text-align: justify;">Jyoti Jhanwar is a certified Yoga instructor and founder of Yog Shalaa. She has completed her training from Rishikesh - Yoga capital of India.</div>
+        <div class="blog-slider__text" style="text-align: justify;">Jyoti Jhanwar is a certified Yoga instructor and founder of Yogshalaa. She has completed her training from Rishikesh - Yoga capital of India.</div>
         <a href="#content-2" class="blog-slider__button">READ MORE</a>
       </div>
     </div>
@@ -305,7 +301,6 @@
         <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/jason-leung-798979-unsplash.webp" alt="">
       </div>
       <div class="blog-slider__content" id="content-2">
-<!--        <span class="blog-slider__code">26 December 2019</span>-->
         <div class="blog-slider__title">Certification</div>
         <div class="blog-slider__text" style="text-align: justify;">She is Holding US alliance certificate. Also, she is certified from Ministry of Ayush, India</div>
         <a href="#content-3" class="blog-slider__button">READ MORE</a>
@@ -317,35 +312,32 @@
         <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1535759871/alessandro-capuzzi-799180-unsplash.webp" alt="">
       </div>
       <div class="blog-slider__content" id="content-3">
-<!--        <span class="blog-slider__code">26 December 2019</span>-->
         <div class="blog-slider__title">Vision</div>
         <div class="blog-slider__text" style="text-align: justify;">She is constantly working on directing
-            people towards achieving a healthy lifestyle. Yoga and Mediation are her way of bringing awareness and abate the sufferings.</div>
-<!--        <a href="#" class="blog-slider__button">READ MORE</a>-->
+            people towards achieving a healthy lifestyle. Yoga and Mediation are her way of bringing awareness and abate the sufferings.
+        </div>
       </div>
     </div>
-
   </div>
   <div class="blog-slider__pagination"></div>
             <script>
-                var swiper = new Swiper('.blog-slider', {
-      spaceBetween: 30,
-      effect: 'fade',
-      loop: true,
-      mousewheel: {
-        invert: false,
-      },
-      // autoHeight: true,
-      pagination: {
-        el: '.blog-slider__pagination',
-        clickable: true,
-      }
-    });
+                var swiper = new Swiper(
+                '.blog-slider', {
+                    spaceBetween: 30,
+                    effect: 'fade',
+                    loop: true,
+                    mousewheel: {
+                    invert: false,
+                    },
+                    // autoHeight: true,
+                    pagination: {
+                    el: '.blog-slider__pagination',
+                    clickable: true,
+                    }
+                });
             </script>
-</div>
-
+    </div>
     </main>
-
     <footer>
         <div class="footer-main">
             <div class="footer-content">
