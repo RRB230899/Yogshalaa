@@ -100,6 +100,7 @@ def registerView(request):
         phone_num = request.POST['phone_number']
         country_code = f"+{request.POST['country_code']}"
         phone_num = f'{country_code}{phone_num}'
+        print(phone_num)
         if Profile.objects.filter(mobile=phone_num).exists():
             red = redirect('User Landing Page')
             red.set_cookie('profile_verified', True, max_age=86400)
@@ -109,7 +110,8 @@ def registerView(request):
             username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
         otp = random.randint(1000, 9999)
         profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}', country_code=country_code)
-        OTPHandler(phone_num, otp).send_otp_via_message()
+        messageHandler = OTPHandler(phone_num, otp).send_otp_via_message()
+        print(messageHandler)
         red = redirect(f'otp/{profile.uid}/')
         red.set_cookie("can_otp_enter", True, max_age=600)
         return red
@@ -123,7 +125,8 @@ def verifyOTP(request, uid):
         resend_code = request.POST.get('resend_code', False)
         if resend_code:
             otp = random.randint(1000, 9999)
-            OTPHandler(profile.mobile, otp).send_otp_via_message()
+            messageHandler = OTPHandler(profile.mobile, otp).send_otp_via_message()
+            print(messageHandler)
             profile.otp = otp
             profile.save()
             red = HttpResponseRedirect(request.path_info)
