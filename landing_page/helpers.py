@@ -8,7 +8,7 @@ class OTPHandler:
     otp = None
     country_code = None
 
-    def __init__(self, phone_num, otp, country_code) -> None:
+    def __init__(self, phone_num, otp) -> None:
         self.phone_num = phone_num
         self.otp = otp
 
