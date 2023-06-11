@@ -97,7 +97,8 @@ def registerView(request):
     if request.method == 'POST':
         phone_num = request.POST['phone_number']
         country_code = f"+{request.POST['country_code']}"
-        if Profile.objects.filter(mobile=f'{country_code}{phone_num}').exists():
+        phone_num = f'{country_code}{phone_num}'
+        if Profile.objects.filter(mobile=phone_num).exists():
             red = redirect('User Landing Page')
             red.set_cookie('profile_verified', True, max_age=86400)
             return red
@@ -105,7 +106,7 @@ def registerView(request):
         user = User.objects.create(
             username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
         otp = random.randint(1000, 9999)
-        profile = Profile.objects.create(user=user, mobile=f'{country_code}{phone_num}', otp=f'{otp}', country_code=country_code)
+        profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}', country_code=country_code)
         OTPHandler(phone_num, otp, country_code).send_otp_via_message()
         red = redirect(f'otp/{profile.uid}/')
         red.set_cookie("can_otp_enter", True, max_age=600)
