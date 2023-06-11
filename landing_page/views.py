@@ -67,7 +67,7 @@ def create_checkout_session(request):
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        'price': 'price_1ND5HgSFpSBjt2aIBhsdfbQr',
+                        'price': 'price_1NDlHxSFpSBjt2aIFIxQjhmj',
                         'quantity': 1,
                     },
                 ],
@@ -148,10 +148,12 @@ def loginView(request):
     else:
         if request.method == 'POST':
             phone_number = request.POST.get('phone_number')
-            profile = Profile.objects.get(mobile=phone_number)
+            country_code = request.POST.get('country_code')
+            profile = Profile.objects.get(mobile=f'+{country_code}{phone_number}')
             user = profile.user
 
-            if Profile.objects.filter(mobile=phone_number).exists():
+            if Profile.objects.filter(mobile=f'+{country_code}{phone_number}').exists():
+                print("User already exists", f'+{country_code}{phone_number}')
                 login(request, user)
                 red = redirect('User Landing Page')
                 red.set_cookie('profile_verified', True, max_age=86400)
@@ -185,3 +187,7 @@ def signUpView(request):
     red = redirect('register')
     red.delete_cookie('profile_verified')
     return red
+
+
+def trialClassView(request):
+    return render(request, 'trial_new.html', {'data': 'something'})
