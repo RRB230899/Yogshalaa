@@ -15,11 +15,10 @@ class OTPHandler:
         client = Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
         message = client.messages.create(
             body=f'Hello from Yogshalaa :) Your OTP is: {self.otp}. Your OTP is valid for 10 minutes.',
-            from_=f'{settings.TWILIO_PHONE_NUMBER}',
+            from_=f'+{settings.TWILIO_PHONE_NUMBER}',
             to=f'{self.phone_num}')
-        print(f'Hello from Yogshalaa :) Your OTP for {self.phone_num} is {self.otp}. '
-              f'This OTP is valid for 10 minutes only.')
-        return message
+        print(f'Auth token: {settings.AUTH_TOKEN}. Hello from Yogshalaa :) Your OTP for {self.phone_num} is {self.otp}. '
+              f'This OTP is valid for 10 minutes only. From +{settings.TWILIO_PHONE_NUMBER}')
 
     # def send_otp_via_whatsapp(self):
     #     client = Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
