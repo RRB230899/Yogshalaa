@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <title>Sign up with Yogshalaa today</title>
+    {% load static %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/trial.css' %}">
+    <style>
+        .container {
+          padding: 0;
+          margin-left: auto;
+          margin-right: inherit;
+          max-width: 100%;
+        }
+        @media screen and (min-width: 768px) {
+            .container {
+                max-width: 100%;
+            }
+            .carousel-item.active {
+                display: flex !important;
+            }
+        }
+        @media screen and (min-width: 576px) {
+            .container {
+                max-width: 100%;
+            }
+            .carousel-item.active {
+                display: flex !important;
+            }
+        }
+        .btn-click {
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25) !important;
+        }
+        .btn-unclick {
+            box-shadow: none
+        }
+        .btn:focus {
+            box-shadow: none;
+        }
+
+    </style>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval='false'>
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <div class="onboarding__logo-wrapper">
+                    <a href="/" class="onboarding__logo" aria-label="Yogshalaa logo. link to the homepage">
+                        <img src="{% static 'images/Logo-final.jpg' %}" width="80px" height="80px">
+                    </a>
+                </div>
+                <div class="onboarding__card onboarding__card--intro" data-slide="intro">
+                    <div class="onboarding__card-wrapper">
+                        <div class="onboarding__header-container">
+                            <div class="onboarding__header">
+                                <h1 class="onboarding__card-title f-medium-editorial">Let&rsquo;s personalize your
+                                    practice.</h1>
+                                <p class="onboarding__instructions">Help us create a routine that fits your needs by
+                                    answering few quick questions.</p>
+                                <div style="display: flex;">
+                                    <button class="btn btn--solid-dark onboarding-carousel__next-btn"
+                                            style="height: 50px; width: 150px;">Let's do it!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="split-image-layout__image-container split-image-layout__image-container--no-logo split-image-layout__image-container--gray">
+                    <div class="split-image-layout__image split-image-layout__image--intro">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="onboarding__header-container onboarding__header-container--top">
+                    <div class="onboarding__header">
+                        <h1 class="onboarding__card-title f-medium-editorial">What would you like to focus on?</h1>
+                        <p class="onboarding__instructions">Pick as many as you&#x27;d like.</p>
+                        <div style="display: flex;">
+                            <button class="btn btn--solid-dark onboarding-carousel__next-btn"
+                                    style="height: 50px; width: 150px;">Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="onboarding__content-container">
+                    <div class="onboarding__focus-container">
+                        <div class="onboarding__focus">
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="sleep" id="sleep" onclick="addClassFunction('sleep')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/sleep.svg"
+                                         alt="">
+                                    <span>Sleep</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="core" id="core" onclick="addClassFunction('core')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/core.svg" alt="">
+                                    <span>Core</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="strength" id="strength" onclick="addClassFunction('strength')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/strength.svg"
+                                         alt="">
+                                    <span>Strength</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="stretch" id="flexibility" onclick="addClassFunction('flexibility')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/stretch.svg"
+                                         alt="">
+                                    <span>Flexibility</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="calm" id="calm" onclick="addClassFunction('calm')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/calm.svg" alt="">
+                                    <span>Calm</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="workouts" id="workout" onclick="addClassFunction('workout')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/workouts.svg"
+                                         alt="">
+                                    <span>Workout</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="basics" id="basics" onclick="addClassFunction('basics')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/basics.svg"
+                                         alt="">
+                                    <span>The Basics</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="prenatal" id="health" onclick="addClassFunction('health')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/prenatal.svg"
+                                         alt="">
+                                    <span>Emotional Health & Recovery</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="postnatal" id="focus" onclick="addClassFunction('focus')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/postnatal.svg"
+                                         alt="">
+                                    <span>Focus & Productivity</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="back" id="backCare" onclick="addClassFunction('backCare')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/back.svg" alt="">
+                                    <span>Back Care</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="women" id="womenHealth" onclick="addClassFunction('womenHealth')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/women.svg"
+                                         alt="">
+                                    <span>Women&#x27;s Health</span>
+                                </button>
+                            </div>
+                            <div class="onboarding__focus-item-container">
+                                <button type="button" class="onboarding__focus-item card-picker" data-type="outcomes"
+                                        data-id="productivity" id="productivity"
+                                        onclick="addClassFunction('productivity')">
+                                    <img class="onboarding__focus--icon"
+                                         src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/productivity.svg"
+                                         alt="">
+                                    <span>Focus and Productivity</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="onboarding__card-wrapper">
+                    <div class="onboarding__header-container onboarding__header-container--top">
+                        <div class="onboarding__header">
+                            <div>
+                                <h1 class="onboarding__card-title f-medium-editorial">Great. Tell us which styles you&#x27;d
+                                    like to practice.</h1>
+                                <p class="onboarding__instructions">Feel free to select more than one.</p>
+                                <div style="display: flex;">
+                                    <button class="btn btn--solid-dark onboarding-carousel__next-btn"
+                                            style="height: 50px; width: 150px;">Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="onboarding__content-container">
+                        <div class="onboarding__styles-container">
+                            <div class="onboarding__styles">
+                                <button type="button" class="onboarding__style btn card-picker" data-type="styles"
+                                        data-id="26" id="ashtanga" onclick="addClassFunction('ashtanga')">
+                                    Ashtanga
+                                </button>
+                                <button type="button" class="onboarding__style btn card-picker" data-type="styles"
+                                        data-id="45" id="lecture" onclick="addClassFunction('lecture')">
+                                    Lecture
+                                </button>
+                                <button type="button" class="onboarding__style btn card-picker" data-type="styles"
+                                        data-id="39" id="hatha" onclick="addClassFunction('hatha')">
+                                    Hatha
+                                </button>
+                                <button type="button" class="onboarding__style btn card-picker" data-type="styles"
+                                        data-id="51" id="yogaConditioning"
+                                        onclick="addClassFunction('yogaConditioning')">
+                                    Yoga Conditioning
+                                </button>
+                                <button type="button" class="onboarding__style btn card-picker" data-type="styles"
+                                        data-id="31" id="partnerYoga" onclick="addClassFunction('partnerYoga')">
+                                    Partner Yoga
+                                </button>
+                                <button type="button" class="onboarding__style btn card-picker" data-type="styles"
+                                        data-id="40" id="restorative" onclick="addClassFunction('restorative')">
+                                    Restorative
+                                </button>
+                                <button type="button" class="onboarding__style btn card-picker" data-type="styles"
+                                        data-id="14" id="vinyasa" onclick="addClassFunction('vinyasa')">
+                                    Vinyasa Flow
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="onboarding__card-wrapper">
+                    <div class="onboarding__header-container">
+                        <div class="onboarding__header onboarding__header--vertical-padding">
+                            <h1 class="onboarding__card-title onboarding__card-title--wide f-medium-editorial">We&rsquo;re
+                                so pleased to meet you.</h1>
+                            <h2>Welcome Aboard!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(".onboarding-carousel__next-btn").click(() => $(".carousel").carousel("next"));
+    function addClassFunction(id) {
+        btn = document.getElementById(id);
+        if (!btn.classList.contains('btn-click')){
+            btn.classList.add('btn-click')
+        }
+        else {
+            btn.classList.remove('btn-click')
+        }
+    }
+
+</script>
+</body>
+</html>

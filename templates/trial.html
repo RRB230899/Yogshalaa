@@ -1,0 +1,283 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<title>Sign up with Yogshalaa today</title>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+	{% load static %}
+	<link rel="stylesheet" href="https://d28z2mkpklymta.cloudfront.net/13.22.1/css/marketing.css" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body class="preload no-js">
+	<section class="onboarding__container ">
+		<div class="onboarding-carousel__top-nav onboarding-carousel__top-nav--gray" data-intro-layout="gray">
+			<button class="onboarding-carousel__prev-btn f-link--btn hide" aria-label="Back">
+				<i class="icon--arrow-left icon--small"></i>
+			</button>
+			<div class="onboarding__logo-wrapper">
+				<a href="/" class="onboarding__logo" aria-label="Yogshalaa logo. link to the homepage">
+					<img src="{% static 'images/Logo-final.jpg' %}" width="80px" height="80px">
+				</a>
+			</div>
+			<div class="onboarding__dots owl-dots hide">
+				<div class="owl-dot active"><span></span></div>
+				<div class="owl-dot"><span></span></div>
+				<div class="owl-dot"><span></span></div>
+			</div>
+		</div>
+		<div class="onboarding__logo-wrapper">
+			<a href="/" class="onboarding__logo" aria-label="Yogshalaa logo. link to the homepage">
+					<img src="{% static 'images/Logo-final.jpg' %}" width="80px" height="80px">
+			</a>
+		</div>
+		<div class="onboarding-carousel owl-carousel">
+			<div class="onboarding-carousel__cards">
+					<div class="onboarding__card onboarding__card--intro" data-slide="intro">
+						<div class="onboarding__card-wrapper">
+							<div class="onboarding__header-container">
+								<div class="onboarding__header">
+									<h1 class="onboarding__card-title f-medium-editorial">Let&rsquo;s personalize your practice.</h1>
+									<p class="onboarding__instructions">Help us create a routine that fits your needs by answering few quick questions.</p>
+									<div style="display: flex;">
+									<button class="btn btn--solid-dark onboarding-carousel__next-btn"
+											style="height: 50px; width: 150px;" >Let's do it!</button>
+										<button type="button" class="f-link f-link--no-underline f-link--btn f-medium onboarding-carousel__skip onboarding-carousel__skip--desktop" style="height: 50px;"></button>
+									</div>
+								</div>
+							</div>
+							<div class="split-image-layout__image-container split-image-layout__image-container--no-logo split-image-layout__image-container--gray">
+								<div class="split-image-layout__image split-image-layout__image--intro">
+								</div>
+							</div>
+						</div>
+						<div class="onboarding__value-props hide">
+							<div class="onboarding__value-props-nav">
+								<button class="onboarding__value-props-prev-btn f-link--btn" aria-label="Back">
+									<i class="icon--arrow-left icon--small"></i>
+								</button>
+							</div>
+							<div class="onboarding__value-props-container">
+								<h1 class="f-medium-editorial">Start your free 2-days trial today</h1>
+								<button class="btn btn--solid-dark onboarding-carousel__continue-value-props">Continue</button>
+							</div>
+						</div>
+					</div>
+					<a href="#div_outcomes" id="outcomes">Link text here</a>
+					<div class="onboarding__card onboarding__card--focus onboarding__card--violet hide" data-slide="outcomes" id="div_outcomes">
+							<div class="onboarding__header-container onboarding__header-container--top">
+								<div class="onboarding__header">
+									<h1 class="onboarding__card-title f-medium-editorial">What would you like to focus on?</h1>
+									<p class="onboarding__instructions">Pick as many as you&#x27;d like.</p>
+									<div class="onboarding__checkbox">
+										<input type="checkbox" id="specific-style" name="specific-style">
+										<label class="onboarding__checkbox-label" for="specific-style">I&#x27;m here for a specific style</label>
+									</div>
+								</div>
+							</div>
+							<div class="onboarding__content-container">
+								<div class="onboarding__focus-container">
+									<div class="onboarding__focus">
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="sleep">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/sleep.svg" alt="">
+													<span>Sleep</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="core">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/core.svg" alt="">
+													<span>Core</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="strength">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/strength.svg" alt="">
+													<span>Strength</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="stretch">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/stretch.svg" alt="">
+													<span>Flexibility</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="calm">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/calm.svg" alt="">
+													<span>Calm</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="workouts">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/workouts.svg" alt="">
+													<span>Workout</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="basics">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/basics.svg" alt="">
+													<span>The Basics</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="prenatal">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/prenatal.svg" alt="">
+													<span>Emotional Health & Recovery</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="postnatal">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/postnatal.svg" alt="">
+													<span>Focus & Productivity</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="back">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/back.svg" alt="">
+													<span>Back Care</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="women">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/women.svg" alt="">
+													<span>Women&#x27;s Health</span>
+												</button>
+											</div>
+											<div class="onboarding__focus-item-container">
+												<button type="button" class="onboarding__focus-item card-picker" data-type="outcomes" data-id="productivity">
+													<img class="onboarding__focus--icon" src="https://ddjv1g7udgx6x.cloudfront.net/onboarding/outcomes/productivity.svg" alt="">
+													<span>Focus and Productivity</span>
+												</button>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="onboarding__card onboarding__card--styles onboarding__card--violet hide" data-slide="styles">
+						<div class="onboarding__card-wrapper">
+							<div class="onboarding__header-container onboarding__header-container--top">
+								<div class="onboarding__header">
+									<div class="onboarding__checkbox">
+									<h1 class="onboarding__card-title f-medium-editorial">Great. Tell us which styles you&#x27;d like to practice.</h1>
+									<p class="onboarding__instructions">Feel free to select more than one.</p>
+								</div>
+							</div>
+							<div class="onboarding__content-container">
+								<div class="onboarding__styles-container">
+									<div class="onboarding__styles">
+											<button type="button" class="onboarding__style btn card-picker" data-type="styles" data-id="26">
+												Ashtanga
+											</button>
+											<button type="button" class="onboarding__style btn card-picker" data-type="styles" data-id="45">
+												Lecture
+											</button>
+											<button type="button" class="onboarding__style btn card-picker" data-type="styles" data-id="39">
+												Hatha
+											</button>
+											<button type="button" class="onboarding__style btn card-picker" data-type="styles" data-id="51">
+												Yoga Conditioning
+											</button>
+											<button type="button" class="onboarding__style btn card-picker" data-type="styles" data-id="31">
+												Partner Yoga
+											</button>
+											<button type="button" class="onboarding__style btn card-picker" data-type="styles" data-id="40">
+												Restorative
+											</button>
+											<button type="button" class="onboarding__style btn card-picker" data-type="styles" data-id="14">
+												Vinyasa Flow
+											</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="onboarding__card onboarding__card--experience onboarding__card--white hide" data-slide="priorExperiences">
+						<div class="onboarding__card-wrapper">
+							<div class="onboarding__header-container onboarding__header-container--top">
+								<div class="onboarding__header">
+									<h1 class="onboarding__card-title onboarding__card-title--wide f-medium-editorial">How many classes have you taken?</h1>
+									<p class="onboarding__instructions">Move the slider to your best estimate for each practice.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="onboarding__card onboarding__card--experience onboarding__card--white hide" data-slide="priorExperiences">
+						<div class="onboarding__card-wrapper">
+							<div class="onboarding__header-container onboarding__header-container--top">
+								<div class="onboarding__header">
+								</div>
+							</div>
+
+							<div class="onboarding__content-container">
+								<div class="onboarding__experience onboarding__card-container">
+									<div class="range-slider__slider-wrapper">
+										<div class="range-slider__slider-categories">
+												<div class="range-slider__slider-category">
+													Yoga
+												</div>
+										</div>
+										<div class="range-slider__slider-container">
+											<div class="range-slider__slider-graph-container range-slider__slider-graph-container--rows">
+												<div class="range-slider__graph-row-wrapper">
+													<div class="range-slider__slider-label"></div>
+													<div class="range-slider__slider-graph-line"></div>
+												</div>
+													<div class="range-slider__graph-row-wrapper">
+														<div class="range-slider__slider-label">
+															0-5 Classes
+														</div>
+														<div class="range-slider__slider-graph-line"></div>
+													</div>
+													<div class="range-slider__graph-row-wrapper">
+														<div class="range-slider__slider-label">
+															5-20 Classes
+														</div>
+														<div class="range-slider__slider-graph-line"></div>
+													</div>
+													<div class="range-slider__graph-row-wrapper">
+														<div class="range-slider__slider-label">
+															20-50 Classes
+														</div>
+														<div class="range-slider__slider-graph-line"></div>
+													</div>
+													<div class="range-slider__graph-row-wrapper">
+														<div class="range-slider__slider-label">
+															50+ Classes
+														</div>
+														<div class="range-slider__slider-graph-line"></div>
+													</div>
+											</div>
+											<div class="range-slider__slider-graph-container">
+													<div class="range-slider range-slider--onboarding">
+														<div class="noUi-target" data-modality="1"></div>
+													</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="onboarding__card onboarding__card--preferences onboarding__card--scroll-y hide" data-slide="save-preferences">
+						<div class="onboarding__card-wrapper">
+							<div class="onboarding__header-container">
+								<div class="onboarding__header onboarding__header--vertical-padding">
+									<h1 class="onboarding__card-title onboarding__card-title--wide f-medium-editorial">We&rsquo;re so pleased to meet you.</h1>
+						</div>
+					</div>
+			</div>
+		</div>
+			</div>
+		</div>
+		</div>
+	</section>
+</body>
+</html>
