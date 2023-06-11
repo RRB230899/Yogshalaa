@@ -88,7 +88,9 @@ def success_page(request):
         return render(request, 'success.html', {'data': 'Something'})
     else:
         logout(request)
-        return loginView(request)
+        red = redirect('login')
+        red.delete_cookie('profile_verified')
+        return red
 
 
 def registerView(request):
