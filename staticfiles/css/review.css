@@ -73,7 +73,7 @@
 .carousel-control-next-icon, .carousel-control-prev-icon {
 	background-color: rgba(175,175,212,.8);
 }
-@media (max-width: 767px)
+@media screen and (max-width: 767px)
 {
     .section-class {
         height: 120vh;
