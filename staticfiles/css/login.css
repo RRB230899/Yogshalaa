@@ -20,7 +20,7 @@
 	 transform: translate(-50%, -50%);
 	 display: block;
 	 width: 100%;
-	 max-width: 400px;
+	 max-width: 75%;
 	 background-color: #fff;
 	 margin: 0;
 	 padding: 2.25em;
@@ -80,7 +80,7 @@
 	 border-radius: 4px;
 	 -webkit-appearance: none;
 	 box-sizing: border-box;
-	 width: 100%;
+	 width: 80%;
 	 height: 65px;
 	 font-size: 1.55em;
 	 color: #353538;
@@ -140,3 +140,9 @@
 		 opacity: 1;
 	}
 
+.iti--container {
+    max-height: 250px !important;
+    width: 50% !important;
+    top: 58% !important;
+    left: 16% !important;
+}

@@ -134,11 +134,12 @@
 	const phoneInputField = document.querySelector("#full_name");
    	const phoneInput = window.intlTelInput(phoneInputField, {
    	onlyCountries: ['gb', 'in', 'us', 'nl'],
-	initialCountry: 'gb',
+	initialCountry: 'in',
      utilsScript:
        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
      separateDialCode: true,
    });
+   var isValid = phoneInput.isValidNumber();
    function validate(){
    	console.log("Function executed")
    	var phn_no = phoneInput.getSelectedCountryData();
