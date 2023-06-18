@@ -1,11 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.conf import settings
 from django.http import HttpResponseRedirect
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from .models import *
 from .helpers import OTPHandler
 import stripe
@@ -140,7 +137,6 @@ def success_page(request):
 
 def registerView(request):
     if request.COOKIES.get('profile_verified') is not None:
-        print('User redirected to Dashboard')
         return redirect('User Landing Page')
     if request.method == 'POST':
         try:
