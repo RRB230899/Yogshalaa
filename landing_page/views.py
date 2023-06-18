@@ -22,8 +22,10 @@ stripe.api_key = settings.SECRET_KEY_PROD
 def create_checkout_session(request):
     checkout_session = None
     try:
+        country_code = '+44'
         if request.user.is_authenticated:
             profile = Profile.objects.get(user=request.user)
+            country_code = profile.country_code
         YOUR_DOMAIN = "https://yogshalaa.in/"
         # if request.method == 'POST':
         if 'Weekend flow' in request.POST:  # For Weekend Flow
@@ -31,7 +33,9 @@ def create_checkout_session(request):
                 line_items=[
                     {
                         # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                        'price': 'price_1NDlGVSFpSBjt2aIQHiDadJP',  # Can be created on Stripe Dashboard
+                        'price': ('price_1NDlGVSFpSBjt2aIQHiDadJP' if country_code == '+44'
+                                  else 'price_1NKIbOSFpSBjt2aIjJK9DxBb'),
+                        # Can be created on Stripe Dashboard
                         'quantity': 1,
                     },
                 ],
@@ -43,7 +47,8 @@ def create_checkout_session(request):
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        'price': 'price_1NDlHhSFpSBjt2aIHFT5Me9E',
+                        'price': ('price_1NDlHhSFpSBjt2aIHFT5Me9E' if country_code == '+44'
+                                  else 'price_1NKIX5SFpSBjt2aIdz69Guxc'),
                         'quantity': 1,
                     },
                 ],
@@ -56,7 +61,8 @@ def create_checkout_session(request):
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        'price': 'price_1NDlHoSFpSBjt2aITL7JDNje',
+                        'price': ('price_1NDlHoSFpSBjt2aITL7JDNje' if country_code == '+44'
+                                  else 'price_1NKIRvSFpSBjt2aIW59sbRqS'),
                         'quantity': 1,
                     },
                 ],
@@ -69,7 +75,8 @@ def create_checkout_session(request):
             checkout_session = stripe.checkout.Session.create(
                 line_items=[
                     {
-                        'price': 'price_1NDlHxSFpSBjt2aIFIxQjhmj',
+                        'price': ('price_1NDlHxSFpSBjt2aIFIxQjhmj' if country_code == '+44'
+                                  else 'price_1NKIYQSFpSBjt2aIj5dXRFUp'),
                         'quantity': 1,
                     },
                 ],
