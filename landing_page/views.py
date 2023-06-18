@@ -130,7 +130,7 @@ def success_page(request):
             return red
     else:
         logout(request)
-        red = redirect('register')
+        red = redirect('login')
         red.delete_cookie('profile_verified')
         return red
 
