@@ -1,4 +1,3 @@
-import { gsap } from "/static/js/node_modules/gsap/all.js";
 let xPos = 0;
 
 gsap.timeline()

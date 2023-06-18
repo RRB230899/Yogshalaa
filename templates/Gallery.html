@@ -8,7 +8,9 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="module" src="{% static 'js/gallery.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+            integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <h1 style="color: #fff; text-align: center;">Yogshalaa Photo Gallery</h1>
@@ -32,5 +34,6 @@
 </div>
 
 </div>
+<script src="{% static 'js/gallery.js' %}"></script>
 </body>
 </html>
