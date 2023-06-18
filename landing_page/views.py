@@ -112,7 +112,7 @@ def success_page(request):
                     priceDict['priceRegularMonthly'] = 99
                     priceDict['priceRegularQuarterly'] = 249
                     priceDict['pricePersonalizedSessions'] = 14.99
-                    priceDict['priceWeekendFlow'] = 6.99
+                    priceDict['priceWeekendFlow'] = 13.99
             return render(request, 'success.html', {'priceRegularMonthly': priceDict['priceRegularMonthly'],
                                                     'priceRegularQuarterly': priceDict['priceRegularQuarterly'],
                                                     'pricePersonalizedSessions': priceDict['pricePersonalizedSessions'],
