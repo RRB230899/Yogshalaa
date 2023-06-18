@@ -62,6 +62,9 @@
         </div>
         <input type="submit" value="login">
     </form>
+    {% for message in messages %}
+		<p id="messages">{{message}}</p>
+	{% endfor %}
     {% endblock includes %}
     <script src="{% static 'js/timer.js' %}"></script>
 </body>

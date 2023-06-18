@@ -6,7 +6,7 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import Profile
+from .models import *
 from .helpers import OTPHandler
 import stripe
 import random
@@ -22,6 +22,8 @@ stripe.api_key = settings.SECRET_KEY_PROD
 def create_checkout_session(request):
     checkout_session = None
     try:
+        if request.user.is_authenticated:
+            profile = Profile.objects.get(user=request.user)
         YOUR_DOMAIN = "https://yogshalaa.in/"
         # if request.method == 'POST':
         if 'Weekend flow' in request.POST:  # For Weekend Flow
@@ -85,7 +87,36 @@ def create_checkout_session(request):
 # User Dashboard
 def success_page(request):
     if request.COOKIES.get('profile_verified') is not None:
-        return render(request, 'success.html', {'data': 'Something'})
+        try:
+            priceDict = {'priceRegularMonthly': 0, 'priceRegularQuarterly': 0,
+                         'pricePersonalizedSessions': 0, 'priceWeekendFlow': 0}
+            currency = '£'
+            discount = '18.8%'
+            if request.user.is_authenticated:
+                profile = Profile.objects.get(user=request.user)
+                if profile.country_code == '+91':
+                    priceDict['priceRegularMonthly'] = 1500
+                    priceDict['priceRegularQuarterly'] = 4000
+                    priceDict['pricePersonalizedSessions'] = 500
+                    priceDict['priceWeekendFlow'] = 500
+                    currency = '₹'
+                    discount = '11.11%'
+                else:
+                    priceDict['priceRegularMonthly'] = 99
+                    priceDict['priceRegularQuarterly'] = 249
+                    priceDict['pricePersonalizedSessions'] = 14.99
+                    priceDict['priceWeekendFlow'] = 6.99
+            return render(request, 'success.html', {'priceRegularMonthly': priceDict['priceRegularMonthly'],
+                                                    'priceRegularQuarterly': priceDict['priceRegularQuarterly'],
+                                                    'pricePersonalizedSessions': priceDict['pricePersonalizedSessions'],
+                                                    'priceWeekendFlow': priceDict['priceWeekendFlow'],
+                                                    'currencySymbol': currency,
+                                                    'discount': discount
+                                                    })
+        except Exception as e:
+            print(e)
+            logout(request)
+            return render(request, 'register.html', {})
     else:
         logout(request)
         red = redirect('login')
@@ -121,8 +152,16 @@ def registerView(request):
 def verifyOTP(request, uid):
     # uid = Profile.uid
     if request.method == "POST":
-        profile = Profile.objects.get(uid=uid)
-        resend_code = request.POST.get('resend_code', False)
+        try:
+            profile = Profile.objects.get(uid=uid)
+        except Exception as e:
+            messages.info(request, f"{e}: The given profile doesn't exist. Please register.")
+            return render(request, "register.html", {'data': 'something'})
+        try:
+            resend_code = request.POST.get('resend_code', False)
+        except Exception as e:
+            messages.info(request, f"Please wait for sometime.")
+            return render(request, f'otp/{profile.uid}')
         if resend_code:
             otp = random.randint(1000, 9999)
             messageHandler = OTPHandler(profile.mobile, otp).send_otp_via_message()
@@ -155,7 +194,11 @@ def loginView(request):
         if request.method == 'POST':
             phone_number = request.POST.get('phone_number')
             country_code = request.POST.get('country_code')
-            profile = Profile.objects.get(mobile=f'+{country_code}{phone_number}')
+            try:
+                profile = Profile.objects.get(mobile=f'+{country_code}{phone_number}')
+            except Exception as e:
+                messages.info(request, 'Phone number entered is incorrect')
+                return render(request, 'login.html', {'data': 'something'})
             user = profile.user
 
             if Profile.objects.filter(mobile=f'+{country_code}{phone_number}').exists():
