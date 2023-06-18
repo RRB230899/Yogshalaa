@@ -94,14 +94,19 @@ def create_checkout_session(request):
 # User Dashboard
 def success_page(request):
     if request.COOKIES.get('profile_verified') is not None:
+        print('1')
         try:
+            print('2')
             priceDict = {'priceRegularMonthly': 0, 'priceRegularQuarterly': 0,
                          'pricePersonalizedSessions': 0, 'priceWeekendFlow': 0}
             currency = '£'
             discount = '18.8%'
             if request.user.is_authenticated:
+                print(request.user, 'authenticated')
                 profile = Profile.objects.get(user=request.user)
+                print(profile)
                 if profile.country_code == '+91':
+                    print('India')
                     priceDict['priceRegularMonthly'] = 1500
                     priceDict['priceRegularQuarterly'] = 4000
                     priceDict['pricePersonalizedSessions'] = 500
@@ -121,38 +126,52 @@ def success_page(request):
                                                     'discount': discount
                                                     })
         except Exception as e:
-            print(e)
+            print(e, 'Another exception')
             logout(request)
-            return render(request, 'register.html', {})
+            red = redirect('register')
+            red.delete_cookie('profile_verified')
+            return red
     else:
         logout(request)
-        red = redirect('login')
+        red = redirect('register')
         red.delete_cookie('profile_verified')
         return red
 
 
 def registerView(request):
     if request.COOKIES.get('profile_verified') is not None:
+        print('User redirected to Dashboard')
         return redirect('User Landing Page')
     if request.method == 'POST':
-        phone_num = request.POST['phone_number']
-        country_code = f"+{request.POST['country_code']}"
-        phone_num = f'{country_code}{phone_num}'
-        print(phone_num)
+        try:
+            phone_num = request.POST['phone_number']
+            country_code = f"+{request.POST['country_code']}"
+            phone_num = f'{country_code}{phone_num}'
+        except Exception as e:
+            print(str(e), 'exception occurred')
+            return render(request, 'register.html', {})
         if Profile.objects.filter(mobile=phone_num).exists():
+            profile = Profile.objects.get(mobile=phone_num)
+            user = User.objects.get(username=profile.user)
+            login(request, user)
             red = redirect('User Landing Page')
             red.set_cookie('profile_verified', True, max_age=86400)
             return red
 
-        user = User.objects.create(
-            username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
-        otp = random.randint(1000, 9999)
-        profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}', country_code=country_code)
-        messageHandler = OTPHandler(phone_num, otp).send_otp_via_message()
-        print(messageHandler)
-        red = redirect(f'otp/{profile.uid}/')
-        red.set_cookie("can_otp_enter", True, max_age=600)
-        return red
+        try:
+            user = User.objects.create(
+                username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
+            print(user)
+            otp = random.randint(1000, 9999)
+            profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}', country_code=country_code)
+            messageHandler = OTPHandler(phone_num, otp).send_otp_via_message()
+            print(messageHandler)
+            red = redirect(f'otp/{profile.uid}/')
+            red.set_cookie("can_otp_enter", True, max_age=600)
+            return red
+        except Exception as e:
+            print(str(e))
+            return render(request, 'register.html', {})
     return render(request, 'register.html')
 
 
@@ -184,6 +203,7 @@ def verifyOTP(request, uid):
                 login(request, user)
                 red = redirect("User Landing Page")
                 red.set_cookie('profile_verified', True, max_age=86400)
+                red.delete_cookie('can_otp_enter')
                 return red
             return HttpResponse("wrong otp")
         return HttpResponse("10 minutes passed")
