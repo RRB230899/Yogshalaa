@@ -98,6 +98,8 @@ def success_page(request):
                          'pricePersonalizedSessions': 0, 'priceWeekendFlow': 0}
             currency = '£'
             discount = '18.8%'
+            timing1 = ''
+            timing2 = ''
             if request.user.is_authenticated:
                 print(request.user, 'authenticated')
                 profile = Profile.objects.get(user=request.user)
@@ -110,17 +112,21 @@ def success_page(request):
                     priceDict['priceWeekendFlow'] = 500
                     currency = '₹'
                     discount = '11.11%'
+                    timing1 = '(6:15-7-15 A.M. (I.S.T.))'
+                    timing2 = '(6-7 P.M. (I.S.T.))'
                 else:
                     priceDict['priceRegularMonthly'] = 99
                     priceDict['priceRegularQuarterly'] = 249
                     priceDict['pricePersonalizedSessions'] = 14.99
                     priceDict['priceWeekendFlow'] = 13.99
+                    timing1 = '(6-7 A.M. (B.S.T.))'
+                    timing2 = '(7-8 A.M. (B.S.T.))'
             return render(request, 'success.html', {'priceRegularMonthly': priceDict['priceRegularMonthly'],
                                                     'priceRegularQuarterly': priceDict['priceRegularQuarterly'],
                                                     'pricePersonalizedSessions': priceDict['pricePersonalizedSessions'],
                                                     'priceWeekendFlow': priceDict['priceWeekendFlow'],
-                                                    'currencySymbol': currency,
-                                                    'discount': discount
+                                                    'currencySymbol': currency, 'discount': discount,
+                                                    'batchTimings1': timing1, 'batchTimings2': timing2
                                                     })
         except Exception as e:
             print(e, 'Another exception')
