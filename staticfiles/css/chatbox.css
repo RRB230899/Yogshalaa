@@ -15,17 +15,19 @@
     .container-chatbox{
         width: 200px !important;
         margin: 0;
+        margin-left: 10px;
+        margin-top: 60px;
     }
     .chatbox {
-        left: 75% !important;
-        height: 75% !important;
-        width: 100% !important;
+        left: 65% !important;
+        height: 80% !important;
+        width: 110% !important;
     }
     .messages{
-        width: 70% !important;
+        width: 60% !important;
     }
     .people{
-        width: 85% !important;
+        width: 80% !important;
         left: -30px !important;
     }
     .people .time{
@@ -35,14 +37,8 @@
         margin-left: 0 !important;
     }
     .people .preview{
-        margin-left: 0 !important;
-    }
-    .incoming{
-        width: 100% !important;
-    }
-    .outgoing{
-        width: 100% !important;
-        top: 30% !important;
+        margin-left: -10px !important;
+        font-size: .8em !important;
     }
     .typing .bubble{
         padding: 0 13px 9px 13px !important;
@@ -52,6 +48,21 @@
     }
     .profile-chatbox .avatar{
         left: 30px;
+    }
+    .lower{
+        margin-top: 110px !important;
+    }
+    .typing{
+        top: 78% !important;
+    }
+    .hide-name-mobile{
+        display: block !important;
+    }
+    .hide-name-desktop{
+        display: none !important;
+    }
+    .name2{
+        left: 28px !important;
     }
 }
 
@@ -90,7 +101,7 @@
 	 margin-top: 2px;
 }
  .people .preview {
-	 color: #79c7c5;
+	 color: #e3b04b;
 	 margin-left: 14px;
 	 font-size: 0.5em;
 }
@@ -115,13 +126,18 @@
  .name2 {
 	 position: absolute;
 	 top: 50px;
-	 left: 2px;
+	 left: 12px;
 	 text-transform: uppercase;
-	 color: #79c7c5;
+	 color: #222;
 	 font-size: 0.8em;
 	 letter-spacing: 2px;
 	 font-weight: 500;
 }
+
+.hide-name{
+    display: none;
+}
+
  .email {
 	 color: #f9fbff;
 	 font-size: 0.5em;
@@ -145,7 +161,7 @@
  .avatar {
 	 width: 35px;
 	 height: 35px;
-	 background: linear-gradient(to bottom left, #79c7c5 20%, #a1e2d9 100%);
+	 background: #e3b04b;
 	 border-radius: 50%;
 	 position: absolute;
 	 top: 11px;
@@ -179,7 +195,7 @@
 }
  .icons {
 	 position: absolute;
-	 color: #a1e2d9;
+	 color: #e3b04b;
 	 padding: 10px;
 	 top: 5px;
 	 right: 21px;
@@ -206,20 +222,21 @@
 	 width: 100%;
 	 opacity: 0.85;
 	 top: 60px;
-	 height: 80%;
+	 height: 100%;
 }
  .incoming {
 	 position: absolute;
-	 width: 50%;
+	 width: 100%;
 	 height: 100%;
 	 padding: 20px;
 }
  .incoming .bubble {
 	 background: #b2b2b2;
+	 float: left;
 }
  .typing {
 	 position: absolute;
-	 top: 67%;
+	 top: 75%;
 	 left: 20px;
 }
  .typing .bubble {
@@ -253,25 +270,26 @@
 	 border-radius: 20px;
 }
  .lower {
-	 margin-top: 45px;
+	 margin-top: 100px;
 }
  .outgoing {
 	 position: absolute;
 	 padding: 20px;
 	 right: 0;
-	 top: 15%;
-	 width: 50%;
+	 top: 1%;
+	 width: 100%;
 	 height: 100%;
 }
  .outgoing .bubble {
-	 background: #79c7c5;
+	 background: #e3b04b;
 	 float: right;
+	 color: #222;
 }
  .bottom-bar {
 	 position: absolute;
 	 width: 100%;
 	 height: 55px;
-	 bottom: 0;
+	 bottom: -65px;
 	 background: #f9fbff;
 	 border-radius: 0 0 10px 10px;
 }
@@ -279,7 +297,7 @@
 	 left: 0px;
 }
  .chatbox-input {
-	 padding: 7px;
+	 padding: 0 7px 7px 0;
 	 width: 74%;
 	 left: 5%;
 	 position: absolute;
@@ -289,7 +307,7 @@
 	 color: #79c7c5;
 }
  .chatbox-input::placeholder {
-	 color: #a1e2d9;
+	 color: #222;
 	 font-size: 12px;
 }
  .chatbox-input:focus {
@@ -300,12 +318,13 @@
 	 position: absolute;
 	 border: 0;
 	 font-size: 1em;
-	 color: #a1e2d9;
-	 top: 19px;
+	 color: #e3b04b;
 	 opacity: 0.8;
 	 right: 17px;
 	 cursor: pointer;
 	 outline: 0;
+	 width: 60px;
+	 height: 55px;
 }
  .chatbox-button:hover {
 	 transform: scale(1.1);
