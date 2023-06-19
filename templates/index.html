@@ -62,8 +62,6 @@
         html {
             scroll-behavior: smooth !important;
         }
-
-
     </style>
 </head>
 <body>
@@ -120,12 +118,18 @@
                         <div class="voldemort">
                             <div class="outgoing">
                                 <div class="bubble">Hi Yogshalaa.</div>
-                                <div class="bubble" style="text-align: right;">Anything special for International Yoga Day?</div>
+                                <div class="bubble" style="text-align: right;">Anything special for International Yoga
+                                    Day?
+                                </div>
                             </div>
                             <div class="incoming">
                                 <div class="bubble lower">Hey, glad you asked!</div>
-                                <div class="bubble" style="text-align: left;">We're offering an <b>Exclusive Free Class</b>.</div>
-                                <div class="bubble" style="text-align: left;">To register, click on the send button below.</div>
+                                <div class="bubble" style="text-align: left;">We're offering an <b>Exclusive Free
+                                    Class</b>.
+                                </div>
+                                <div class="bubble" style="text-align: left;">To register, click on the send button
+                                    below.
+                                </div>
                             </div>
                             <div class="typing">
                                 <div class="bubble">
@@ -140,8 +144,10 @@
                         <div class="chat">
                             <input class="chatbox-input" type="text"
                                    placeholder="That's amazing..."/>
-                            <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLScRdPsjkgraxSLSCc1fo4WxLU5JWSH96uW5T_l6lhXJ7Xt3vg/viewform?usp=sf_link">
-                                <button class="chatbox-button" type="submit"><i class="fas fa-paper-plane" style="font-size: 20px;"></i></button>
+                            <a target="_blank"
+                               href="https://docs.google.com/forms/d/e/1FAIpQLScRdPsjkgraxSLSCc1fo4WxLU5JWSH96uW5T_l6lhXJ7Xt3vg/viewform?usp=sf_link">
+                                <button class="chatbox-button" type="submit"><i class="fas fa-paper-plane"
+                                                                                style="font-size: 20px;"></i></button>
                             </a>
                         </div>
                     </div>
@@ -154,7 +160,13 @@
                 <ul class="people">
                     <li class="person focus">
                         <span class="title">Yogshalaa </span>
-                        <span class="time">2:50pm</span><br>
+                        <span class="time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-bell" viewBox="0 0 16 16">
+                              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                            </svg>
+                        </span>
+                        <br>
                         <span class="preview">An <b>Exclusive Free Yoga class</b> on International Yoga Day.</span>
                     </li>
                 </ul>
@@ -553,6 +565,7 @@
     $(".person").on('click', function(){
     $(this).toggleClass('focus').siblings().removeClass('focus');
  })
+
 
 
 </script>

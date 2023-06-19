@@ -91,17 +91,17 @@
 	 font-size: 0.7em;
 	 margin-left: 14px;
 	 letter-spacing: 1px;
-	 color: #777;
+	 color: #e3b04b;
+	 padding-right: 10px;
 }
  .people .time {
 	 font-size: 0.3em;
-	 color: #777;
+	 color: #e3b04b;
 	 position: absolute;
 	 right: 10px;
-	 margin-top: 2px;
 }
  .people .preview {
-	 color: #e3b04b;
+	 color: #222;
 	 margin-left: 14px;
 	 font-size: 0.5em;
 }
@@ -116,7 +116,6 @@
 }
  .focus {
 	 background: #f9fbff;
-	 margin-left: 1px;
 }
  .profile-chatbox {
 	 position: absolute;
