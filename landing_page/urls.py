@@ -14,5 +14,6 @@ urlpatterns = [
     path('cancel', cancelCheckoutSession, name='Checkout canceled'),
     path('signup', signUpView, name='signup'),
     path('trial', trialClassView, name='Start your free trial'),
+    path('registered/<str:phone_num>', alreadyRegisteredView, name='registered'),
     re_path(r'^my_def_in_view$', my_def_in_view, name='my_def_in_view'),
 ]

@@ -269,9 +269,18 @@ def signUpView(request):
     return red
 
 
+def alreadyRegisteredView(request, phone_num):
+    return render(request, 'trialRegistered.html', {'user': phone_num})
+
+
 def trialClassView(request):
     try:
         if request.user.is_authenticated:
+            user = request.user
+            profile = Profile.objects.get(user=user)
+            if TrialClassUserPreferences.objects.filter(profile=profile).exists():
+                print('In here')
+                return redirect(f'registered/{profile.mobile}')
             return render(request, 'trial_new.html', {'data': 'something'})
         else:
             print('Exception occurred while accessing trial class in try block')
