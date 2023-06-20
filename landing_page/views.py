@@ -293,8 +293,8 @@ def my_def_in_view(request):
             profile = Profile.objects.get(user=user)
             TrialClassUserPreferences.objects.create(profile=profile,
                                                      phone_num=profile.mobile,
-                                                     focusChoices=result['focus'],
-                                                     styleChoices=result['style'])
+                                                     focus_choices=result['focus'],
+                                                     style_choices=result['style'])
             data = {
                 # Data that you want to send to javascript function
                 'result': result
