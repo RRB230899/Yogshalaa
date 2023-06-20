@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import HttpResponseRedirect
 from .models import *
 from .helpers import OTPHandler
+from django.http import JsonResponse
 import stripe
 import random
 import uuid
@@ -189,7 +190,7 @@ def verifyOTP(request, uid):
             resend_code = request.POST.get('resend_code', False)
         except Exception as e:
             messages.info(request, f"Please wait for sometime.")
-            return render(request, f'otp/{profile.uid}')
+            return render(request, f'otp/{profile.uid}', {'error': str(e)})
         if resend_code:
             otp = random.randint(1000, 9999)
             messageHandler = OTPHandler(profile.mobile, otp).send_otp_via_message()
@@ -213,7 +214,6 @@ def verifyOTP(request, uid):
 
 
 def loginView(request):
-
     if request.user.is_authenticated:
         red = redirect('User Landing Page')
         red.set_cookie('profile_verified', True, max_age=86400)
@@ -227,7 +227,7 @@ def loginView(request):
                 profile = Profile.objects.get(mobile=f'+{country_code}{phone_number}')
             except Exception as e:
                 messages.info(request, 'Phone number entered is incorrect')
-                return render(request, 'login.html', {'data': 'something'})
+                return render(request, 'login.html', {'error': str(e)})
             user = profile.user
 
             if Profile.objects.filter(mobile=f'+{country_code}{phone_number}').exists():
@@ -270,4 +270,37 @@ def signUpView(request):
 
 
 def trialClassView(request):
-    return render(request, 'trial_new.html', {'data': 'something'})
+    try:
+        if request.user.is_authenticated:
+            return render(request, 'trial_new.html', {'data': 'something'})
+        else:
+            print('Exception occurred while accessing trial class in try block')
+            return redirect('login')
+    except Exception as e:
+        print('Exception occurred while accessing trial class', str(e))
+        return redirect('login')
+
+
+def my_def_in_view(request):
+    data = {}
+    if request.method == 'GET':
+        try:
+            result = dict(request.GET)
+            print(result, ': result.achieved')
+            # Any process that you want
+            # print(json.loads(result))
+            user = request.user
+            profile = Profile.objects.get(user=user)
+            TrialClassUserPreferences.objects.create(profile=profile,
+                                                     phone_num=profile.mobile,
+                                                     focusChoices=result['focus'],
+                                                     styleChoices=result['style'])
+            data = {
+                # Data that you want to send to javascript function
+                'result': result
+            }
+            print(data)
+        except Exception as e:
+            print('Exception occurred while getting trial class data;', str(e))
+            return redirect('Start your free trial')
+    return JsonResponse(data)

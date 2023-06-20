@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <title>Sign up with Yogshalaa today</title>
     {% load static %}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
             integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             crossorigin="anonymous"></script>
@@ -237,34 +235,20 @@
                         <div class="onboarding__styles-container">
                             <div class="onboarding__styles">
                                 <button type="button" class="onboarding__style btn card-picker" data-type="styles"
-                                        data-id="26" id="ashtanga" onclick="addClassFunction('ashtanga')">
-                                    Ashtanga
-                                </button>
+                                        data-id="26" id="ashtanga" onclick="addClassFunction('ashtanga')">Ashtanga</button>
                                 <button type="button" class="onboarding__style btn card-picker" data-type="styles"
-                                        data-id="45" id="lecture" onclick="addClassFunction('lecture')">
-                                    Lecture
-                                </button>
+                                        data-id="45" id="lecture" onclick="addClassFunction('lecture')">Lecture</button>
                                 <button type="button" class="onboarding__style btn card-picker" data-type="styles"
-                                        data-id="39" id="hatha" onclick="addClassFunction('hatha')">
-                                    Hatha
-                                </button>
+                                        data-id="39" id="hatha" onclick="addClassFunction('hatha')">Hatha</button>
                                 <button type="button" class="onboarding__style btn card-picker" data-type="styles"
                                         data-id="51" id="yogaConditioning"
-                                        onclick="addClassFunction('yogaConditioning')">
-                                    Yoga Conditioning
-                                </button>
+                                        onclick="addClassFunction('yogaConditioning')">Yoga Conditioning</button>
                                 <button type="button" class="onboarding__style btn card-picker" data-type="styles"
-                                        data-id="31" id="partnerYoga" onclick="addClassFunction('partnerYoga')">
-                                    Partner Yoga
-                                </button>
+                                        data-id="31" id="partnerYoga" onclick="addClassFunction('partnerYoga')">Partner Yoga</button>
                                 <button type="button" class="onboarding__style btn card-picker" data-type="styles"
-                                        data-id="40" id="restorative" onclick="addClassFunction('restorative')">
-                                    Restorative
-                                </button>
+                                        data-id="40" id="restorative" onclick="addClassFunction('restorative')">Restorative</button>
                                 <button type="button" class="onboarding__style btn card-picker" data-type="styles"
-                                        data-id="14" id="vinyasa" onclick="addClassFunction('vinyasa')">
-                                    Vinyasa Flow
-                                </button>
+                                        data-id="14" id="vinyasa" onclick="addClassFunction('vinyasa')">Vinyasa Flow</button>
                             </div>
                         </div>
                     </div>
@@ -278,7 +262,7 @@
                             style="font-size: 28px; line-height: 30px;">We&rsquo;re
                                 so pleased to meet you.</h1>
                             <h2 style="font-size: 1.2rem;">Welcome Aboard! Please head back to dashboard.</h2>
-                            <a href="{%url 'User Landing Page' %}" style="color: #007bff">Dashboard</a>
+                            <a href="{%url 'User Landing Page' %}" style="color: #007bff" id="dashboard">Dashboard</a>
                         </div>
                     </div>
                 </div>
@@ -287,7 +271,41 @@
     </div>
 </div>
 <script>
-    $(".onboarding-carousel__next-btn").click(() => $(".carousel").carousel("next"));
+    var len = 0;
+    var result = {
+            'focus': '',
+            'style': '',
+        };
+    $(".onboarding-carousel__next-btn").click(
+    function nextCarousel(){
+        $(".carousel").carousel("next");
+        var userPreference = document.getElementsByClassName('btn-click');
+        for (let node=len; node < userPreference.length; node++){
+            if (userPreference[node].getElementsByTagName('span')[0]){
+                result['focus'] += (node+1) + '. ' + userPreference[node].getElementsByTagName('span')[0].innerHTML + ' ';
+            }
+            else{
+                result['style'] += (node+1-len) + '. ' + userPreference[node].innerHTML + ' ';
+            }
+        }
+        len = userPreference.length;
+    });
+    $("#dashboard").click(function(e){
+        e.preventDefault();
+        $.ajax({
+        type: "GET",
+        url: '/my_def_in_view',
+        data: result,
+        dataType: "json",
+        success: function (data) {
+            // any process in data
+            console.log("Inside success function")
+            location.href = 'http://127.0.0.1:8000/success'
+        },
+        failure: function () {
+            alert("failure");
+        }
+    })});
     function addClassFunction(id) {
         btn = document.getElementById(id);
         if (!btn.classList.contains('btn-click')){
@@ -297,7 +315,6 @@
             btn.classList.remove('btn-click')
         }
     }
-
 </script>
 </body>
 </html>

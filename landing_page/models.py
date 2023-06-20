@@ -64,3 +64,12 @@ class Profile(models.Model):
     uid = models.CharField(default=uuid.uuid4, max_length=200, unique=True, null=True, blank=True)
     country_code = models.CharField(max_length=50, default='+91')
     objects = models.Manager()
+
+
+class TrialClassUserPreferences(models.Model):
+
+    profile = models.OneToOneField(Profile, on_delete=models.CASCADE, default=None, null=True)
+    phone_num = PhoneNumberField(default='', unique=True, null=False, blank=False)
+    focus_choices = models.CharField(default=None, null=True, max_length=200)
+    style_choices = models.CharField(default=None, null=True, max_length=200)
+    objects = models.Manager()
