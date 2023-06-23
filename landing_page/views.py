@@ -39,7 +39,7 @@ def create_checkout_session(request):
                 ],
                 mode='subscription',
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'success',
+                success_url=YOUR_DOMAIN + 'payment_successful',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
         elif 'Personalized flow' in request.POST:  # For personalized sessions
@@ -53,7 +53,7 @@ def create_checkout_session(request):
                 ],
                 mode='payment',
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'success',
+                success_url=YOUR_DOMAIN + 'payment_successful',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
 
@@ -68,7 +68,7 @@ def create_checkout_session(request):
                 ],
                 mode='payment',
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'success',
+                success_url=YOUR_DOMAIN + 'payment_successful',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
 
@@ -83,7 +83,7 @@ def create_checkout_session(request):
                 ],
                 mode='payment',
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'success',
+                success_url=YOUR_DOMAIN + 'payment_successful',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
         return redirect(checkout_session.url, code=303)
@@ -126,13 +126,13 @@ def success_page(request):
                     priceDict['priceWeekendFlow'] = 13.99
                     timing1 = '(6-7 A.M. (B.S.T.))'
                     timing2 = '(7-8 A.M. (B.S.T.))'
-            return render(request, 'success.html', {'priceRegularMonthly': priceDict['priceRegularMonthly'],
-                                                    'priceRegularQuarterly': priceDict['priceRegularQuarterly'],
-                                                    'pricePersonalizedSessions': priceDict['pricePersonalizedSessions'],
-                                                    'priceWeekendFlow': priceDict['priceWeekendFlow'],
-                                                    'currencySymbol': currency, 'discount': discount,
-                                                    'batchTimings1': timing1, 'batchTimings2': timing2
-                                                    })
+            return render(request, 'dashboard.html', {'priceRegularMonthly': priceDict['priceRegularMonthly'],
+                                                      'priceRegularQuarterly': priceDict['priceRegularQuarterly'],
+                                                      'pricePersonalizedSessions': priceDict['pricePersonalizedSessions'],
+                                                      'priceWeekendFlow': priceDict['priceWeekendFlow'],
+                                                      'currencySymbol': currency, 'discount': discount,
+                                                      'batchTimings1': timing1, 'batchTimings2': timing2
+                                                      })
         except Exception as e:
             print(e, 'Another exception')
             logout(request)
@@ -275,6 +275,10 @@ def signUpView(request):
 
 def alreadyRegisteredView(request, phone_num):
     return render(request, 'trialRegistered.html', {'user': phone_num})
+
+
+def paymentSuccessfulView(request):
+    return render(request, 'payment_success.html', {'data': 'something'})
 
 
 def trialClassView(request):
