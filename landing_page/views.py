@@ -38,6 +38,7 @@ def create_checkout_session(request):
                     },
                 ],
                 mode='subscription',
+                invoice_creation={"enabled": True},
                 success_url=YOUR_DOMAIN + 'success',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
@@ -51,6 +52,7 @@ def create_checkout_session(request):
                     },
                 ],
                 mode='payment',
+                invoice_creation={"enabled": True},
                 success_url=YOUR_DOMAIN + 'success',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
@@ -65,6 +67,7 @@ def create_checkout_session(request):
                     },
                 ],
                 mode='payment',
+                invoice_creation={"enabled": True},
                 success_url=YOUR_DOMAIN + 'success',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
@@ -79,6 +82,7 @@ def create_checkout_session(request):
                     },
                 ],
                 mode='payment',
+                invoice_creation={"enabled": True},
                 success_url=YOUR_DOMAIN + 'success',
                 cancel_url=YOUR_DOMAIN + 'cancel',
             )
