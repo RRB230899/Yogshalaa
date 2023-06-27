@@ -50,6 +50,9 @@ SECRET_KEY_STRIPE = config('SECRET_KEY_STRIPE')
 PUBLISHABLE_KEY_PROD = config('PUBLISHABLE_KEY_PROD')
 SECRET_KEY_PROD = config('SECRET_KEY_PROD')
 
+# Random url for admin
+RANDOM_STR = config('RANDOM_STR')
+
 
 # Application definition
 
@@ -61,8 +64,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'landing_page',
-    'rest_framework',
-    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

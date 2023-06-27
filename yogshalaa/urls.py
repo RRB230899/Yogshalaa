@@ -17,15 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
-# from landing_page.views import sendOTP, verifyOTP
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
+
+random_str = settings.RANDOM_STR
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path(f'{random_str}/', admin.site.urls),
     path('', include('landing_page.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name="Homepage"),
-    # path('send_otp', sendOTP),
-    # path('verify_otp', verifyOTP),
-    # path('generatePDF/', generatePDF, name='generatePDF')
+    path(r'^', include('favicon.urls'))
 ]
-
