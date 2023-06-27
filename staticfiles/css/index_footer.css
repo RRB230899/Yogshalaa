@@ -19,7 +19,7 @@ footer ul{  padding-left: 0;  list-style: none;}
 .footer-copyright p { color: #969696; margin: 2px 0 0;}
 
 /* Footer Top */
-.footer-top{  background: #252525;  padding-bottom: 30px; margin-bottom: 30px;  border-bottom: 3px solid #222;}
+.footer-top{  background: #252525;  padding-bottom: 30px; margin-bottom: 10px;  border-bottom: 3px solid #222;}
 
 
 /* Footer transparent */
