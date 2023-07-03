@@ -3,16 +3,13 @@ from .models import *
 # Register your models here.
 
 
-@admin.register(YogaUser)
+@admin.register(YogaUserMorning)
 class YogshalaaByJJ(admin.ModelAdmin):
-    fields = ['fullName', 'age', 'gender', 'contactNumber', 'beginnerAtYoga', 'purpose',
-              'ailment', 'packageSelection', 'batchTimingSelection', 'paymentMode', 'paymentStatus']
-    list_display = ['fullName', 'contactNumber', 'paymentStatus']
-    list_filter = ['paymentStatus', 'paymentMode', 'batchTimingSelection', 'packageSelection']
-    search_fields = ['fullName']
+    fields = ['profile', 'batch_choice', 'date_of_joining']
+    list_display = ['batch_choice', 'date_of_joining']
+    list_filter = ['batch_choice', 'date_of_joining']
 
 
-# admin.site.register(UserOTP)
 @admin.register(Profile)
 class Profile(admin.ModelAdmin):
     fields = ['user', 'mobile', 'otp', 'uid', 'country_code']

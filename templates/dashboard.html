@@ -23,13 +23,17 @@
     <link rel="stylesheet" href="{% static 'css/mobile_menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/socialLinks.css' %}">
     <link rel="stylesheet" href="{% static 'css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css" integrity="sha512-zar81H5lVN36QFsq/da1hxpOLODXK4/oFwBGOFrvdWX6SBe3NWriWTQS6YQDVfW5fDeb2Vry41YQCELOe8cHww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/jquery-1.9.1.min.js"></script>
 	<script src="https://2-22-4-dot-lead-pages.appspot.com/static/lp918/min/html5shiv.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js" integrity="sha512-+z66PuMP/eeemN2MgRhPvI3G15FOBbsp5NcCJBojg6dZBEFL0Zoi0PEGkhjubEcQF7N1EpTX15LZvfuw+Ej95Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'js/dashboard.js' %}"></script>
-<!--    <script src="{% static 'js/aboutJJ.js' %}"></script>-->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -38,7 +42,6 @@
 		<a href="https://wa.me/917023425271?text=Hello%20Yogshalaa%21%20I%20would%20like%20to%20know%20more%20
 		about%20your%20services%2E" target="_blank"><i class="fab fa-whatsapp social-media-links"></i></a>
     </div>
-<!--    <script src="{% static 'js/toast.js' %}"></script>-->
 	<nav>
         <div class="nav-1">
             <div class="nav-main">
@@ -152,10 +155,31 @@
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form action="/create-checkout-session" method="POST">
+                                            <button data-toggle="modal" data-target="#login-modal" type="button" class="btn-download" id="btn-auto-click">
+                                                Proceed
+                                            </button>
+                                            <form action="/create-checkout-session" method="POST" style="padding-top: 20px;">
                                                 {% csrf_token %}
-                                                <label for="checkout-button-morning-monthly"></label>
-                                                <input type="submit" id="checkout-button-morning-monthly" name="Morning flow Monthly" value="Checkout"/>
+                                                <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                    <div class="modal-dialog">
+                                                        <div class="loginmodal-container">
+                                                            <h2>Choose your batch:</h2><br>
+                                                            <input id="batch_i" type="radio" value="Batch I" name="choose_batch">
+                                                            <label for="batch_i">Batch I</label>
+                                                            <input id="batch_ii" type="radio" value="Batch II" name="choose_batch">
+                                                            <label for="batch_ii">Batch II</label>
+                                                            <h2 style="padding-top: 10px;">Mention your Date of Joining:</h2>
+                                                            <div class="input-group date insertInfo" data-provide="datepicker">
+                                                                <input type="text" class="form-control" name="date_of_joining">
+                                                                <div class="input-group-addon close-button" style="display: inline-block">
+                                                                <span class="glyphicon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                                </div>
+                                                            </div>
+                                                            <label for="checkout-button-morning-monthly"></label>
+                                                            <input type="submit" id="checkout-button-morning-monthly" name="Morning flow Monthly" value="Checkout"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
@@ -223,13 +247,33 @@
                                             </ul>
                                         </div>
                                         <div class="card-footer">
-                                            <form action="/create-checkout-session" method="POST">
+                                            <button data-toggle="modal" data-target="#login-modal-quarterly" type="button" class="btn-download" id="btn-auto-click-quarterly">
+                                                Proceed
+                                            </button>
+                                            <form action="/create-checkout-session" method="POST" style="padding-top: 20px;">
                                                 {% csrf_token %}
-                                                <label for="checkout-button-morning"></label>
-                                                <input type="submit" id="checkout-button-morning" name="Morning flow Quarterly" value="Checkout"/>
+                                                <div class="modal fade" id="login-modal-quarterly" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                    <div class="modal-dialog">
+                                                        <div class="loginmodal-container">
+                                                            <h2>Choose your batch:</h2><br>
+                                                            <input id="batch_i_quarterly" type="radio" value="Batch I" name="choose_batch">
+                                                            <label for="batch_i_quarterly">Batch I</label>
+                                                            <input id="batch_ii_quarterly" type="radio" value="Batch II" name="choose_batch">
+                                                            <label for="batch_ii_quarterly">Batch II</label>
+                                                            <h2 style="padding-top: 10px;">Mention your Date of Joining:</h2>
+                                                            <div class="input-group date insertInfo" data-provide="datepicker">
+                                                                <input type="text" class="form-control" name="date_of_joining">
+                                                                <div class="input-group-addon close-button" style="display: inline-block">
+                                                                <span class="glyphicon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                                </div>
+                                                            </div>
+                                                            <label for="checkout-button-morning-monthly"></label>
+                                                            <input type="submit" id="checkout-button-morning-quarterly" name="Morning flow Monthly" value="Checkout"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </form>
                                         </div>
-
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
@@ -391,4 +435,14 @@
         </div>
     </footer>
 </body>
+<script>
+    $('.date').each(function()
+    {
+        $(this).datepicker(
+        {
+            format: 'mm-dd-yyyy',
+            autoclose: true
+        });
+    });
+</script>
 </html>

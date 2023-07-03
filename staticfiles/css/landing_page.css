@@ -10,6 +10,19 @@ body{
   box-sizing: border-box;
 }
 
+.contact-form-alert{
+	text-align: center;
+	padding: 10px;
+	background-color: #26d367;
+	color: #fff;
+	margin-bottom: 10px;
+	display: none;
+	position: fixed;
+	top: 50px;
+	width: 100%;
+	z-index: 99;
+}
+
 .bg-image {
   /* The image used */
   background-image: url("../images/Yogshalaa_bg_updated.jpg");

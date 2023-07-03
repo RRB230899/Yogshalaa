@@ -24,7 +24,16 @@ def create_checkout_session(request):
         if request.user.is_authenticated:
             profile = Profile.objects.get(user=request.user)
             country_code = profile.country_code
-        YOUR_DOMAIN = "https://yogshalaa.in/"
+            if request.method == 'POST':
+                try:
+                    batch_choice = request.POST['choose_batch']
+                    date_of_joining = request.POST['date_of_joining']
+                    YogaUserMorning.objects.create(
+                        profile=profile, batch_choice=batch_choice, date_of_joining=date_of_joining)
+                    print('Print statement executed', batch_choice, date_of_joining)
+                except Exception as e:
+                    print('Exception occurred in modal', str(e))
+        YOUR_DOMAIN = "http://127.0.0.1:8000/"
         # if request.method == 'POST':
         if 'Weekend flow' in request.POST:  # For Weekend Flow
             checkout_session = stripe.checkout.Session.create(
@@ -96,9 +105,7 @@ def create_checkout_session(request):
 # User Dashboard
 def success_page(request):
     if request.COOKIES.get('profile_verified') is not None:
-        print('1')
         try:
-            print('2')
             priceDict = {'priceRegularMonthly': 0, 'priceRegularQuarterly': 0,
                          'pricePersonalizedSessions': 0, 'priceWeekendFlow': 0}
             currency = '£'
@@ -108,7 +115,6 @@ def success_page(request):
             if request.user.is_authenticated:
                 print(request.user, 'authenticated')
                 profile = Profile.objects.get(user=request.user)
-                print(profile)
                 if profile.country_code == '+91':
                     print('India')
                     priceDict['priceRegularMonthly'] = 1500
