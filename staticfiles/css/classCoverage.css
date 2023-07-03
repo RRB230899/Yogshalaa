@@ -37,6 +37,11 @@ p {
 	letter-spacing: 1px;
 }
 
+h2{
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
 
 /* ======================
 ----- FIRST SECTION------
@@ -81,10 +86,6 @@ p {
 ---- SECOND SECTION------
 =======================*/
 
-.second-section {
-	padding: 100px 0px;
-}
-
 .second-section .service-item {
 	text-align: center;
 }
@@ -99,6 +100,7 @@ p {
 	color: #415b90;
 	margin-top: 25px;
 	margin-bottom: 15px;
+	font-weight: 600;
 }
 
 
@@ -111,7 +113,7 @@ p {
 	background-size: cover;
 	width: 100%;
 	background-repeat: no-repeat;
-	padding: 20% 0px;
+	padding: 15% 0 15% 0;
 }
 
 .third-section .left-image img {
@@ -131,16 +133,16 @@ p {
 }
 
 .third-section h4 {
-	margin-top: 60px;
+	margin-top: 30px;
 	color: #fff;
-	font-size: 24px;
-	font-weight: 700;
+	font-size: 16px;
+	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
 
 .third-section p {
-	color: #fff;
+	color: #000000;
 	margin-top: 15px;
 }
 
@@ -150,11 +152,7 @@ p {
 =======================*/
 
 .fourth-section {
-	background-image: url(../img/fourth-section-bg.png);
-	background-size: cover;
 	width: 100%;
-	background-repeat: no-repeat;
-	padding: 16% 0px;
 }
 
 .fourth-section .col-md-3 {
@@ -656,14 +654,14 @@ footer a:hover {
 		padding: 50px 0px 0px 0px;
 	}
 
-	.second-section .service-item {
+	.service-item {
 		margin-bottom: 50px;
 	}
 
 	.third-section {
-		margin-top: -50px;
+		margin-top: -150px;
 		text-align: center;
-		padding: 250px 0px 150px 0px;
+		padding: 250px 0px 350px 0px;
 	}
 
 	.third-section .right-text {
@@ -715,6 +713,11 @@ footer a:hover {
 	}
 }
 
+@media (min-width: 768px) and (max-width: 849px){
+    .third-section{
+        padding: 200px 0 200px 0;
+    }
+}
 
 @media (max-width: 590px){
 
