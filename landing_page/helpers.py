@@ -1,5 +1,5 @@
 from django.conf import settings
-from twilio.rest import Client
+import vonage
 
 
 class OTPHandler:
@@ -12,13 +12,17 @@ class OTPHandler:
         self.otp = otp
 
     def send_otp_via_message(self):
-        client = Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
-        message = client.messages.create(
-            body=f'Hello from Yogshalaa :) Your OTP is: {self.otp}. Your OTP is valid for 10 minutes.',
-            from_=f'+{settings.TWILIO_PHONE_NUMBER}',
-            to=f'{self.phone_num}')
-        print(f'Auth token: {settings.AUTH_TOKEN}. Hello from Yogshalaa :) Your OTP for {self.phone_num} is {self.otp}. '
-              f'This OTP is valid for 10 minutes only. From +{settings.TWILIO_PHONE_NUMBER}')
+        client = vonage.Client(key=settings.API_KEY, secret=settings.NEXMO_SECRET_KEY)
+        sms = vonage.Sms(client)
+        message = sms.send_message(
+            {
+                "from": f'Vonage APIs',
+                "to": f'{self.phone_num}',
+                "text": f'Hello from Yogshalaa :) Your OTP is: {self.otp}. Your OTP is valid for 10 minutes.',
+            })
+        print(f'Hello from Yogshalaa :) Your OTP for {self.phone_num} is {self.otp}. '
+              f'This OTP is valid for 10 minutes only.')
+        return message
 
     # def send_otp_via_whatsapp(self):
     #     client = Client(settings.ACCOUNT_SID, settings.AUTH_TOKEN)
