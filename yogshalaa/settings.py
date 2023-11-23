@@ -35,13 +35,6 @@ ALLOWED_HOSTS = ["yogshalaa.in", '127.0.0.1', 'yogshalaa.onrender.com']
 # External DB URL
 DATABASE_URL = config('DATABASE_URL')
 
-# Twilio configuration
-ACCOUNT_SID = config('ACCOUNT_SID')
-AUTH_TOKEN = config('AUTH_TOKEN')
-COUNTRY_CODE = config('COUNTRY_CODE')
-TWILIO_WHATSAPP_NUMBER = config('TWILIO_WHATSAPP_NUMBER')
-TWILIO_PHONE_NUMBER = config('TWILIO_PHONE_NUMBER')
-
 # Stripe config for testing
 PUBLISHABLE_KEY = config('PUBLISHABLE_KEY')
 SECRET_KEY_STRIPE = config('SECRET_KEY_STRIPE')
