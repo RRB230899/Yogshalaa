@@ -3,7 +3,7 @@ Healthcare and Fitness website for Yogshalaa.
 https://yogshalaa.in/
 
 # SMS Service
-Twilio: https://www.twilio.com/try-twilio
+Phone Auth by Firebase (I know: Client side authentication, but just had to do!)
 
 # Payment Gateway
 Stripe: https://stripe.com/en-in
@@ -16,6 +16,3 @@ Django
 
 # Database
 PostgreSQL
-
-# Messaging Service
-Phone Auth by Firebase (I know: Client side authentication, but just had to do!)
