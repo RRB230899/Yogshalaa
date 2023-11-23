@@ -12,8 +12,8 @@ class YogshalaaByJJ(admin.ModelAdmin):
 
 @admin.register(Profile)
 class Profile(admin.ModelAdmin):
-    fields = ['user', 'mobile', 'otp', 'uid', 'country_code']
-    list_display = ['user', 'mobile']
+    fields = ['user', 'mobile', 'uid', 'country_code', 'is_verified']
+    list_display = ['user', 'mobile', 'is_verified']
     search_fields = ['mobile']
 
 

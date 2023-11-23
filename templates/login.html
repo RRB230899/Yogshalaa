@@ -120,9 +120,7 @@
 	<div class="inputGroup inputGroup3">
 		<button id="login" type="submit" name="Login user">Login</button>
 	</div>
-	{% for message in messages %}
-		<p id="messages">{{message}}</p>
-	{% endfor %}
+	{% include 'messages.html' %}
 	<div class="mt-4">
 		<div class="d-flex justify-content-center links">
 			Don't have an account?&nbsp;<a href="{% url 'signup' %}" class="ml-2">Sign Up</a>

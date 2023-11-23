@@ -26,5 +26,5 @@ urlpatterns = [
     path(f'{random_str}/', admin.site.urls),
     path('', include('landing_page.urls')),
     path('', TemplateView.as_view(template_name='index.html'), name="Homepage"),
-    path(r'^', include('favicon.urls'))
+    path(r'', include('favicon.urls'))
 ]

@@ -7,6 +7,7 @@
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/timer.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         body{
             background-color: rgba(138,43,226, .5);
@@ -58,15 +59,14 @@
         <input id="otp" type="text" name="otp">
         <div style="display: flex; margin-top: 20px;">
             <div id="app"></div>
-            <input style="margin: 0 0 0 150px; font-size: 12px;" type="submit" value="Resend Code" id="resend_otp"
+            <input style="margin: 0 0 0 150px; font-size: 12px;" type="button" value="Resend Code" id="resend_otp"
             name="resend_code">
         </div>
-        <input type="submit" value="login">
+        <input type="submit" value="login" id="verify_otp">
+        <div id="message-error"></div>
     </form>
-    {% for message in messages %}
-		<p id="messages">{{message}}</p>
-	{% endfor %}
     {% endblock includes %}
     <script src="{% static 'js/timer.js' %}"></script>
+    <script type="module" src="{% static 'js/OTPAuth.js' %}"></script>
 </body>
 </html>

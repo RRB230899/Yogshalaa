@@ -53,10 +53,6 @@ SECRET_KEY_PROD = config('SECRET_KEY_PROD')
 # Random url for admin
 RANDOM_STR = config('RANDOM_STR')
 
-# Nexmo API
-API_KEY = config('API_KEY')
-NEXMO_SECRET_KEY = config('NEXMO_SECRET_KEY')
-
 
 # Application definition
 

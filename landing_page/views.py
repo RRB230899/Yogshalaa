@@ -1,13 +1,11 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.conf import settings
-from django.http import HttpResponseRedirect
-from .models import *
-from .helpers import OTPHandler
 from django.http import JsonResponse
+from .models import *
 import stripe
-import random
+import json
 import uuid
 
 # Create your views here.
@@ -157,70 +155,64 @@ def registerView(request):
         return redirect('User Landing Page')
     if request.method == 'POST':
         try:
-            phone_num = request.POST['phone_number']
-            country_code = f"+{request.POST['country_code']}"
-            phone_num = f'{country_code}{phone_num}'
-        except Exception as e:
-            print(str(e), 'exception occurred')
-            return render(request, 'register.html', {})
-        if Profile.objects.filter(mobile=phone_num).exists():
-            profile = Profile.objects.get(mobile=phone_num)
-            user = User.objects.get(username=profile.user)
-            login(request, user)
-            red = redirect('User Landing Page')
-            red.set_cookie('profile_verified', True, max_age=86400)
-            return red
-
-        try:
+            response = {
+                'success': True,
+                'message': '',
+                'uid': ''
+            }
+            data = json.loads(request.body.decode('utf-8'))
+            phone_num = data.get("phone_number", "")
+            if Profile.objects.filter(mobile=phone_num, is_verified=True).exists():
+                profile = Profile.objects.get(mobile=phone_num)
+                user = User.objects.get(username=profile.user)
+                login(request, user)
+                response['message'] = 'Profile verified'
+                json_response = JsonResponse(response)
+                json_response.set_cookie('profile_verified', True, max_age=86400)
+                json_response.delete_cookie('can_otp_enter')
+                return json_response
+            if Profile.objects.filter(mobile=phone_num, is_verified=False).exists():
+                Profile.objects.get(mobile=phone_num).delete()
             user = User.objects.create(
-                username=f'Yogshalaa_user_{request.POST["full_name"]}_{uuid.uuid4().hex[:6].upper()}')
-            print(user)
-            otp = random.randint(1000, 9999)
-            profile = Profile.objects.create(user=user, mobile=phone_num, otp=f'{otp}', country_code=country_code)
-            messageHandler = OTPHandler(phone_num, otp).send_otp_via_message()
-            print(messageHandler)
-            red = redirect(f'otp/{profile.uid}/')
-            red.set_cookie("can_otp_enter", True, max_age=600)
-            return red
+                username=f'Yogshalaa_user_{data.get("full_name", "")}_{uuid.uuid4().hex[:6].upper()}')
+            profile = Profile.objects.create(user=user, mobile=phone_num, country_code=data.get("country_code", ""))
+            response['message'] = 'OTP sent successfully'
+            response['uid'] = profile.uid
+            json_response = JsonResponse(response)
+            json_response.set_cookie('can_otp_enter', True, max_age=600)
+            return json_response
         except Exception as e:
             print(str(e))
-            return render(request, 'register.html', {})
+            return JsonResponse({
+                'success': False,
+                'message': 'Something went wrong'
+            })
     return render(request, 'register.html')
 
 
 def verifyOTP(request, uid):
     # uid = Profile.uid
+    print("Received UID: ", uid)
     if request.method == "POST":
+        response = {
+            'success': True
+        }
         try:
             profile = Profile.objects.get(uid=uid)
         except Exception as e:
             messages.info(request, f"{e}: The given profile doesn't exist. Please register.")
-            return render(request, "register.html", {'data': 'something'})
-        try:
-            resend_code = request.POST.get('resend_code', False)
-        except Exception as e:
-            messages.info(request, f"Please wait for sometime.")
-            return render(request, f'otp/{profile.uid}', {'error': str(e)})
-        if resend_code:
-            otp = random.randint(1000, 9999)
-            messageHandler = OTPHandler(profile.mobile, otp).send_otp_via_message()
-            print(messageHandler)
-            profile.otp = otp
-            profile.save()
-            red = HttpResponseRedirect(request.path_info)
-            red.set_cookie("can_otp_enter", True, max_age=600)
-            return red
-        elif request.COOKIES.get('can_otp_enter') is not None:
-            if profile.otp == request.POST['otp']:
-                user = profile.user
-                login(request, user)
-                red = redirect("User Landing Page")
-                red.set_cookie('profile_verified', True, max_age=86400)
-                red.delete_cookie('can_otp_enter')
-                return red
-            return HttpResponse("wrong otp")
-        return HttpResponse("10 minutes passed")
-    return render(request, "verifyOTP.html", {'uid': uid})
+            response['success'] = False
+            return JsonResponse(response)
+        user = profile.user
+        login(request, user)
+        profile.is_verified = True
+        profile.save()
+        json_response = JsonResponse(response)
+        json_response.set_cookie('profile_verified', True, max_age=86400)
+        json_response.delete_cookie('can_otp_enter')
+        json_response['uid'] = uid
+        return json_response
+    return render(request, "verifyOTP.html", {})
 
 
 def loginView(request):

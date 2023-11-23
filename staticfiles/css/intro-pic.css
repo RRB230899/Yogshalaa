@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100);
 .intro-pic {
     border-radius: 50%;
     width: 10%;
@@ -9,7 +10,6 @@
     top: 25;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:100);
  .hr {
 	 width: 100%;
 	 height: 1px;

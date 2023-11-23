@@ -5,7 +5,6 @@
     <title>Registration</title>
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/intro-pic.css' %}">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link
@@ -22,16 +21,10 @@
             integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js"></script>-->
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </head>
 <body>
 <form method="POST" action="" onsubmit="return validate()">
     {% csrf_token %}
-    {% if message %}
-    <div class="alert alert-{{class}}">
-        {{message}}
-    </div>
-    {% endif %}
     <div class="svgContainer">
         <div>
             <svg class="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -184,6 +177,7 @@
     <div class="inputGroup inputGroup3">
         <input id="login" type="submit" name="Submit" value="Submit"/>
     </div>
+    {% include 'messages.html' %}
     <div class="mt-4">
         <div class="d-flex justify-content-center links">
             Already have an account?&nbsp;<a href="{% url 'login' %}">Login</a>
@@ -191,24 +185,6 @@
     </div>
 </form>
 <script src="{% static 'js/register.js' %}"></script>
+<script type="module" src="{% static 'js/phoneAuth.js' %}"></script>
 </body>
-<script>
-	const phoneInputField = document.querySelector("#id_password1");
-   	const phoneInput = window.intlTelInput(phoneInputField, {
-   		utilsScript:
-       		"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-   		dropdownContainer: document.getElementsByTagName('input')[10],
-   		onlyCountries: ['gb', 'in', 'us', 'nl'],
-		initialCountry: 'in',
-     	separateDialCode: true,
-   });
-   function validate(){
-   	console.log("Function executed")
-   	var phn_no = phoneInput.getSelectedCountryData();
-	var ip = document.getElementById('country_code');
-	ip.value = phn_no['dialCode'];
-	return true;
-   }
-
-</script>
 </html>

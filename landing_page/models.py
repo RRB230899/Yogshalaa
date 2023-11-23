@@ -8,9 +8,9 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     mobile = PhoneNumberField(default='', blank=False, null=False, unique=True)
-    otp = models.CharField(max_length=6, default='******')
     uid = models.CharField(default=uuid.uuid4, max_length=200, unique=True, null=True, blank=True)
-    country_code = models.CharField(max_length=50, default='+91')
+    country_code = models.CharField(default='+91', max_length=5)
+    is_verified = models.BooleanField(default=False)
     objects = models.Manager()
 
 
