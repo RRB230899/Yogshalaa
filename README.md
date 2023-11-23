@@ -16,3 +16,6 @@ Django
 
 # Database
 PostgreSQL
+
+# Messaging Service
+Phone Auth by Firebase (I know: Client side authentication, but just had to do!)
