@@ -67,6 +67,15 @@
     </form>
     {% endblock includes %}
     <script src="{% static 'js/timer.js' %}"></script>
+    <script type="text/javascript">
+        var API_KEY = "{{ API_KEY }}";
+        var AUTH_DOMAIN = "{{ AUTH_DOMAIN }}";
+        var PROJECT_ID = "{{ PROJECT_ID }}";
+        var STORAGE_BUCKET = "{{ STORAGE_BUCKET }}";
+        var MESSAGING_SENDER_ID = "{{ MESSAGING_SENDER_ID }}";
+        var APP_ID = "{{ APP_ID }}"
+        var MEASUREMENT_ID = "{{ MEASUREMENT_ID }}"
+    </script>
     <script type="module" src="{% static 'js/OTPAuth.js' %}"></script>
 </body>
 </html>

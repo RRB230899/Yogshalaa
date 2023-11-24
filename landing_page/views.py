@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout
 from django.conf import settings
 from django.http import JsonResponse
 from .models import *
+import os
 import stripe
 import json
 import uuid
@@ -12,6 +13,17 @@ import uuid
 
 # Stripe product config
 stripe.api_key = settings.SECRET_KEY_PROD
+
+# Firebase Configuration
+firebase_config = {
+    'API_KEY': os.environ.get('API_KEY'),
+    'AUTH_DOMAIN': os.environ.get('AUTH_DOMAIN'),
+    'PROJECT_ID': os.environ.get('PROJECT_ID'),
+    'STORAGE_BUCKET': os.environ.get('STORAGE_BUCKET'),
+    'MESSAGING_SENDER_ID': os.environ.get('MESSAGING_SENDER_ID'),
+    'APP_ID': os.environ.get('APP_ID'),
+    'MEASUREMENT_ID': os.environ.get('MEASUREMENT_ID')
+}
 
 
 # Checkout session for accepting payments
@@ -110,8 +122,6 @@ def success_page(request):
                          'pricePersonalizedSessions': 0, 'priceWeekendFlow': 0}
             currency = '£'
             discount = '18.8%'
-            timing1 = ''
-            timing2 = ''
 
             if profile.country_code == '+91':
                 print('India')
@@ -187,7 +197,7 @@ def registerView(request):
                 'success': False,
                 'message': 'Something went wrong'
             })
-    return render(request, 'register.html')
+    return render(request, 'register.html', firebase_config)
 
 
 def verifyOTP(request, uid):
@@ -212,7 +222,7 @@ def verifyOTP(request, uid):
         json_response.delete_cookie('can_otp_enter')
         json_response['uid'] = uid
         return json_response
-    return render(request, "verifyOTP.html", {})
+    return render(request, "verifyOTP.html", firebase_config)
 
 
 def loginView(request):
