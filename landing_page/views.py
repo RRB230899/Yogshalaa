@@ -185,7 +185,7 @@ def registerView(request):
                 Profile.objects.get(mobile=phone_num).delete()
             user = User.objects.create(
                 username=f'Yogshalaa_user_{data.get("full_name", "")}_{uuid.uuid4().hex[:6].upper()}')
-            profile = Profile.objects.create(user=user, mobile=phone_num, country_code=data.get("country_code", ""))
+            profile = Profile.objects.create(user=user, mobile=phone_num, country_code=f'+{data.get("country_code", "")}')
             response['message'] = 'OTP sent successfully'
             response['uid'] = profile.uid
             json_response = JsonResponse(response)
