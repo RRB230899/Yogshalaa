@@ -43,7 +43,7 @@ def create_checkout_session(request):
                     print('Print statement executed', batch_choice, date_of_joining)
                 except Exception as e:
                     print('Exception occurred in modal', str(e))
-        YOUR_DOMAIN = "http://yogshalaa.in/"
+        YOUR_DOMAIN = "https://yogshalaa.onrender.com/"
         # if request.method == 'POST':
         if 'Weekend flow' in request.POST:  # For Weekend Flow
             checkout_session = stripe.checkout.Session.create(
