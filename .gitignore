@@ -2,6 +2,8 @@
 *.log
 *.pot
 *.pyc
+*.sqlite3
+*.env
 __pycache__
 db.sqlite3
 media

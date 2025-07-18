@@ -15,7 +15,7 @@ import os
 import dj_database_url
 from decouple import config
 
-config.encoding = 'cp1251'
+# config.encoding = 'cp1251'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,9 +28,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["yogshalaa.in", '127.0.0.1', 'yogshalaa.onrender.com']
+ALLOWED_HOSTS = ["yogshalaa.in", '127.0.0.1', 'yogshalaa.onrender.com', '*']
 
 # External DB URL
 DATABASE_URL = config('DATABASE_URL')
@@ -88,14 +88,21 @@ TEMPLATES = [
     },
 ]
 
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+for directory in [STATIC_DIR, MEDIA_DIR]:
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    STATIC_DIR,
 )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = MEDIA_DIR
 
 
 WSGI_APPLICATION = 'yogshalaa.wsgi.application'

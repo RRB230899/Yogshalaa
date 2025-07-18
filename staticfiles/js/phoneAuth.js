@@ -1,5 +1,5 @@
-import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+import { getAuth, signInWithPhoneNumber, RecaptchaVerifier } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 const firebaseConfig = {
     apiKey: API_KEY,
@@ -15,13 +15,17 @@ initializeApp(firebaseConfig);
 document.addEventListener('DOMContentLoaded', function () {
     var auth = getAuth();
     //invisible recaptcha0
-    window.recaptchaVerifier = new RecaptchaVerifier('login', {
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'login', {
         'size': 'invisible',
         'callback': (response) => {
             // reCAPTCHA solved, allow signInWithPhoneNumber.
             onSignInSubmit();
         }
     }, auth);
+
+    window.recaptchaVerifier.render().then(function(widgetId) {
+        window.recaptchaWidgetId = widgetId;
+    });
 
     const phoneInputField = document.querySelector("#id_password1");
     const phoneInput = window.intlTelInput(phoneInputField, {
