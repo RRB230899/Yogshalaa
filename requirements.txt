@@ -13,8 +13,10 @@ django-phonenumber-field==8.1.0
 django-phonenumbers==1.0.1
 favicon==0.7.0
 frozenlist==1.7.0
+gunicorn==23.0.0
 idna==3.10
 multidict==6.6.3
+packaging==25.0
 phonenumbers==9.0.9
 propcache==0.3.2
 psycopg2-binary==2.9.10
