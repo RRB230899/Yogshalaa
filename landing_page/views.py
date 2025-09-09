@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.conf import settings
 from django.http import JsonResponse
+from django.views.decorators.http import require_http_methods
 from .models import *
 import os
 import stripe
@@ -329,3 +330,7 @@ def my_def_in_view(request):
             print('Exception occurred while getting trial class data;', str(e))
             return redirect('Start your free trial')
     return JsonResponse(data)
+
+@require_http_methods(["GET", "HEAD"])
+def ping(request):
+    return JsonResponse({"status": "ok"})
