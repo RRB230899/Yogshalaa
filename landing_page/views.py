@@ -5,7 +5,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from .models import *
-import os
+from decouple import config
 import stripe
 import json
 import uuid
@@ -17,13 +17,13 @@ stripe.api_key = settings.SECRET_KEY_PROD
 
 # Firebase Configuration
 firebase_config = {
-    'API_KEY': os.environ.get('API_KEY'),
-    'AUTH_DOMAIN': os.environ.get('AUTH_DOMAIN'),
-    'PROJECT_ID': os.environ.get('PROJECT_ID'),
-    'STORAGE_BUCKET': os.environ.get('STORAGE_BUCKET'),
-    'MESSAGING_SENDER_ID': os.environ.get('MESSAGING_SENDER_ID'),
-    'APP_ID': os.environ.get('APP_ID'),
-    'MEASUREMENT_ID': os.environ.get('MEASUREMENT_ID')
+    'API_KEY': config('API_KEY', default=None),
+    'AUTH_DOMAIN': config('AUTH_DOMAIN', default=None),
+    'PROJECT_ID': config('PROJECT_ID', default=None),
+    'STORAGE_BUCKET': config('STORAGE_BUCKET', default=None),
+    'MESSAGING_SENDER_ID': config('MESSAGING_SENDER_ID', default=None),
+    'APP_ID': config('APP_ID', default=None),
+    'MEASUREMENT_ID': config('MEASUREMENT_ID', default=None)
 }
 
 
