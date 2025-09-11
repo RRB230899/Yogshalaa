@@ -63,11 +63,15 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
+            console.log("Inside DjangoView Then.")
+            console.log(data)
             if (data.success) {
+                console.log("Inside data success")
                 if (data.message === 'Profile verified') {
                     window.location.href = '/success'
                 }
                 else if (data.message === 'OTP sent successfully') {
+                    print("OTP sent successfully")
                     var appVerifier = window.recaptchaVerifier;
                     signInWithPhoneNumber(auth, phNo, appVerifier)
                     .then((confirmationResult) => {
@@ -87,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             else {
-                console.error('Error:', data.error);
+                console.error('Error from if else:', data.error);
             }
         })
         .catch((error) => {
