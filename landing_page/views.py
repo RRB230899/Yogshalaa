@@ -156,7 +156,7 @@ def registerView(request):
             print(str(e))
             return JsonResponse({
                 'success': False,
-                'message': 'Something went wrong'
+                'message': str(e)
             })
     return render(request, 'register.html', firebase_config)
 
