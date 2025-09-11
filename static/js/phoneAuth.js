@@ -33,9 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         e.preventDefault();
         var phoneNumber = phoneInput.getNumber();
+        console.log("phNo: ", phoneNumber);
+        console.log("selected country data:", phoneInput.getSelectedCountryData());
         callDjangoView(phoneNumber)
     }
     function callDjangoView(phNo) {
+        console.log("Sending phone number to Django:", phNo);
         var full_name = document.getElementById('full_name').value;
         var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         var phn_no = phoneInput.getSelectedCountryData();
