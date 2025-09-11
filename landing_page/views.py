@@ -35,6 +35,10 @@ def create_checkout_session(request):
         if request.user.is_authenticated:
             profile = Profile.objects.get(user=request.user)
             country_code = profile.country_code
+            try:
+                pricing = Pricing.objects.get(country_code=country_code)
+            except Pricing.DoesNotExist:
+                pricing = Pricing.objects.get(country_code="+44")
             if request.method == 'POST':
                 try:
                     batch_choice = request.POST['choose_batch']
@@ -48,63 +52,37 @@ def create_checkout_session(request):
         # if request.method == 'POST':
         if 'Weekend flow' in request.POST:  # For Weekend Flow
             checkout_session = stripe.checkout.Session.create(
-                line_items=[
-                    {
-                        # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                        'price': ('price_1NDlGVSFpSBjt2aIQHiDadJP' if country_code == '+44'
-                                  else 'price_1NKIbOSFpSBjt2aIjJK9DxBb'),
-                        # Can be created on Stripe Dashboard
-                        'quantity': 1,
-                    },
-                ],
-                mode='subscription',
+                line_items=[{"price": pricing.weekend_flow_price_id, "quantity": 1}],
+                mode="subscription",
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'payment_successful',
-                cancel_url=YOUR_DOMAIN + 'cancel',
+                success_url=YOUR_DOMAIN + "payment_successful",
+                cancel_url=YOUR_DOMAIN + "cancel",
             )
         elif 'Personalized flow' in request.POST:  # For personalized sessions
             checkout_session = stripe.checkout.Session.create(
-                line_items=[
-                    {
-                        'price': ('price_1NDlHhSFpSBjt2aIHFT5Me9E' if country_code == '+44'
-                                  else 'price_1NKIX5SFpSBjt2aIdz69Guxc'),
-                        'quantity': 1,
-                    },
-                ],
-                mode='payment',
+                line_items=[{"price": pricing.personalized_flow_price_id, "quantity": 1}],
+                mode="payment",
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'payment_successful',
-                cancel_url=YOUR_DOMAIN + 'cancel',
+                success_url=YOUR_DOMAIN + "payment_successful",
+                cancel_url=YOUR_DOMAIN + "cancel",
             )
 
         elif 'Morning flow Monthly' in request.POST:  # For Monthly Morning Energized Flow
             checkout_session = stripe.checkout.Session.create(
-                line_items=[
-                    {
-                        'price': ('price_1NDlHoSFpSBjt2aITL7JDNje' if country_code == '+44'
-                                  else 'price_1NKIRvSFpSBjt2aIW59sbRqS'),
-                        'quantity': 1,
-                    },
-                ],
-                mode='payment',
+                line_items=[{"price": pricing.morning_monthly_price_id, "quantity": 1}],
+                mode="payment",
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'payment_successful',
-                cancel_url=YOUR_DOMAIN + 'cancel',
+                success_url=YOUR_DOMAIN + "payment_successful",
+                cancel_url=YOUR_DOMAIN + "cancel",
             )
 
         elif 'Morning flow Quarterly' in request.POST:  # For Quarterly Morning Energized Flow
             checkout_session = stripe.checkout.Session.create(
-                line_items=[
-                    {
-                        'price': ('price_1NDlHxSFpSBjt2aIFIxQjhmj' if country_code == '+44'
-                                  else 'price_1NKIYQSFpSBjt2aIj5dXRFUp'),
-                        'quantity': 1,
-                    },
-                ],
-                mode='payment',
+                line_items=[{"price": pricing.morning_quarterly_price_id, "quantity": 1}],
+                mode="payment",
                 invoice_creation={"enabled": True},
-                success_url=YOUR_DOMAIN + 'payment_successful',
-                cancel_url=YOUR_DOMAIN + 'cancel',
+                success_url=YOUR_DOMAIN + "payment_successful",
+                cancel_url=YOUR_DOMAIN + "cancel",
             )
         return redirect(checkout_session.url, code=303)
 
@@ -119,35 +97,17 @@ def success_page(request):
         print(request.user, 'authenticated')
         profile = Profile.objects.get(user=request.user)
         try:
-            priceDict = {'priceRegularMonthly': 0, 'priceRegularQuarterly': 0,
-                         'pricePersonalizedSessions': 0, 'priceWeekendFlow': 0}
-            currency = '£'
-            discount = '18.8%'
-
-            if profile.country_code == '+91':
-                print('India')
-                priceDict['priceRegularMonthly'] = 1500
-                priceDict['priceRegularQuarterly'] = 4000
-                priceDict['pricePersonalizedSessions'] = 500
-                priceDict['priceWeekendFlow'] = 500
-                currency = '₹'
-                discount = '11.11%'
-                timing1 = '(6:15-7-15 A.M. (I.S.T.))'
-                timing2 = '(6-7 P.M. (I.S.T.))'
-            else:
-                priceDict['priceRegularMonthly'] = 99
-                priceDict['priceRegularQuarterly'] = 249
-                priceDict['pricePersonalizedSessions'] = 14.99
-                priceDict['priceWeekendFlow'] = 13.99
-                timing1 = '(6-7 A.M. (B.S.T.))'
-                timing2 = '(7-8 A.M. (B.S.T.))'
-            return render(request, 'dashboard.html', {'priceRegularMonthly': priceDict['priceRegularMonthly'],
-                                                      'priceRegularQuarterly': priceDict['priceRegularQuarterly'],
-                                                      'pricePersonalizedSessions': priceDict['pricePersonalizedSessions'],
-                                                      'priceWeekendFlow': priceDict['priceWeekendFlow'],
-                                                      'currencySymbol': currency, 'discount': discount,
-                                                      'batchTimings1': timing1, 'batchTimings2': timing2
-                                                      })
+            pricing = Pricing.objects.get(country_code=profile.country_code)
+            return render(request, "dashboard.html", {
+                "priceRegularMonthly": pricing.regular_monthly,
+                "priceRegularQuarterly": pricing.regular_quarterly,
+                "pricePersonalizedSessions": pricing.personalized_sessions,
+                "priceWeekendFlow": pricing.weekend_flow,
+                "currencySymbol": pricing.currency_symbol,
+                "discount": pricing.discount,
+                "batchTimings1": pricing.batch_timing1,
+                "batchTimings2": pricing.batch_timing2,
+            })
         except Exception as e:
             print(e, 'Another exception')
             logout(request)

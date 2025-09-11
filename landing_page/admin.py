@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.db.models import Field
 from .models import *
 # Register your models here.
 
@@ -22,3 +23,12 @@ class TrialClassPreferenceData(admin.ModelAdmin):
     fields = ['profile', 'phone_num', 'focus_choices', 'style_choices']
     list_display = ['phone_num']
     search_fields = ['phone_num']
+
+
+@admin.register(Pricing)
+class PricingAdmin(admin.ModelAdmin):
+    fields = ["country_code", "discount", "currency_symbol", "weekend_flow_price_id", "personalized_flow_price_id", 
+              "morning_monthly_price_id", "morning_quarterly_price_id", "regular_monthly", "regular_quarterly", 
+              "personalized_sessions", "weekend_flow", "batch_timing1", "batch_timing2"]
+    search_fields = ["country_code"]
+    list_display = ["country_code", "regular_monthly", "regular_quarterly", "personalized_sessions", "weekend_flow"] 
