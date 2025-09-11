@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     window.location.href = '/success'
                 }
                 else if (data.message === 'OTP sent successfully') {
-                    print("OTP sent successfully")
+                    console.log("OTP sent successfully")
                     var appVerifier = window.recaptchaVerifier;
                     signInWithPhoneNumber(auth, phNo, appVerifier)
                     .then((confirmationResult) => {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             else {
-                console.error('Error from if else:', data.error);
+                console.error('Error from if else:', data.message);
             }
         })
         .catch((error) => {
