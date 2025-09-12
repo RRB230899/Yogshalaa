@@ -173,12 +173,16 @@ def verifyOTP(request, uid):
         except Exception as e:
             messages.info(request, f"{e}: The given profile doesn't exist. Please register.")
             response['success'] = False
+            response['message'] = f"Error occurred: {e}"
+            print(response['message'])
             return JsonResponse(response)
         user = profile.user
+        print(user)
         login(request, user)
         profile.is_verified = True
         profile.save()
         json_response = JsonResponse(response)
+        print(json_response)
         json_response.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
         json_response.delete_cookie('can_otp_enter')
         json_response['uid'] = uid
@@ -188,6 +192,7 @@ def verifyOTP(request, uid):
 
 def loginView(request):
     if request.user.is_authenticated:
+        print("User Authentication Successful - in loginView")
         red = redirect('User Landing Page')
         red.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
         return red

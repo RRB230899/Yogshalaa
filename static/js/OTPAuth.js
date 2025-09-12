@@ -28,6 +28,7 @@ document.getElementById("resend_otp").addEventListener('click', resendOTP);
 function verifyOTP(e){
     e.preventDefault();
     var confirmationResult = JSON.parse(localStorage.getItem('confirmationResult'));
+    console.log("Confirmation Result: ", confirmationResult)
     var code = document.getElementById("otp").value;
     var verificationId = confirmationResult.verificationId;
     var credential = PhoneAuthProvider.credential(verificationId, code);
@@ -77,6 +78,7 @@ function setOTPExpiryCookie() {
 }
 
 function djangoView(){
+    console.log("Django View Called")
     var uid = JSON.parse(localStorage.getItem('uid'))
     var csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
     console.log('otp/' + uid + '/')
