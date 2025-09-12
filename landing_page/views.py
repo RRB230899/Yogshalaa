@@ -139,7 +139,7 @@ def registerView(request):
                 login(request, user)
                 response['message'] = 'Profile verified'
                 json_response = JsonResponse(response)
-                json_response.set_cookie('profile_verified', True, max_age=86400)
+                json_response.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
                 json_response.delete_cookie('can_otp_enter')
                 return json_response
             if Profile.objects.filter(mobile=phone_num, is_verified=False).exists():
@@ -179,7 +179,7 @@ def verifyOTP(request, uid):
         profile.is_verified = True
         profile.save()
         json_response = JsonResponse(response)
-        json_response.set_cookie('profile_verified', True, max_age=86400)
+        json_response.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
         json_response.delete_cookie('can_otp_enter')
         json_response['uid'] = uid
         return json_response
@@ -189,7 +189,7 @@ def verifyOTP(request, uid):
 def loginView(request):
     if request.user.is_authenticated:
         red = redirect('User Landing Page')
-        red.set_cookie('profile_verified', True, max_age=86400)
+        red.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
         return red
 
     else:
@@ -207,7 +207,7 @@ def loginView(request):
                 print("User already exists", f'+{country_code}{phone_number}')
                 login(request, user)
                 red = redirect('User Landing Page')
-                red.set_cookie('profile_verified', True, max_age=86400)
+                red.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
                 return red
             else:
                 messages.info(request, 'Phone number entered is incorrect')

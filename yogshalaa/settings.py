@@ -28,6 +28,10 @@ load_dotenv(BASE_DIR / ".env")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+# For session cookies
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = "Lax"   # or "None" if cross-domain is needed
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
