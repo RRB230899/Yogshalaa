@@ -45,7 +45,7 @@ def create_checkout_session(request):
                     date_of_joining = request.POST['date_of_joining']
                     YogaUserMorning.objects.create(
                         profile=profile, batch_choice=batch_choice, date_of_joining=date_of_joining)
-                    print('Print statement executed', batch_choice, date_of_joining)
+                    # print('Print statement executed', batch_choice, date_of_joining)
                 except Exception as e:
                     print('Exception occurred in modal', str(e))
         YOUR_DOMAIN = "https://yogshalaa.onrender.com/"
@@ -87,14 +87,14 @@ def create_checkout_session(request):
         return redirect(checkout_session.url, code=303)
 
     except Exception as e:
-        print("Exception occurred: " + str(e))
+        print("Exception occurred in checkout_session: " + str(e))
         return str(e)
 
 
 # User Dashboard
 def success_page(request):
     if request.user.is_authenticated:
-        print(request.user, 'authenticated')
+        # print(request.user, 'authenticated')
         profile = Profile.objects.get(user=request.user)
         try:
             pricing = Pricing.objects.get(country_code=profile.country_code)
@@ -109,7 +109,7 @@ def success_page(request):
                 "batchTimings2": pricing.batch_timing2,
             })
         except Exception as e:
-            print(e, 'Another exception')
+            print(f"Error in success_page view: {str(e)}")
             logout(request)
             red = redirect('register')
             red.delete_cookie('profile_verified')
@@ -153,7 +153,7 @@ def registerView(request):
             json_response.set_cookie('can_otp_enter', True, max_age=600)
             return json_response
         except Exception as e:
-            print(str(e))
+            print(f"Exception in registerView: {str(e)}")
             return JsonResponse({
                 'success': False,
                 'message': str(e)
@@ -163,7 +163,7 @@ def registerView(request):
 
 def verifyOTP(request, uid):
     # uid = Profile.uid
-    print("Received UID: ", uid)
+    # print("Received UID: ", uid)
     if request.method == "POST":
         response = {
             'success': True
@@ -174,15 +174,14 @@ def verifyOTP(request, uid):
             messages.info(request, f"{e}: The given profile doesn't exist. Please register.")
             response['success'] = False
             response['message'] = f"Error occurred: {e}"
-            print(response['message'])
             return JsonResponse(response)
         user = profile.user
-        print(user)
+        # print(user)
         login(request, user)
         profile.is_verified = True
         profile.save()
         json_response = JsonResponse(response)
-        print(json_response)
+        # print(json_response)
         json_response.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
         json_response.delete_cookie('can_otp_enter')
         json_response['uid'] = uid
@@ -192,7 +191,6 @@ def verifyOTP(request, uid):
 
 def loginView(request):
     if request.user.is_authenticated:
-        print("User Authentication Successful - in loginView")
         red = redirect('User Landing Page')
         red.set_cookie('profile_verified', True, max_age=86400, secure=True, samesite="Lax")
         return red
@@ -261,11 +259,10 @@ def trialClassView(request):
             user = request.user
             profile = Profile.objects.get(user=user)
             if TrialClassUserPreferences.objects.filter(profile=profile).exists():
-                print('In here')
                 return redirect(f'registered/{profile.mobile}')
             return render(request, 'trial_new.html', {'data': 'something'})
         else:
-            print('Exception occurred while accessing trial class in try block')
+            print('Exception occurred while accessing trial class in try block in trialClassView')
             return redirect('login')
     except Exception as e:
         print('Exception occurred while accessing trial class', str(e))
@@ -277,7 +274,6 @@ def my_def_in_view(request):
     if request.method == 'GET':
         try:
             result = dict(request.GET)
-            print(result, ': result.achieved')
             # Any process that you want
             # print(json.loads(result))
             user = request.user
@@ -290,9 +286,9 @@ def my_def_in_view(request):
                 # Data that you want to send to javascript function
                 'result': result
             }
-            print(data)
+            # print(data)
         except Exception as e:
-            print('Exception occurred while getting trial class data;', str(e))
+            print('Exception occurred while getting trial class data in my_def_in_view;', str(e))
             return redirect('Start your free trial')
     return JsonResponse(data)
 
