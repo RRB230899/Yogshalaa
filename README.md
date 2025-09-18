@@ -39,6 +39,8 @@ git clone https://github.com/RRB230899/Yogshalaa.git
 cd Yogshalaa
 
 ### 2. Project Structure
+
+```text
 YogShalaa/
 ├─ yogshalaa/ # Django project settings
 │ ├─ init.py
