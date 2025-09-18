@@ -28,7 +28,8 @@ The project is **fully built using Django**, configured and hosted on **Render**
 
 ## 🚀 Live Demo
 - **Gallery**: [https://yogshalaa.onrender.com/gallery](https://yogshalaa.onrender.com/gallery)  
-- **Class Coverage**: [https://yogshalaa.onrender.com/coverage](https://yogshalaa.onrender.com/coverage)  
+- **Class Coverage**: [https://yogshalaa.onrender.com/coverage](https://yogshalaa.onrender.com/coverage)
+- **Landing Page**: [https://yogshalaa.onrender.com](https://yogshalaa.onrender.com)
 
 ---
 
